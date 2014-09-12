@@ -1251,8 +1251,8 @@ div.file-upload a {
 div.file-upload:hover,
 .button:active,
 div.file-upload:active {
-  color: #f2be6a;
-  border-color: #f2be6a;
+  color: #6cd1d4;
+  border-color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -1269,7 +1269,7 @@ div.file-upload:active {
 div.file-upload:hover a,
 .button:active a,
 div.file-upload:active a {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -2165,7 +2165,7 @@ body {
 .header .main-nav li a:hover,
 .header .main-nav li a:active,
 .header .main-nav li a.current {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -2325,7 +2325,7 @@ body {
   font-size: 0.6875em;
   line-height: 1.0909090909em;
   text-transform: uppercase;
-  color: #f2be6a;
+  color: #6cd1d4;
   transition: color 0.2s linear;
 }
 
@@ -2340,7 +2340,7 @@ body {
 }
 
 .header .user-info .user-session-info .sign-out a {
-  color: #f2be6a;
+  color: #6cd1d4;
   transition: color 0.2s linear;
 }
 
@@ -2626,7 +2626,7 @@ body {
   font-size: 0.875em;
   line-height: 2.5714285714em;
   letter-spacing: 1px;
-  color: #f2be6a;
+  color: #6cd1d4;
   text-transform: uppercase;
 }
 
@@ -2781,8 +2781,8 @@ body {
 .sub-header .sub-nav-buttons div.file-upload:hover,
 .sub-header .sub-nav-buttons .button:active,
 .sub-header .sub-nav-buttons div.file-upload:active {
-  color: #f2be6a;
-  border-color: #f2be6a;
+  color: #6cd1d4;
+  border-color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -2799,7 +2799,7 @@ body {
 .sub-header .sub-nav-buttons div.file-upload:hover a,
 .sub-header .sub-nav-buttons .button:active a,
 .sub-header .sub-nav-buttons div.file-upload:active a {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -3125,7 +3125,7 @@ body {
 
 .form-fields .container .field-section .section-header ul.existing-blocks li.dropdown {
   margin-top: -1px;
-  background-color: #f2be6a;
+  background-color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -3622,7 +3622,39 @@ body {
   }
 
   line {
-    font-family: \00003223;
+    font-family: \00003224;
+  }
+}
+
+.form-fields .container .field-section .field-group .field-row .field.invalid h1.field-title,
+.form-fields .container .field-section .field-group .field-row .field.invalid h1.required,
+.form-fields .container .field-section .field-group .field-row .field.valid h1.field-title,
+.form-fields .container .field-section .field-group .field-row .field.valid h1.required {
+  color: #6cd1d4;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/jenniferlouthan\/Projects\/Web\/madelinemanson2\/cms\/app\/styles\/partials\/_form-general\.scss;
+  }
+
+  line {
+    font-family: \00003227;
+  }
+}
+
+.form-fields .container .field-section .field-group .field-row .field.invalid h1.required,
+.form-fields .container .field-section .field-group .field-row .field.valid h1.required {
+  margin-top: 8px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/jenniferlouthan\/Projects\/Web\/madelinemanson2\/cms\/app\/styles\/partials\/_form-general\.scss;
+  }
+
+  line {
+    font-family: \00003232;
   }
 }
 
@@ -3666,7 +3698,7 @@ body {
   }
 
   line {
-    font-family: \00003227;
+    font-family: \00003236;
   }
 }
 
@@ -3685,7 +3717,7 @@ body {
   }
 
   line {
-    font-family: \00003235;
+    font-family: \00003244;
   }
 }
 
@@ -3701,7 +3733,7 @@ body {
   }
 
   line {
-    font-family: \00003240;
+    font-family: \00003249;
   }
 }
 
@@ -3716,7 +3748,7 @@ body {
   }
 
   line {
-    font-family: \00003243;
+    font-family: \00003252;
   }
 }
 
@@ -3730,12 +3762,12 @@ body {
   }
 
   line {
-    font-family: \00003247;
+    font-family: \00003256;
   }
 }
 
 .form-fields .container .field-section .field-group .field-row .field h1.slug-info {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -3744,7 +3776,7 @@ body {
   }
 
   line {
-    font-family: \00003250;
+    font-family: \00003259;
   }
 }
 
@@ -3759,12 +3791,12 @@ body {
   }
 
   line {
-    font-family: \00003256;
+    font-family: \00003265;
   }
 }
 
 .form-fields .container .field-section .field-group .field-row .field h1.block-remove {
-  color: #f2be6a;
+  color: #6cd1d4;
   float: right;
 }
 
@@ -3774,7 +3806,7 @@ body {
   }
 
   line {
-    font-family: \00003260;
+    font-family: \00003269;
   }
 }
 
@@ -3788,12 +3820,12 @@ body {
   }
 
   line {
-    font-family: \00003265;
+    font-family: \00003274;
   }
 }
 
 .form-fields .container .field-section .field-group .field-row .field h1.remove-x {
-  color: #f2be6a;
+  color: #6cd1d4;
   float: right;
   font-size: 1.0909090909em;
   line-height: 1em;
@@ -3807,7 +3839,7 @@ body {
   }
 
   line {
-    font-family: \00003271;
+    font-family: \00003280;
   }
 }
 
@@ -3821,7 +3853,7 @@ body {
   }
 
   line {
-    font-family: \00003277;
+    font-family: \00003286;
   }
 }
 
@@ -3835,7 +3867,7 @@ body {
   }
 
   line {
-    font-family: \00003279;
+    font-family: \00003288;
   }
 }
 
@@ -3849,7 +3881,7 @@ body {
   }
 
   line {
-    font-family: \00003284;
+    font-family: \00003293;
   }
 }
 
@@ -3877,7 +3909,7 @@ body {
   }
 
   line {
-    font-family: \00003301;
+    font-family: \00003310;
   }
 }
 
@@ -3892,13 +3924,13 @@ body {
   }
 
   line {
-    font-family: \00003305;
+    font-family: \00003314;
   }
 }
 
 .form-fields .container .field-section .field-group .field-row .field input:focus,
 .form-fields .container .field-section .field-group .field-row .field .tagsinput:focus {
-  border-color: #f2be6a;
+  border-color: #6cd1d4;
   transition: border 0.2s linear;
 }
 
@@ -3908,7 +3940,7 @@ body {
   }
 
   line {
-    font-family: \00003312;
+    font-family: \00003321;
   }
 }
 
@@ -3981,7 +4013,7 @@ body {
   }
 
   line {
-    font-family: \00003320;
+    font-family: \00003329;
   }
 }
 
@@ -3999,7 +4031,7 @@ body {
   }
 
   line {
-    font-family: \00003327;
+    font-family: \00003336;
   }
 }
 
@@ -4023,7 +4055,7 @@ body {
   }
 
   line {
-    font-family: \00003338;
+    font-family: \00003347;
   }
 }
 
@@ -4039,7 +4071,7 @@ body {
   }
 
   line {
-    font-family: \00003349;
+    font-family: \00003358;
   }
 }
 
@@ -4057,7 +4089,7 @@ body {
   }
 
   line {
-    font-family: \00003356;
+    font-family: \00003365;
   }
 }
 
@@ -4084,7 +4116,7 @@ body {
   }
 
   line {
-    font-family: \00003372;
+    font-family: \00003381;
   }
 }
 
@@ -4099,7 +4131,7 @@ body {
   }
 
   line {
-    font-family: \00003376;
+    font-family: \00003385;
   }
 }
 
@@ -4113,7 +4145,7 @@ body {
   }
 
   line {
-    font-family: \00003379;
+    font-family: \00003388;
   }
 }
 
@@ -4130,7 +4162,7 @@ body {
   }
 
   line {
-    font-family: \00003382;
+    font-family: \00003391;
   }
 }
 
@@ -4145,12 +4177,12 @@ body {
   }
 
   line {
-    font-family: \00003385;
+    font-family: \00003394;
   }
 }
 
 .form-fields .container .field-section .field-group .field-row .field textarea:focus {
-  border-color: #f2be6a;
+  border-color: #6cd1d4;
   transition: border 0.2s linear;
 }
 
@@ -4160,7 +4192,7 @@ body {
   }
 
   line {
-    font-family: \00003391;
+    font-family: \00003400;
   }
 }
 
@@ -4174,7 +4206,7 @@ body {
   }
 
   line {
-    font-family: \00003397;
+    font-family: \00003406;
   }
 }
 
@@ -4193,7 +4225,7 @@ body {
   }
 
   line {
-    font-family: \00003405;
+    font-family: \00003414;
   }
 }
 
@@ -4216,7 +4248,7 @@ body {
   }
 
   line {
-    font-family: \00003419;
+    font-family: \00003428;
   }
 }
 
@@ -4230,7 +4262,7 @@ body {
   }
 
   line {
-    font-family: \00003431;
+    font-family: \00003440;
   }
 }
 
@@ -4244,7 +4276,7 @@ body {
   }
 
   line {
-    font-family: \00003434;
+    font-family: \00003443;
   }
 }
 
@@ -4258,7 +4290,7 @@ body {
   }
 
   line {
-    font-family: \00003439;
+    font-family: \00003448;
   }
 }
 
@@ -4272,7 +4304,7 @@ body {
   }
 
   line {
-    font-family: \00003441;
+    font-family: \00003450;
   }
 }
 
@@ -4286,12 +4318,12 @@ body {
   }
 
   line {
-    font-family: \00003446;
+    font-family: \00003455;
   }
 }
 
 .form-fields .container .field-section .field-group .field-row .field .image-box:hover {
-  background-color: #f2be6a;
+  background-color: #6cd1d4;
   cursor: pointer;
 }
 
@@ -4301,7 +4333,7 @@ body {
   }
 
   line {
-    font-family: \00003450;
+    font-family: \00003459;
   }
 }
 
@@ -4317,7 +4349,7 @@ body {
   }
 
   line {
-    font-family: \00003457;
+    font-family: \00003466;
   }
 }
 
@@ -4332,7 +4364,7 @@ body {
   }
 
   line {
-    font-family: \00003460;
+    font-family: \00003469;
   }
 }
 
@@ -4346,7 +4378,7 @@ body {
   }
 
   line {
-    font-family: \00003463;
+    font-family: \00003472;
   }
 }
 
@@ -4354,7 +4386,7 @@ body {
   width: 100%;
   height: 100%;
   visibility: hidden;
-  background-color: #f2be6a;
+  background-color: #6cd1d4;
   opacity: 0;
   transition: opacity 0.2s linear;
 }
@@ -4365,7 +4397,7 @@ body {
   }
 
   line {
-    font-family: \00003472;
+    font-family: \00003481;
   }
 }
 
@@ -4380,7 +4412,7 @@ body {
   }
 
   line {
-    font-family: \00003481;
+    font-family: \00003490;
   }
 }
 
@@ -4396,7 +4428,7 @@ body {
   }
 
   line {
-    font-family: \00003486;
+    font-family: \00003495;
   }
 }
 
@@ -4418,7 +4450,7 @@ body {
   }
 
   line {
-    font-family: \00003496;
+    font-family: \00003505;
   }
 }
 
@@ -4442,7 +4474,7 @@ body {
   }
 
   line {
-    font-family: \00003508;
+    font-family: \00003517;
   }
 }
 
@@ -4456,13 +4488,13 @@ body {
   }
 
   line {
-    font-family: \00003513;
+    font-family: \00003522;
   }
 }
 
 .form-fields .container .field-section .field-group .field-row .field .switch-box .switch-option:hover {
   cursor: pointer;
-  background-color: #f2be6a;
+  background-color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -4471,7 +4503,7 @@ body {
   }
 
   line {
-    font-family: \00003516;
+    font-family: \00003525;
   }
 }
 
@@ -4485,7 +4517,7 @@ body {
   }
 
   line {
-    font-family: \00003521;
+    font-family: \00003530;
   }
 }
 
@@ -4500,7 +4532,7 @@ body {
   }
 
   line {
-    font-family: \00003524;
+    font-family: \00003533;
   }
 }
 
@@ -4514,7 +4546,7 @@ body {
   }
 
   line {
-    font-family: \00003533;
+    font-family: \00003542;
   }
 }
 
@@ -4529,13 +4561,13 @@ body {
   }
 
   line {
-    font-family: \00003536;
+    font-family: \00003545;
   }
 }
 
 .form-fields .container .field-section .field-group .field-row .field.optional input:focus,
 .form-fields .container .field-section .field-group .field-row .field.optional textarea:focus {
-  border-color: #f2be6a;
+  border-color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -4544,7 +4576,7 @@ body {
   }
 
   line {
-    font-family: \00003542;
+    font-family: \00003551;
   }
 }
 
@@ -4593,7 +4625,7 @@ body {
 
 .container .tag-col h1:hover {
   cursor: pointer;
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -4607,7 +4639,7 @@ body {
 }
 
 .container .highlight-first div:first-child h1:first-child {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -4688,7 +4720,7 @@ body {
 .container .currentTag {
   font-size: 0.875em;
   line-height: 1.2857142857em;
-  background: #f2be6a;
+  background: #6cd1d4;
   color: #ffffff;
   float: left;
   margin-bottom: 6px;
@@ -5062,7 +5094,7 @@ body {
 .modal-dialog .edit-modal div.lead-info div.text h3 {
   float: none;
   display: inline;
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -5103,7 +5135,7 @@ body {
   float: right;
   width: 0;
   height: 0;
-  color: #f2be6a;
+  color: #6cd1d4;
   background-image: none;
 }
 
@@ -5394,7 +5426,7 @@ body {
 .modal-dialog .archive-beer-modal div.restriction h3,
 .modal-dialog .edit-modal div.restriction h3 {
   letter-spacing: 1px;
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -5559,7 +5591,7 @@ body {
 
 .modal-dialog .drop-area:hover p.image-icon,
 .modal-dialog .drop-area:hover p.choose-image {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -5662,7 +5694,7 @@ body {
 }
 
 .modal-dialog .field input:focus {
-  border-color: #f2be6a;
+  border-color: #6cd1d4;
   transition: border 0.2s linear;
 }
 
@@ -5750,8 +5782,8 @@ body {
 .modal-dialog button:hover,
 .modal-dialog button:active {
   cursor: pointer;
-  color: #f2be6a;
-  border-color: #f2be6a;
+  color: #6cd1d4;
+  border-color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -5915,7 +5947,7 @@ body {
 .modal-dialog .login-error-modal h2 span.object-title,
 .modal-dialog .archive-beer-modal h2 span.object-title,
 .modal-dialog .edit-modal h2 span.object-title {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -5932,7 +5964,7 @@ body {
 .modal-dialog .login-error-modal h2.help,
 .modal-dialog .archive-beer-modal h2.help,
 .modal-dialog .edit-modal h2.help {
-  color: #f2be6a;
+  color: #6cd1d4;
   margin-top: 18px;
 }
 
@@ -5950,7 +5982,7 @@ body {
 .modal-dialog .login-error-modal h2.help a,
 .modal-dialog .archive-beer-modal h2.help a,
 .modal-dialog .edit-modal h2.help a {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -6714,8 +6746,8 @@ body {
 
 .list-view .container .main-header .create-button:hover,
 .list-view .container .main-header .create-button:active {
-  color: #f2be6a;
-  border-color: #f2be6a;
+  color: #6cd1d4;
+  border-color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -6730,7 +6762,7 @@ body {
 
 .list-view .container .main-header .create-button:hover a,
 .list-view .container .main-header .create-button:active a {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -6766,8 +6798,8 @@ body {
   font-weight: 300;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #f2be6a;
-  border-bottom: 1px dotted #f2be6a;
+  color: #6cd1d4;
+  border-bottom: 1px dotted #6cd1d4;
   background-color: #333333;
 }
 
@@ -6812,7 +6844,7 @@ body {
 .list-view .container .main-table thead tr.category-header {
   font-size: 2em;
   line-height: 4em;
-  color: #f2be6a;
+  color: #6cd1d4;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -6995,7 +7027,7 @@ body {
 
 .list-view .container .main-table tbody tr td.title a:hover,
 .list-view .container .main-table tbody tr td.name a:hover {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -7269,7 +7301,7 @@ body {
 
 .list-view .container .main-table tbody tr td.button-col .button:hover,
 .list-view .container .main-table tbody tr td.button-col div.file-upload:hover {
-  border-color: #f2be6a;
+  border-color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -7284,7 +7316,7 @@ body {
 
 .list-view .container .main-table tbody tr td.button-col .button:hover a,
 .list-view .container .main-table tbody tr td.button-col div.file-upload:hover a {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -7346,7 +7378,7 @@ body {
 }
 
 .list-view .container .main-table tbody tr td.icons span.icon-trash:hover {
-  color: #f2be6a;
+  color: #6cd1d4;
   cursor: pointer;
   transition: color 0.2s linear;
 }
@@ -7555,7 +7587,7 @@ body {
 }
 
 .form-fields .form-login .field-section .section-header.account-info p a:hover {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -7654,7 +7686,7 @@ body {
 .form-fields .form-login .field-section .field-group .field-row .field .button:hover,
 .form-fields .form-login .field-section .field-group .field-row .field div.file-upload:hover {
   cursor: pointer;
-  background-color: #f2be6a;
+  background-color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -7732,7 +7764,7 @@ body {
   -webkit-animation: three-quarters 1250ms infinite linear;
   -ms-animation: three-quarters 1250ms infinite linear;
   animation: three-quarters 1250ms infinite linear;
-  border: 3px solid #f2be6a;
+  border: 3px solid #6cd1d4;
   border-right-color: transparent;
   border-radius: 45px;
   -moz-box-sizing: border-box;
@@ -7756,7 +7788,7 @@ body {
 }
 
 .three-quarters:not(:required).finished {
-  border-right-color: #f2be6a;
+  border-right-color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -8012,7 +8044,7 @@ table.timepicker tr td button.button:hover {
 }
 
 .quickdate-close:hover {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -8071,7 +8103,7 @@ a.quickdate-prev-month {
 }
 
 a.quickdate-prev-month:hover {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -8099,7 +8131,7 @@ a.quickdate-next-month {
 }
 
 a.quickdate-next-month:hover {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -8295,7 +8327,7 @@ table.quickdate-calendar td:hover {
 
 .quickdate:hover {
   cursor: pointer;
-  border-color: #f2be6a;
+  border-color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -8309,7 +8341,7 @@ table.quickdate-calendar td:hover {
 }
 
 .quickdate:hover a.quickdate-button {
-  color: #f2be6a;
+  color: #6cd1d4;
   text-decoration: none;
 }
 
@@ -8678,7 +8710,7 @@ div.file-upload.empty {
 
 div.file-upload:hover {
   cursor: pointer;
-  border-color: #f2be6a;
+  border-color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -8692,7 +8724,7 @@ div.file-upload:hover {
 }
 
 div.file-upload:hover a {
-  color: #f2be6a;
+  color: #6cd1d4;
 }
 
 @media -sass-debug-info {
@@ -8751,7 +8783,7 @@ h1.file-change {
 
 h1.file-change:hover {
   transition: color, 0.2s, linear;
-  color: #f2be6a;
+  color: #6cd1d4;
   cursor: pointer;
 }
 

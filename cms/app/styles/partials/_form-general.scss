@@ -220,6 +220,15 @@
 							padding-bottom: 18px;
 						}
 
+						&.invalid, &.valid{
+							h1.field-title, h1.required{
+								color: $main-highlight;
+							}
+							h1.required{
+								margin-top: 8px;
+							}
+						}
+
 						.title-container{
 							@include clearfix;
 						}
