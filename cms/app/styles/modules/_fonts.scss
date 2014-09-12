@@ -1,0 +1,230 @@
+// Load Fonts
+@import "http://cloud.typography.com/6338432/611002/css/fonts.css";
+@import "http://fonts.googleapis.com/css?family=Merriweather:300,400,700";
+
+// Typography
+$primary-serif: 'Merriweather', serif;
+$primary-sans-serif: 'Gotham SSm A', 'Gotham SSm B';
+$secondary-sans-serif: 'Gotham A', 'Gotham B';
+
+.gotham-ss-black{
+	font-family: $primary-sans-serif;
+	font-weight: 600;
+}
+
+.gotham-ss-light, .gotham-ss-thin{
+	font-family: $primary-sans-serif;
+	font-weight: 300;
+}
+
+.gotham-light{
+	font-family: $secondary-sans-serif;
+	font-weight: 300;
+	@include antialiased;
+}
+
+.merriweather-light{
+	font-family: $primary-serif;
+	font-weight: 300;
+	@include antialiased;
+}
+
+.merriweather-italic{
+	font-family: $primary-serif;
+	font-weight: normal;
+	font-style: italic;
+}
+
+// CMS FONT
+
+@font-face {
+	font-family: 'GALCMS';
+	src:url('fonts/GALCMS.eot');
+	src:url('fonts/GALCMS.eot?#iefix') format('embedded-opentype'),
+		url('fonts/GALCMS.woff') format('woff'),
+		url('fonts/GALCMS.ttf') format('truetype'),
+		url('fonts/GALCMS.svg#GALCMS') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'GALCMS';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-videoLeft:before {
+	content: "\e600";
+}
+.icon-trash:before {
+	content: "\e601";
+}
+.icon-3words:before {
+	content: "\e602";
+}
+.icon-text:before {
+	content: "\e603";
+}
+.icon-projectTeaser:before{
+	content: "\e604";
+}
+.icon-blogTeaser:before {
+	content: "\e605";
+}
+.icon-video:before {
+	content: "\e606";
+}
+.icon-img:before {
+	content: "\e607";
+}
+.icon-pullquote:before {
+	content: "\e608";
+}
+.icon-profile:before {
+	content: "\e609";
+}
+.icon-preview:before {
+	content: "\e60a";
+}
+.icon-no:before {
+	content: "\e60b";
+}
+.icon-link:before {
+	content: "\e60c";
+}
+.icon-imgBreak:before {
+	content: "\e60d";
+}
+.icon-imgHero:before {
+	content: "\e60e";
+}
+.icon-dropdown:before {
+	content: "\e60f";
+}
+.icon-contentRight:before {
+	content: "\e610";
+}
+.icon-contentLeft:before {
+	content: "\e611";
+}
+.icon-contentLead:before {
+	content: "\e612";
+}
+.icon-code:before {
+	content: "\e613";
+}
+.icon-x:before {
+	content: "\e614";
+}
+.icon-check:before {
+	content: "\e615";
+}
+.icon-addRetina:before {
+	content: "\e616";
+}
+.icon-addStd:before {
+	content: "\e617";
+}
+.icon-add:before {
+	content: "\e618";
+}
+.icon-download:before {
+	content: "\e619";
+}
+.icon-quote:before {
+	content: "\e61a";
+}
+.icon-drag:before {
+	content: "\e61b";
+}
+.icon-videoRight:before {
+	content: "\e61c";
+}
+
+// UNCORKED FONT (only in here now for back arrow. maybe we'll need more later? otherwise should take out arrow only)
+
+@font-face {
+	font-family: 'uncorked';
+	src:url('fonts/uncorked.eot');
+	src:url('fonts/uncorked.eot?#iefix') format('embedded-opentype'),
+		url('fonts/uncorked.woff') format('woff'),
+		url('fonts/uncorked.ttf') format('truetype'),
+		url('fonts/uncorked.svg#uncorked') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-previous-arrow"], [class*=" icon-previous-arrow"] {
+	font-family: 'uncorked';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-uniF000:before {
+	content: "\f000";
+}
+.icon-samsung:before {
+	content: "\24";
+}
+.icon-lego:before {
+	content: "\25";
+}
+.icon-intel:before {
+	content: "\26";
+}
+.icon-google:before {
+	content: "\27";
+}
+.icon-logo:before {
+	content: "\28";
+}
+.icon-next-arrow:before {
+	content: "\29";
+}
+.icon-home-previous-arrow:before {
+	content: "\2a";
+}
+.icon-previous-arrow:before {
+	content: "\2b";
+}
+.icon-home-next-arrow:before {
+	content: "\2c";
+}
+.icon-circle:before {
+	content: "\21";
+}
+.icon-zepp:before {
+	content: "\2e";
+}
+.icon-us-resistor:before {
+	content: "\2d";
+}
+.icon-wavy-2:before {
+	content: "\23";
+}
+.icon-three-words-diamond:before {
+	content: "\2f";
+}
+.icon-footer-logo:before {
+	content: "\30";
+}
+.icon-wavy-1:before {
+	content: "\22";
+}

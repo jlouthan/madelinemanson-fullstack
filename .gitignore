@@ -1,0 +1,7 @@
+frontend/bower_components
+frontend/node_modules
+frontend/.sass-cache
+cms/app/bower_components
+cms/node_modules
+cms/.sass-cache
+api/app/node_modules

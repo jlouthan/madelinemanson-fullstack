@@ -1,0 +1,43 @@
+table.timepicker{
+	position: relative;
+	top: -22px;
+	tr.text-center td{
+		padding-left: 20px;
+		padding-bottom: 5px;
+		a{
+			width: 0; 
+			height: 0; 
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-bottom: 5px solid $text-color-accent-secondary;
+			&:hover{
+				cursor: pointer;
+			}
+		}
+	}
+	tr.decrement td{
+		@include rotate(180deg);
+	}
+
+	tr td input{
+		padding-left: 0 !important;
+		text-align: center !important;
+		height: 40px !important;
+	}
+	tr td.colon{
+		text-align: center;
+		color: $text-color-accent-secondary;
+	}
+	tr td button.button{
+		background-color: transparent;
+		@include antialiased;
+		margin-left: 10px;
+		height: 40px;
+		line-height: 2em;
+		text-transform: lowercase;
+		outline: none;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+<div class="remove-modal">
+
+    <div class="lead-info">
+        <div class="text">
+            <h1>Delete this {{objType}}?</h1>
+        </div>
+    </div>
+
+    <div class="content">
+
+    <div class="warning">
+        <h2>Are you sure you want to delete the {{objType}} <span class="object-title">{{objTitle}}</span> ?</h2>
+    </div>
+    <div class="warning">
+        <h2>This action cannot be undone.</h2>
+    </div>
+
+    </div>
+
+    <div class="button-group">
+    	<button ng-click="cancel()">Cancel</button>
+    	<button ng-click="ok()">Delete</button>
+    </div>
+
+</div>

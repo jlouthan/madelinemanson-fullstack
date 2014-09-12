@@ -1,0 +1,23 @@
+{
+  "name": "rename-me-to-your-app",
+  "version": "0.0.0",
+  "dependencies": {
+    "deployd": "0.6.x",
+    "dpd-event": "*",
+    "dpd-s3": "*",
+    "dpd-ses": "*",
+    "dpd-image-wrangler": "*",
+    "dpd-curl-proxy": "*"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {
+    "start": "production.js"
+  },
+  "devDependencies": {
+    "grunt-rsync": "~0.6.2",
+    "load-grunt-tasks": "~0.6.0",
+    "grunt": "~0.4.5"
+  }
+}

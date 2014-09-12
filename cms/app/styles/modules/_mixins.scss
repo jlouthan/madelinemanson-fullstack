@@ -1,0 +1,66 @@
+@mixin antialiased{
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+@mixin rotate($angle) {
+	-webkit-transform: rotate($angle);
+	-moz-transform: rotate($angle);
+	-ms-transform: rotate($angle);
+	-o-transform: rotate($angle);
+	transform: rotate($angle);
+}
+
+@mixin border-box{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+//use clearfix to force float containment uniformly
+@mixin clearfix{
+	//trigger hasLayout in IE 6/7
+	zoom: 1;
+	&:before, &:after{
+		content: "";
+		display: table;
+	}
+	&:after{
+		clear:both;
+	}
+}
+
+/*control elements nested in rows*/
+@mixin nesting{
+	padding: 0;
+
+	& > div{
+		float: left;
+		margin-right: gutter; /*check this!*/
+		@include border-box; /*include our border-box mixin*/
+	}
+}
+/*
+create row behavior*/
+@mixin row{
+	width: 100%;
+	max-width: $max-width;
+	margin: 0 auto;
+	@include clearfix;
+	@include nesting;
+
+}
+
+/*for the last element in a row, there's no gutter and we float it right*/
+@mixin last-in-row{
+	margin-right: 0;
+	float: right;
+}

@@ -1,0 +1,79 @@
+.leading{
+	@include row;
+		height: rhythm(72/9);
+		width: columns(15,16);
+		margin-left: columns(1,16);
+		h1{
+			color: $text-color-accent-secondary;
+			padding-top: rhythm(22.5/9);
+		}
+	}
+
+.dashboard{
+	background-color: $main-background;
+}
+
+.form-fields .form-login{
+	// TODO: set to fill browser 
+	height: rhythm(500/9);
+	padding-top: 0;
+
+	.field-section .section-header{
+		&.account-info p{
+			@include adjust-font-size-to(11px, 18/9);
+			@extend .gotham-ss-thin;
+			color: $text-color-accent-secondary;
+			text-align: left;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			padding-bottom: rhythm(7/9);
+
+			a{
+				@extend .gotham-ss-black;
+				color: $text-color-accent-secondary;
+				&:hover{
+					color: $main-highlight;
+				}
+			}
+		}
+	}
+
+	.field-section .field-group{
+		width: columns(7,15);
+		.field-row .field{
+			padding-right: 0;
+
+			input{
+				@include adjust-font-size-to(24px, 3);
+			}
+
+			.button{
+				height: 60px;
+				background-color: $sub-header-accent;
+				margin-top: 18px;
+				@include transition(background-color, 0.2s, linear);
+				h2{
+					@include adjust-font-size-to(18px, 2);
+					@extend .gotham-ss-black;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+					color: $inactive-accent;
+					padding-top: 21px;
+					text-align: center;
+					@include transition(color, 0.2s, linear);
+				}
+				&:hover{
+					cursor: pointer;
+					background-color: $main-highlight;
+					h2{
+						color: #ffffff;
+					}
+				}
+				&:active{
+					transform: translate(2px, 2px);
+				}
+			}
+		}
+	}
+
+}

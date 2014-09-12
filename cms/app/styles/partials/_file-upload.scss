@@ -1,0 +1,42 @@
+div.file-upload{
+	@extend .button;
+	margin-left: 0;
+	@include border-box;
+	height: 60px;
+	padding-top: 7.5px; 
+	width: 100%;
+	float:left;
+	margin-bottom: 6px;
+	overflow: hidden;
+	&.empty{
+		border-color: $inactive-accent;
+		a{
+			// color: $inactive-accent;
+		} 
+	}
+	&:hover{
+		cursor: pointer;
+		border-color: $main-highlight;
+		a{
+			color: $main-highlight;
+		}
+	}
+	a{
+		padding-left: 20px;
+	}
+	&.inactive{
+		padding-top: 7.5px;
+		padding-left: 0;
+	}
+
+}
+
+h1.file-change{
+	float: right;
+	color: $text-color-accent-secondary;
+	&:hover{
+		@include transition(color, 0.2s, linear);
+		color: $main-highlight;
+		cursor: pointer;
+	}
+}

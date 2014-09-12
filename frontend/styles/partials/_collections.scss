@@ -1,0 +1,39 @@
+div.container{
+
+	div.content{
+		div.thumbnail-row{
+			@include row;
+			@include border-box;
+			// margin-bottom: rhythm(30/9);
+			div.thumbnail{
+				@include border-box;
+				// width: columns(5, 12);
+				// margin-right: columns(1, 12);
+				width: columns(3.5, 12);
+				margin-right: columns(0.5, 12);
+				div.image{
+					@include transition(opacity, 0.2s, linear);
+					position: relative;
+				}
+				img.source-image{
+					width: 100%;
+				}
+				h2.title{
+					width: 100%;
+					text-align: right;
+					@extend .gotham-ss-thin;
+					@include adjust-font-size-to(14px, 16/9);
+					margin-top: rhythm(-4/9);
+					margin-bottom: rhythm(24/9);
+				}
+				&:hover{
+					cursor: pointer;
+					div.image{
+						opacity: 0.6;
+					}
+				}
+			}
+		}
+		width: columns(12, 16);
+	}
+}

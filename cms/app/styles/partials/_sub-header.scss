@@ -1,0 +1,145 @@
+// sub-header styles are here for now before a directive is created for it
+.full-width{
+	width: 100%;
+}
+
+.sub-header-container{
+	background-color: $sub-header-accent;
+	z-index: 1010;
+
+	&.ui-scrollfix + div{
+	// TODO: resize this with vertical rhythm?
+	padding-top: 125px;
+	}
+
+	&.ui-scrollfix{
+		position: fixed;
+		top: 0;
+	}
+}
+
+
+.sub-header{
+	@include row;
+	max-width: none;
+	width: columns(16);
+	height: 125px;
+
+	.back-paddle{
+		width: columns(1,16);
+		// height: 100%;
+		margin-top: rhythm(48/9);
+		span{
+			@include adjust-font-size-to(36px, 5);
+			font-weight: bold;
+			color: $detail-accent;
+			margin-left: 40%;
+			&:hover{
+				cursor: pointer;
+			}
+		}
+	}
+	.main-text{
+		width: columns(9,16);
+		margin: rhythm(50/9) auto rhythm(30/9);
+	}
+	h1{
+		// width: columns(5,16);
+		@include adjust-font-size-to(48px, 5);
+		@extend .merriweather-light;
+		letter-spacing: -2.5px;
+		color: $text-color-accent;
+		margin: 0;
+	}
+
+	&.simple{
+		background-color: $sub-header-accent;
+		height: 165px;
+		.main-text{
+			padding-left: columns(1,16);
+			width: columns(15,16);
+			h2{
+				@include adjust-font-size-to(14px, 4);
+				@extend .gotham-ss-light;
+				letter-spacing: 1px;
+				color: $main-highlight;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.sub-nav-buttons{
+		width: columns(6,16);
+		@include last-in-row;
+		padding-right: columns(1,16);
+		margin: rhythm(28/9) auto rhythm(30/9);
+
+		.saved-date{
+			@include adjust-font-size-to(10px, 1);
+			@extend .gotham-ss-light;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			color: $detail-accent;
+			margin-bottom: rhythm(20/9);
+			div.hidden{
+				display: none;
+				margin-bottom: 0;
+			}
+		}
+
+		.saved-date, .button-group{
+			text-align: right;
+			&.top-padding{
+				padding-top: rhythm(20/9);
+			}
+		}
+
+		.button{
+			@include adjust-font-size-to(16px, 39/9);
+			@extend .gotham-ss-black;
+			color: $text-color-accent-secondary;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			display: inline-block;
+			// height: rhythm(45/9);
+			margin-left: 20px;
+			// TODO: allow for border vertical space
+			border: 3px solid $text-color-accent-secondary;
+			// border-width: #{(3/1280)*100}vm;
+			@include transition(border-color, 0.2s, linear);
+
+			&.hidden{
+				// visibility: hidden;
+				display: none;
+			}
+
+			a{
+				padding: rhythm(23/9) 40px;
+				color: $text-color-accent-secondary;
+				@include transition(color, 0.2s, linear);
+			}
+
+			&:hover, &:active{
+				color: $main-highlight;
+				border-color: $main-highlight;
+
+				a{
+					color: $main-highlight;
+				}
+			}
+
+			&.inactive{
+				padding: 0 40px;
+				color: $inactive-accent;
+				border-color: $inactive-accent;
+				a{
+					color: $inactive-accent;
+				}
+				&:hover{
+					color: $inactive-accent;
+					border-color: $inactive-accent;
+				}
+			}
+		}
+	}
+}

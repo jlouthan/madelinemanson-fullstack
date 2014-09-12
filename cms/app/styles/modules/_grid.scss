@@ -1,0 +1,21 @@
+// horizontal column vars
+//max width of the grid/page
+$max-width: 1280px;
+// percentages set based on 1280px wide woth 80px columns
+$column-width: 6.25%;
+$gutter-width: 0%;
+//max columns
+$maximum-columns: 16;
+
+//returns correct percentage width for columns given their width and container
+@function columns($columns, $container-columns: $maximum-columns){
+	$width: $columns * $column-width + ($columns - 1) * $gutter-width;
+	$container-width : $container-columns * $column-width + ($container-columns - 1) * $gutter-width;
+	@return percentage($width / $container-width);
+}
+
+//returns correct percentage width for gutters
+@function gutter($container-columns: $maximum-columns, $gutter: $gutter-width){
+	$container-width: $container-columns * $column-width + ($container-columns - 1) * $gutter-width;
+	@return percentage($gutter / $container-width);
+}

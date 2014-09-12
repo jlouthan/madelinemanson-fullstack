@@ -1,0 +1,70 @@
+a.div-link {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+   	text-decoration: none;
+   	z-index: 1000;
+    background-color: white;
+    /*workaround to make clickable in IE */
+    opacity: 0;
+    /*workaround to make clickable in IE */
+    filter: alpha(opacity=0);
+    /*workaround to make clickable in IE */
+}
+
+div.container{
+	width: columns(16,16);
+	@include row;
+
+	div.logo{
+		position: fixed;
+		width: columns(3,16);
+		margin-right: columns(13,16);
+		height: rhythm( (60 + (16*4.44643)) / 9);
+		z-index: 1000;
+
+		background-image: url('/images/cocktail-circle.jpg');
+		background-position: rhythm(30/9) 50%;
+		background-size: 70px 100%;
+		background-repeat: no-repeat;
+	}
+	div.nav-col{
+		@include border-box;
+		position: fixed;
+		width: columns(3,16);
+		padding-left: rhythm(30/9);
+		padding-top: rhythm( (60 + (16*4.44643)) / 9);
+		ul{
+			li a{
+				@extend .gotham-ss-thin;
+				@include adjust-font-size-to(20px, 36/9);
+				text-decoration: none;
+				color: #000000;
+				@include transition(color, 0.3s, linear);
+				&:hover{
+					color: #6CD1D4;
+				}
+			}
+		}
+	}
+	div.content{
+		margin-left: columns(3, 16);
+		margin-top: rhythm(60/9);
+		padding-top: rhythm((16*4.44643)/9);
+		&.index, &.set{
+			width: columns(10, 16);
+			// width: columns(11.5, 16);
+		}
+		div.main{
+			width: columns(10,10);
+			// width: columns(11.5, 11.5);
+			margin: 0 auto;
+
+			img.source-image{
+				width: 100%;
+			}
+		}
+	}
+}

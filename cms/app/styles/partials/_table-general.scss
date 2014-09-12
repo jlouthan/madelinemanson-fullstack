@@ -1,0 +1,254 @@
+.list-view{
+	background-color: $sub-header-accent;
+	height: 100%;
+	&.beer-manager{
+		height: auto;
+	}
+	&.menu-item-manager{
+		height: auto;
+	}
+
+	.container{
+		width: 100%;
+		// max-width: 1280px;
+		margin: 0 auto;
+		padding: rhythm(52/9) 0 0 0;
+		height: auto;
+
+		.main-header{
+			@include row;
+			max-width: none;
+			width: columns(16);
+			margin-bottom: rhythm(40/9);
+			h1{
+				width: columns(7,16);
+				padding-left: columns(1,16);
+				display: inline-block;
+				@include adjust-font-size-to(48px, 5);
+				@extend .merriweather-light;
+				letter-spacing: -2.5px;
+				color: $text-color-accent;
+			}
+			.create-button{
+				@include adjust-font-size-to(16px, 39/9);
+				@extend .gotham-ss-black;
+				color: $text-color-accent-secondary;
+				@include border-box;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				display: inline-block;
+				@include last-in-row;
+				margin-right: columns(1,16);
+				border: 3px solid $text-color-accent-secondary;
+				@include transition(border-color, 0.2s, linear);
+				a{
+					// display: inline-block;
+					color: $text-color-accent-secondary;
+					padding: rhythm(23/9) 40px;
+					@include transition(color, 0.2s, linear);
+				}
+				&:hover, &:active{
+					color: $main-highlight;
+					border-color: $main-highlight;
+					a{
+						color: $main-highlight;
+					}
+				}
+			}
+		}
+
+		.main-table{
+			// width: columns(14,16);
+			// margin: rhythm(40/9) columns(1,16);
+			margin: 0 auto;
+			max-width: 1280px;
+			width: columns(16,16);
+			margin-bottom: 0;
+			thead{
+				@include adjust-font-size-to(11px, 11/9);
+				@extend .gotham-ss-light;
+				font-weight: 300;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				color: $main-highlight;
+				border-bottom: 1px dotted $main-highlight;
+				background-color: $sub-header-accent;
+				td{
+					padding-left: 10px;
+					span:hover{
+						cursor: pointer;
+					}
+				}
+				tr.category-header{
+					// border-top: 1px solid $main-highlight;
+					@include adjust-font-size-to(32px, 128/9);
+					@extend .gotham-ss-black;
+					color: $main-highlight;
+					@include border-box;
+				}
+			}
+
+			tbody tr{
+				background-color: $inactive-accent;
+				a{
+					color: $text-color-accent;
+					@include transition(color, 0.2s, linear);
+				}
+				&:hover{
+					cursor: pointer;
+					td.icons span.icon-drag{
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+				&.dark{
+					background-color: $main-background;
+				}
+				td{
+					padding-left: 10px;
+					padding-top: rhythm(14/9);
+					padding-bottom: rhythm(14/9);
+					&.title{
+						// padding-left: 20px;
+					}
+					&.name, &.work-title{
+						padding-left: 30px;
+					}
+				}
+				td.title, td.name{
+					@extend .merriweather-light;
+					@include adjust-font-size-to(18px, 3);
+					width: columns(5, 14);
+					padding-right: 3%;
+					&.work-title{
+						width: columns(9,14);
+					}
+					&.smaller{
+						width: columns(4,14);
+					}
+					&.smallest{
+						width: columns(2,14);
+					}
+					a:hover{
+						color: $main-highlight;
+					}
+				}
+				td.author, td.username{
+					@extend .gotham-ss-light;
+					@include adjust-font-size-to(12px, 18/9);
+					font-weight: normal;
+					letter-spacing: 1px;
+					color: $detail-accent;
+					text-transform: uppercase;
+					width: columns(1.5, 14);
+					padding-left: 12px;
+					&.larger{
+						width: columns(2.5,14);
+						padding-right: 3%;
+					}
+					&.largest{
+						width: columns(4.5, 14);
+						padding-right: 2%;
+					}
+					span.icon{
+						@include adjust-font-size-to(48px, 48/9);
+						color: $text-color-accent;
+					}
+				}
+				td.state, td.status, td.weight{
+					@extend .gotham-ss-black;
+					@include adjust-font-size-to(12px, 18/9);
+					letter-spacing: 2px;
+					text-transform: uppercase;
+					width: columns(2, 14);
+					&.smaller{
+						width: columns(1, 14);
+					}
+					color: $detail-accent;
+					&.longer{
+						width: columns(3,14);
+					}
+					&.draft, &.retired{
+						color: $detail-accent;
+					}
+					span.icon{
+						@include adjust-font-size-to(48px, 48/9);
+						color: $text-color-accent;
+					}
+				}
+				td.pub-date{
+					@extend .gotham-ss-black;
+					@include adjust-font-size-to(10px, 10/9);
+					letter-spacing: 1px;
+					width: columns(1, 14);
+					padding-left: 20px;
+					color: $detail-accent;
+					&.smaller{
+						width: columns(0.5, 14);
+					}
+				}
+				td.button-col{
+					width: columns(2,14);
+					padding-left: 20px;
+					&.shorter{
+						width: columns(1,14);
+					}
+					.button{
+						@extend .gotham-ss-black;
+						@include adjust-font-size-to(10px, 10/9);
+						border: 2px solid $detail-accent;
+						padding: 8px;
+						color: $detail-accent;
+						text-align: center;
+						a{
+							padding: 0;
+							color: $detail-accent;
+						}
+						&:hover{
+							a{
+								color: $main-highlight;
+							}
+							border-color: $main-highlight;
+						}
+					}
+				}
+				td.icons{
+					@include adjust-font-size-to(32px, 32/9);
+					width: columns(1,14);
+					padding-left: 54px;
+					&.drag{
+						width: columns(0.5, 14);
+						padding-left: 20px;
+					}
+					color: $sub-header-accent;
+					span{
+						display: inline-block;
+						width: 40%;
+					}
+					span.icon-trash:hover{
+						color: $main-highlight;
+						cursor: pointer;
+						@include transition(color, 0.2s, linear);
+					}
+					span.icon-drag{
+						transition: opacity 0.2s linear;
+						opacity: 0;
+						visibility: hidden;
+					}
+				}
+			}
+
+		}
+
+	}
+	// work feed specific styles
+		.work-manager{
+			tr a{
+				@include adjust-font-size-to(24px, 32/9);
+			}
+			td.state{
+				width: columns(3,14);
+			}
+		}
+
+}

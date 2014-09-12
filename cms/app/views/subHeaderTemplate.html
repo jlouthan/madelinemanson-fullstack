@@ -1,0 +1,34 @@
+<div class="full-width sub-header-container">
+  <div class="sub-header">
+    <div class="back-paddle">
+      <span class="icon-previous-arrow" ng-click = "back()"></span>
+    </div>
+    <div class="main-text">
+      <h1 ng-if="currentPage === 'thing-new' ">Add a Thing</h1>
+      <h1 ng-if="currentPage === 'thing' ">Edit a Thing</h1>
+      <h1 ng-if="currentPage === 'print-new' ">Add a Print</h1>
+      <h1 ng-if="currentPage === 'print' ">Edit a Print</h1>
+      <h1 ng-if="currentPage === 'cocktail-new' ">Add a Cocktail</h1>
+      <h1 ng-if="currentPage === 'cocktail' ">Edit a Cocktail</h1>
+      <h1 ng-if="currentPage === 'menu-item-new' ">Add a Menu Item</h1>
+      <h1 ng-if="currentPage === 'menu-item' ">Edit a Menu Item</h1>
+      <h1 ng-if="currentPage === 'philosophy' ">Edit Philosophy {{hideBackPaddle}}</h1>
+    </div>
+    <div class="sub-nav-buttons">
+      <h3 class="saved-date">
+        <div ng-show = "currentObject.state === 'published'">
+          Last saved: {{currentObject.dateUpdated | date:'MMM dd, yyyy @ h:mm:ssa'}}
+        </div>
+      </h3>
+      <div class="button-group" ng-class="{'top-padding': currentPage === 'person' || currentPage === 'person-new'}">
+        <div>
+          <div class="button">
+            <a  href="" ng-click="save(currentObject)">
+              Save
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

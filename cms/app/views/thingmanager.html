@@ -1,0 +1,38 @@
+<div class="full-width list-view" ng-show="$root.userLoaded">
+	<div class="container">
+		<div class="main-header">
+			<h1>Things</h1>
+			<div class="create-button">
+				<a href="#!/thing/new">Add A Thing</a>
+			</div>
+		</div>
+
+		<table class="main-table">
+			<thead>
+				<tr>
+					<td><span ng-click="sortBy('title')">Title:</span></td><td><span>Property 1:</span></td><td><span>Property 2:</span></td><td></td><td></td>
+				</tr>
+			</thead>
+			<tbody infinite-scroll="feed.loadContents()" infinite-scroll-distance="1">
+				<tr ng-repeat="thing in feed.things" ng-class="{'dark': $index%2 == 1}">
+					<td class="title" ng-click="go(thing)">
+						<a href="#!/thing/{{thing.id}}">{{thing.title}}</a>
+					</td>
+					<td class="author" ng-click="go(thing)">
+						{{thing.property1}}
+					</td>
+					<td class="state {{thing.state}}" ng-click="go(thing)">
+						{{thing.property2}}
+					</td> 
+					<td class="pub-date" ng-click="go(thing)">
+						<span ng-if="thing.state == 'published'"> {{thing.date | date:'MM/dd/yyyy @ h:mma'}}</span>
+					</td>
+					<td class="icons">
+						<span class="icon-drag" ng-click=""></span>
+						<span class="icon-trash" ng-click="openRemoveModal(thing)"></span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

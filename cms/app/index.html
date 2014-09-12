@@ -1,0 +1,105 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Small Batch CMS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/dropzone/downloads/css/dropzone.css" />
+    <link rel="stylesheet" href="styles/angular-bootstrap-modal/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="cmsFrontendApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div ng-include src="'views/header.html'"></div>
+
+    <!-- Add your site or application content here -->
+    <div ng-view="" style="height: 100%;"></div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/dropzone/downloads/dropzone.min.js"></script>
+    <script src="bower_components/angular-elastic/elastic.js"></script>
+    <script src="bower_components/angularjs-slider/rzslider.js"></script>
+    <!-- endbower -->
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <!-- // <script src="bower_components/bootstrap-timepicker/ui-bootstrap-custom-0.10.0.js"></script> -->
+    <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="scripts/lib/angular-bootstrap-modal/modal.js"></script>
+    <script src="scripts/lib/angular-bootstrap-modal/transition.js"></script>
+    <script src="bower_components/jquery-selectboxit/src/javascripts/jquery.selectBoxIt.js"></script>
+    <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+    <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/ngQuickDate/dist/ng-quick-date.js"></script>
+    <script src="scripts/lib/bDatepicker.js"></script>
+    <!-- TODO: only include modules used -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <!-- controllers -->
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/ModalInstance.js"></script>
+        <script src="scripts/controllers/RemoveModalInstance.js"></script>
+        <script src="scripts/controllers/thing.js"></script>
+        <script src="scripts/controllers/thingManager.js"></script>
+        <script src="scripts/controllers/print.js"></script>
+        <script src="scripts/controllers/printManager.js"></script>
+        <!-- deployd -->
+        <!-- directives -->
+        <script src="scripts/directives/subHeader.js"></script>
+        <script src="scripts/directives/subHeaderSimple.js"></script>
+        <script src="scripts/directives/inputWithCharacterBackground.js"></script>
+        <script src="scripts/directives/dropzone.js"></script>
+        <script src="scripts/services/fileUpload.js"></script>
+        <script src="scripts/services/loggedInChecker.js"></script>
+        <script src="scripts/services/listSorting.js"></script>
+        <script src="scripts/services/modalManager.js"></script>
+        <script src="scripts/directives/selectbox.js"></script>
+        <script src="scripts/services/weightUpdater.js"></script>
+        <script src="scripts/services/blockInfo.js"></script>
+        <!-- endbuild -->
+
+        <!-- deployd script  -->
+        <script src="http://api.madelinemanson.com/dpd.js"></script>
+        <!-- deployd script -->
+</body>
+</html>

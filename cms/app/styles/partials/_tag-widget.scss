@@ -1,0 +1,59 @@
+.container{
+	// &.form-blogpost{
+		.tag-col{
+			margin-left: 20px;
+			h1{
+				color: #666666;
+				&:hover{
+					cursor: pointer;
+					color: $main-highlight;
+				}
+			}
+		}
+
+		.highlight-first{
+			div:first-child{
+				h1:first-child{
+					color: $main-highlight;
+				}
+			}
+			
+		}
+
+		.addedTags{
+			margin-top: 24px;
+			@include clearfix;
+			@include nesting;
+		}
+
+		.currentTag{
+			@include adjust-font-size-to(14px, 2);
+			@extend .merriweather-light;
+			background: $main-highlight;
+			color: #ffffff;
+			float: left;
+			margin-bottom: 6px;
+			margin-right: 6px;
+			padding: 6px;
+			padding-top: 8px;
+
+			h2{
+				display: inline-block;
+				float: left;
+			}
+
+			.tag-icon{
+				display: inline-block;
+				margin-top: -1px;
+			}
+
+			span.icon-x{
+				padding-left: 12px;
+				@include adjust-font-size-to(16px, 2, 14px);
+				&:hover{
+					cursor: pointer;
+				}
+			}
+		}
+	// }
+}

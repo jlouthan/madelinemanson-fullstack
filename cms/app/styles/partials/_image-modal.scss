@@ -1,0 +1,364 @@
+.modal-backdrop{
+	// opacity: 0.1;
+	// @include transition(opacity, 0.5s, linear);
+}
+
+.modal-backdrop.in{
+	background-color: $sub-header-accent;
+	opacity: 0.9;
+	padding-top: 200px;
+	// @include transition(opacity, 0.5s, linear);
+}
+
+.modal{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	max-width: 960px;
+	width: columns(12);
+	border-radius: 0;
+	height: auto;
+	background: none;
+	border: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	outline: none;
+	// transition: none;
+}
+
+.modal-dialog{
+	width: columns(12,12);
+	padding: 0;
+	border-radius: 0;
+	height: auto;
+
+	.modal-content{
+		width: columns(12,12);
+		border-radius: 0;
+		border: none;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+
+	.image-modal, .remove-modal, .login-error-modal, .archive-beer-modal, .edit-modal{
+		@include border-box;
+		background-color: $modal-background;
+		width: columns(12,12);
+		padding: 40px columns(1,12);
+		border-radius: 0;
+		-webkit-font-smoothing: antialiased;
+		-moz-font-smoothing: antialiased;
+
+		div.dz-file-preview{
+			display: none;
+			// div{
+			// 	visibility: hidden;
+			// }
+			// div.dz-filename{
+			// 	visibility: visible;
+			// }
+		}
+
+		h3{
+			@include adjust-font-size-to(11px, 11/9);
+			text-transform: uppercase;
+			float: left;
+			display: block;
+			color: $sub-header-accent;
+			&.file-upload{
+				@extend .gotham-ss-black;
+				letter-spacing: 2px;
+			}
+		}
+
+		div.lead-info{
+			@include row;
+			@include border-box;
+			border-bottom: 1px dotted $sub-header-accent;
+			width: columns(12,12);
+
+			div.text{
+				width: columns(7.5,10);
+				h1{
+					@include adjust-font-size-to(48px, 48/9);
+					@extend .merriweather-light;
+					letter-spacing: -2.5px;
+					color: $text-color-accent;
+				}
+				h3{
+					float: none;
+					display: inline;
+					color: $main-highlight;
+				}
+			}
+
+			div.icon{
+				width: columns(2.5,10);
+				span{
+					@include adjust-font-size-to(48px, 48/9);
+					float: right;
+					width: 0;
+					height: 0;
+					// margin-top: -12px;
+					color: $main-highlight;
+					background-image: none;
+					&:before{
+						margin-left: -48px;
+					}
+				}
+			}
+		}
+
+		div.description{
+			@include row;
+			@extend .gotham-ss-light;
+			letter-spacing: 1px;
+			margin-top: 12px;
+			margin-bottom: 4px;
+			.download{
+				@extend .gotham-ss-black;
+				float: right;
+				margin-right: 12px;
+			}
+			.download-icon{
+				float: right;
+				margin-top: -7px;
+				span{
+					@include adjust-font-size-to(24px, 24/9, 11px);
+				}
+				a{
+					color: $sub-header-accent;
+				}
+			}
+		}
+
+		div.restriction{
+			@include row;
+			margin-bottom: 25px;
+			h3{
+				@extend .gotham-ss-black;
+				letter-spacing: 1px;
+				color: $main-highlight;
+			}
+		}
+	}
+
+	.drop-area{
+		width: columns(12,12);
+		height: 192px;
+		border: 3px solid $sub-header-accent;
+		@include border-box;
+		margin-bottom: 18px;
+		z-index: 1000;
+
+		div.spinner{
+			margin-top: 40px;
+			margin-left: 44.375%;
+			// margin-bottom: 20px;
+		}
+		h2.uploading{
+			height: 18px;
+			@include adjust-font-size-to(11px, 11/9);
+			@extend .gotham-ss-thin;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			color: $text-color-accent;
+			padding-top: 15px;
+			text-align: center;
+		}
+
+		div.dropzone-copy{
+			margin-top: 52px;
+			z-index: 900;
+		}
+		p{
+			text-align: center;
+			color: $text-color-accent;
+			@include transition(color, 0.2s, linear);
+			&.image-icon{
+				@include adjust-font-size-to(45px, 5);
+			}
+			&.choose-image{
+				@include adjust-font-size-to(18px, 2);
+				@extend .gotham-ss-black;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+			}
+			&.tagline{
+				@include adjust-font-size-to(14px, 14/9);
+				@extend .merriweather-light;
+				font-style: italic;
+				color: $sub-header-accent;
+			}
+		}
+		&:hover{
+			cursor: pointer;
+			p.image-icon, p.choose-image{
+				color: $main-highlight;
+			}
+		}
+
+		&.upload-successful{
+			border-color: $text-color-accent-secondary;
+		}
+	}
+
+	.field{
+		width: columns(12,12);
+		margin-bottom: 30px;
+		&.nonempty{
+			input{
+				border-color: $text-color-accent-secondary;
+			}
+		}
+		h2{
+			height: 18px;
+			@include adjust-font-size-to(11px, 11/9);
+			@extend .gotham-ss-thin;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			display: block;
+			color: $text-color-accent-secondary;
+			text-align: left;
+			float: left;
+		}
+		input{
+			@include adjust-font-size-to(18px, 2);
+			@extend .merriweather-light;
+			color: #ffffff;
+			height: 60px;
+			background-color: $modal-background;
+			@include border-box;
+			border: 3px solid $sub-header-accent;
+			padding-left: 20px;
+			width: 100%;
+			outline: none;
+			&:focus{
+				border-color: $main-highlight;
+				@include transition(border, 0.2s, linear);
+			}
+		}
+	}
+
+	div.button-group{
+		@include clearfix;
+	}
+
+	button{
+		@include adjust-font-size-to(16px, 39/9);
+		@extend .gotham-ss-black;
+		@include transition(all, 0.2s, linear);
+		letter-spacing: 1px;
+		display: inline-block;
+		height: rhythm(45/9);
+		margin-left: 20px;
+		border: 3px solid $text-color-accent-secondary;
+		color: $text-color-accent-secondary;
+		text-transform: uppercase;
+		background-color: $modal-background;
+		padding: 0 40px;
+		float: right;
+		outline: none;
+
+		&:hover, &:active{
+			cursor: pointer;
+			color: $main-highlight;
+			border-color: $main-highlight;
+		}
+
+		&.inactive{
+			color: $sub-header-accent;
+			border-color: $sub-header-accent;
+
+			&:hover, &:active{
+				color: $sub-header-accent;
+				border-color: $sub-header-accent;
+			}
+		}
+
+	}
+
+	// begin other modal styles
+	.remove-modal, .login-error-modal, .archive-beer-modal, .edit-modal{
+		div.content{
+			width: columns(10,10);
+			padding-bottom: rhythm(42/9);
+			border-bottom: 1px dotted $sub-header-accent;
+		}
+		div.warning{
+			@include clearfix;
+			width: columns(5.5,10);
+			padding-top: rhythm(12/9);
+		}
+		&.remove-modal div.warning{
+			width: columns(8,10);
+		}
+		h2{
+			@include adjust-font-size-to(11px, 20/9);
+			@extend .gotham-ss-light;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			float: left;
+			color: $text-color-accent;
+			span.object-title{
+				color: $main-highlight;
+			}
+			&.help{
+				color: $main-highlight;
+				margin-top: 18px;
+				a{
+					@extend .gotham-ss-black;
+					color: $main-highlight;
+					&:hover{
+						color: $text-color-accent;
+					}
+				}
+			}
+		}
+		div.lead-info{
+			div.text{
+				width: columns(7,10);
+			}
+
+			div.icon{
+				width: columns(3,10);
+				span{
+					@include adjust-font-size-to(62px, 62/9);
+				}
+			}
+		}
+		div.button-group{
+			margin-top: 18px;
+		}
+		button{
+			padding: 0 60px;
+		}
+	}
+
+	.archive-beer-modal, .edit-modal{
+		div.warning{
+			width: columns(9,10);
+		}
+		div.lead-info{
+			div.text{
+				width: columns(9,10);
+			}
+		}
+		div.form-content{
+			@include border-box;
+			float: left;
+			padding-top: 18px;
+			width: columns(4,10);
+			padding-right: 18px;
+		}
+		&.archive-beer-modal div.content{
+			padding-bottom: rhythm(90/9);
+		}
+
+	}
+	// end other modal styles
+
+
+}

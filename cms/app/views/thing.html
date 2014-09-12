@@ -1,0 +1,585 @@
+<div ng-show="$root.currentUser">
+<sub-header current-page={{subHeaderText}} current-obj="thing" publish-fcn="publish()" unpublish-fcn="unpublish()" save-fcn="save()" back="back()" form-is-valid="formIsValid()">
+</sub-header>
+
+<div class="full-width form-fields">
+<div class="container">
+	<form class="" name="thingForm">
+		<div class="field-section">
+
+			<div class="section-header">
+				<h1>Required Items</h1>
+			</div>
+
+			<div class="field-group">
+				<div class="field-row">
+					<div class="field full-width">
+						<h1 class="field-title">
+							Title of Thing
+						</h1>
+						<h1 class="field-metadata slug-info">
+							URL Slug: <span class="slug">{{thing.slug}}</span>
+						</h1>
+						<input required type="text" name="title" ng-model="thing.title"></input>
+					</div>
+				</div>
+
+				<div class="field-row">
+					<div class="field full-width">
+						<h1 class="field-title">
+							Synopsis
+						</h1>
+						<h1 class="field-metadata">
+							One Paragraph
+						</h1>
+						<textarea msd-elastic required name="synopsis" ng-model="thing.synopsis"></textarea>
+					</div>
+				</div>
+
+				<div class="field-row">
+					<div class="field full-width">
+						<div class="title-container">
+							<h1 class="field-title">
+								Author
+							</h1>
+						</div>
+						<select>
+						</select>
+					</div>
+				</div>
+
+				<div class="field-row">
+					<div class="field full-width">
+						<h1 class="field-title">
+							Tags
+						</h1>
+						<div class="addedTags">
+							<div ng-repeat="tag in thing.tags" class="currentTag">
+								<h2>{{tag}}</h2>
+								<div class="tag-icon">
+									<span class="icon-x" ng-click="removeTag(tag)"></span>
+								</div>
+							</div>
+						</div>
+						<input type="text" ng-model="potentialTag" name="tags" ng-change="getValidTags()" ui-keypress="{13: 'setTag()'}">
+					</div>
+				</div>
+
+				<div class="field-row tag-container" ng-class="{'highlight-first': typingTag}">
+						<div class="field tag-col" ng-if="tagColumn[0].length > 0">
+							<h1 field-title ng-repeat="tag in tagColumn[0]" ng-click="setTag(tag)">{{tag}}</h1>
+						</div>
+						<div class="field tag-col" ng-if="tagColumn[1].length > 0">
+							<h1 field-title ng-repeat="tag in tagColumn[1]" ng-click="setTag(tag)">{{tag}}</h1>
+						</div>
+						<div class="field tag-col" ng-if="tagColumn[2].length > 0">
+							<h1 field-title ng-repeat="tag in tagColumn[2]" ng-click="setTag(tag)">{{tag}}</h1>
+						</div>
+						<div class="field tag-col" ng-if="tagColumn[3].length > 0">
+							<h1 field-title ng-repeat="tag in tagColumn[3]" ng-click="setTag(tag)">{{tag}}</h1>
+						</div>
+				</div>
+			</div><!-- field-group -->
+		</div> <!-- field-section (required items)-->
+
+		<div class="field-section optional-items">
+
+			<div class="section-header">
+				<h1>Optional Items</h1>
+			</div>
+
+			<div class="field-group">
+				<div class="field-row">
+					<div class="field fifth-plus-epsilon-width">
+						<h1 class="field-title">
+							Teaser Image
+						</h1>
+						<div class="image-box circle-mask" ng-click="openImageModal('Blog Teaser Image')" ng-style="imageThumbnail('Blog Teaser Image')" ng-class="{'has-thumbnail': shouldDisplayThumb('Blog Teaser Image')}">
+							<div class="thumb-mask circle-mask">
+							<p><span class="icon-blogTeaser"></span></p>
+						</div>
+						</div>
+					</div>
+
+					<div class="field third-plus-epsilon-width">
+						<h1 class="field-title">
+							Hero Parallax Image
+						</h1>
+						<div class="image-box" ng-click="openImageModal('Hero Parallax Image')" ng-style="imageThumbnail('Hero Parallax Image')" ng-class="{'has-thumbnail': shouldDisplayThumb('Hero Parallax Image')}">
+							<div class="thumb-mask">
+							<p><span class="icon-imgHero"></span></p>
+						</div>
+						</div>
+					</div>
+
+					<div class="field half-minus-epsilon-width optional" ng-class="{nonempty: thing.seo}">
+						<h1 class="field-title">
+							SEO
+						</h1>
+						<h1 class="field-metadata">
+							Comma Delimited Words
+						</h1>
+						<textarea msd-elastic name="seo" ng-model="thing.seo" class="seo-terms"></textarea>
+					</div>
+				</div>
+
+				<div class="field-row">
+					<div class="field third-width">
+						<h1 class="field-title">
+							Username
+						</h1>
+						<input required type="text" name="title" ng-model="person.username"></input>
+					</div>
+					<div class="field two-thirds-width">
+						<h1 class="field-title">
+							password
+						</h1>
+						<input type="password" name="password" ng-model="person.password"></input>
+					</div>
+				</div>
+
+				<div class="field-row">
+					<div class="field full-width">
+						<h1 class="field-title">
+							First Name
+						</h1>
+						<input required type="text" name="firstName" ng-model="person.firstName"></input>
+					</div>
+				</div>
+
+				<div class="field-row">
+					<div class="field third-width">
+						<h1 class="field-title">
+							Photo
+						</h1>
+						<h1 class="field-metadata">
+							Black & White
+						</h1>
+						<div class="image-box avatar" ng-click="openImageModal('Avatar BW')" ng-style="imageThumbnail('Avatar BW')" ng-class="{'has-thumbnail': shouldDisplayThumb('Avatar BW')}">
+							<div class="thumb-mask">
+							<span class="icon-profile"></span>
+						</div>
+						</div>
+					</div>
+					<div class="field third-width">
+						<h1 class="field-title">
+							Hover Photo
+						</h1>
+						<h1 class="field-metadata">
+							Color
+						</h1>
+						<div class="image-box avatar" ng-click="openImageModal('Avatar Color')" ng-style="imageThumbnail('Avatar Color')" ng-class="{'has-thumbnail': shouldDisplayThumb('Avatar Color')}">
+							<div class="thumb-mask">
+							<span class="icon-profile"></span>
+						</div>
+						</div>
+					</div>
+					<div class="field third-width bottom-padding">
+						<div class="title-container">
+							<h1 class="field-title">
+								Employee Status
+							</h1>
+						</div>
+						<select class="skinny" id="status">
+						</select>
+					</div>
+					<div class="field third-width">
+						<div class="title-container">
+							<h1 class="field-title">
+								Weight
+							</h1>
+							<h1 class="field-metadata">
+								Higher First
+							</h1>
+						</div>
+						<select class="skinny" id="weight">
+						</select>
+					</div>
+				</div>
+
+				<div class="field-row no-bottom-padding">
+					<div class="field full-width">
+						<h1 class="field-title">
+							Teaser Three Words
+						</h1>
+						<h1 class="field-metadata">
+							Preview
+						</h1>
+					</div>
+				</div>
+
+				<div class="field-row">
+
+					<div class="field full-width has-background-icon" input-with-character-background input-name="fullTeaser" icon="icon-preview" ng-model="fullTeaser">
+					</div>
+				</div>
+
+				<div class="field-row">
+					<div class="field third-width">
+						<h1 class="field-title">
+							Teaser Image
+						</h1>
+							<div class="image-box" ng-click="openImageModal('Teaser Image')" ng-style="imageThumbnail('Teaser Image')" ng-class="{'has-thumbnail': shouldDisplayThumb('Teaser Image')}">
+								<div class="thumb-mask">
+								<span class="icon-projectTeaser"></span>
+							</div>
+							</div>
+					</div>
+
+					<div class="field third-width">
+						<h1 class="field-title">
+							Uncorked Original
+						</h1>
+						<div class="switch-box">
+							<div class="switch-option" ng-click="toggleIsOriginal(true)" ng-class="{selected: work.isOriginal && originalToggled}">
+								<span class="icon-check"></span>
+							</div>
+							<div class="switch-option" ng-click="toggleIsOriginal(false)" ng-class="{selected: !work.isOriginal && originalToggled}">
+								<span class="icon-x"></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="field third-width">
+						<h1 class="field-title">
+							Display on Home Page
+						</h1>
+						<div class="switch-box">
+							<div class="switch-option" ng-click="toggleDisplayOnHomePage(true)" ng-class="{selected: work.displayOnHomePage && isOnHPToggled}">
+								<span class="icon-check"></span>
+							</div>
+							<div class="switch-option" ng-click="toggleDisplayOnHomePage(false)" ng-class="{selected: !work.displayOnHomePage && isOnHPToggled}">
+								<span class="icon-x"></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="field two-thirds-width">
+						<div class="title-container">
+							<h1 class="field-title">
+								Weight
+							</h1>
+							<h1 class="field-metadata">
+								Higher Come First
+							</h1>
+						</div>
+						<select class="skinny">
+						</select>
+					</div>
+
+				</div>
+
+				<div class="field-row">
+					<div class="field two-thirds-width optional" ng-class="{nonempty: work.leadText}">
+						<textarea msd-elastic placeholder="Optional Text" class="no-title" ng-model="work.leadText"></textarea>
+					</div>
+
+					<div class="field third-width">
+						<h1 class="field-title">
+							Lead Photo
+						</h1>
+						<div class="image-box" ng-click="openImageModal('Lead Photo')" ng-style="imageThumbnail('Lead Photo')" ng-class="{'has-thumbnail': shouldDisplayThumb('Lead Photo')}">
+							<div class="thumb-mask">
+							<span class="icon-contentLead"></span>
+						</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="field-row">
+					<div class="field optional two-thirds-width" ng-class="{nonempty: work.role}">
+						<h1 class="field-title">
+							Role
+						</h1>
+						<input type="text" name="role" ng-model="work.role"></input>
+					</div>
+
+					<div class="field optional third-width" ng-class="{nonempty: work.agency}">
+						<h1 class="field-title">
+							Agency
+						</h1>
+						<input type="text" name="agency" ng-model="work.agency"></input>
+					</div>
+				</div>
+
+				<div class="field-row">
+					<div class="field optional full-width" ng-class="{nonempty: work.seo}">
+						<h1 class="field-title">
+							SEO Search Terms
+						</h1>
+						<h1 class="field-metadata">
+							Comma delimited words
+						</h1>
+						<input type="text" name="seo" ng-model="work.seo"></input>
+					</div>
+				</div>
+
+			</div> <!-- field group -->
+		</div> <!-- field section (optional items) -->
+
+
+		<div class="field-section content" scrollfix-dynamic="-125" watch-model="thing.synopsis">
+			<div class="section-header blog-content">
+				<h1>Content</h1>
+				<section id="blockNavWrapper">
+					<ul ui-sortable ng-model="thing.blocks" class="existing-blocks">
+						<li ng-repeat="block in thing.blocks track by block.id" class="existing-block" ng-class="{'scroll-focus': block.isActive}">
+							<a href="" ng-click="scrollToBlock(block.id)">
+								<span class="block-name">{{ getBlockNameFromType(block.type) }}</span>
+								<span class="icon-drag"></span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<section>
+						<ul class="existing-blocks">
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" ng-click="toggleDropdown('blocks')">
+									<span class="block-name">Add a block</span>
+									<span class="icon-add block-icon"></span>
+								</a>
+								<ul class="block-menu" ng-if="dropdownShowing">
+									<li ng-repeat="block in availableBlocks track by $index"><a href="" ng-click="addBlock(block)">
+										<span class="block-name">{{ getBlockNameFromType(block.type) }}</span>
+										<span ng-class="getIconFromBlockType(block.type)" class="block-icon"></span>
+									</a></li>
+								</ul>
+							</li>
+						</ul>
+				</section>
+			</div>
+
+			<div class="field-group">
+				<div ng-repeat="block in thing.blocks track by block.id" id="{{ block.id }}" class="blockContainer contentBlock" emit-when="{event: 'allRendered', condition: $last}" scroll-spy-blocks="-125" current-block="block">
+					<fieldset>
+						<!-- <legend><button class="btn btn-small btn-uncorked" ng-click="removeBlock(block)"><i class="icon-minus icon-white"></i> remove block</button></legend> -->
+						<div ng-if="block.type == 'pullQuote'">
+							<a class="anchor" id="block{{block.id}}"></a>
+							<div class="field-row">
+								<div class="field full-width optional" ng-class="{nonempty: block.quote}">
+									<h1 class="field-title">
+										{{getBlockNameFromType(block.type)}}
+									</h1>
+									<!-- TODO: make remove button a directive -->
+									<h1 class="remove-x" ng-click="removeBlock(block)">
+										<span class="icon-x"></span>
+									</h1>
+									<h1 class="block-remove">
+										Remove Block
+									</h1>
+									<h1 class="field-metadata middle-metadata">
+										Without Quotation Marks
+									</h1>
+									<textarea msd-elastic name="quote{{block.id}}" ng-model="block.quote" class="pull-quote"></textarea>
+								</div>
+							</div>
+						</div>
+						<div ng-if="block.type == 'body'">
+							<a class="anchor" id="block{{block.id}}"></a>
+							<div class="field-row">
+								<div class="field full-width optional" ng-class="{nonempty: block.text}">
+									<h1 class="field-title">
+										{{getBlockNameFromType(block.type)}}
+									</h1>
+									<h1 class="remove-x" ng-click="removeBlock(block)">
+										<span class="icon-x"></span>
+									</h1>
+									<h1 class="block-remove">
+										Remove Block
+									</h1>
+									<textarea msd-elastic name="bodyCopy{{ block.id }}" class="body-copy" ng-model="block.text"></textarea>
+								</div>
+							</div>
+						</div>
+						<div ng-if="block.type == 'code'">
+							<a class="anchor" id="block{{block.id}}"></a>
+							<div class="field-row">
+								<div class="field full-width optional" ng-class="{nonempty: block.code}">
+									<h1 class="field-title">
+										{{getBlockNameFromType(block.type)}}
+									</h1>
+									<h1 class="remove-x" ng-click="removeBlock(block)">
+										<span class="icon-x"></span>
+									</h1>
+									<h1 class="block-remove">
+										Remove Block
+									</h1>
+									<!-- <textarea name="code{{ block.id }}" class="code-snippet" ui-codemirror="editorOptions" ng-model="block.code"></textarea> -->
+									<textarea msd-elastic name="code{{ block.id }}" class="code-snippet" ng-model="block.code"></textarea>
+								</div>
+							</div>
+						</div>
+						<div ng-if="block.type == 'image'">
+							<a class="anchor" id="block{{block.id}}"></a>
+							<div class="field-row">
+								<div class="field full-width">
+									<h1 class="field-title">
+										{{getBlockNameFromType(block.type)}}
+									</h1>
+									<h1 class="remove-x" ng-click="removeBlock(block)">
+										<span class="icon-x"></span>
+									</h1>
+									<h1 class="block-remove">
+										Remove Block
+									</h1>
+									<div class="image-box full-size" ng-click="openImageModal(block)" ng-style="blockImageThumbnail(block)" ng-class="{'has-thumbnail': blockShouldDisplayThumb(block)}">
+										<div class="thumb-mask">
+										<p><span class="icon-img"></span></p>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div ng-if="block.type == 'video'">
+							<a class="anchor" id="block{{block.id}}"></a>
+							<div class="field-row">
+								<div class="field full-width optional" ng-class="{nonempty: block.videoEmbed}">
+									<h1 class="field-title">
+										Full Embed Code for Youtube or Vimeo Video
+									</h1>
+									<h1 class="remove-x" ng-click="removeBlock(block)">
+										<span class="icon-x"></span>
+									</h1>
+									<h1 class="block-remove">
+										Remove Block
+									</h1>
+									<!-- <textarea name="videoEmbed{{ block.id }}" class="video-embed" ui-codemirror="editorOptions" ng-model="block.videoEmbed"></textarea> -->
+									<textarea msd-elastic name="videoEmbed{{ block.id }}" class="video-embed" ng-model="block.videoEmbed"></textarea>
+								</div>
+							</div>
+						</div>
+						<div ng-if="block.type == '23left'">
+							<a class="anchor" id="block{{block.id}}"></a>
+							<div class="field-row">
+								<div class="field third-width">
+									<h1 class="field-title">
+										{{getBlockNameFromType(block.type)}}
+									</h1>
+									<div class="image-box" ng-click="openImageModal(block)" ng-style="blockImageThumbnail(block)" ng-class="{'has-thumbnail': blockShouldDisplayThumb(block)}">
+										<div class="thumb-mask">
+										<span class="icon-contentLeft"></span>
+									</div>
+									</div>
+								</div>
+								<div class="field two-thirds-width optional" ng-class="{nonempty: block.text}">
+									<h1 class="remove-x" ng-click="removeBlock(block)">
+										<span class="icon-x"></span>
+									</h1>
+									<h1 class="block-remove">
+										Remove Block
+									</h1>
+									<textarea msd-elastic name="imageText{{ block.id }}" ng-model="block.text" placeholder="Optional Text"></textarea>
+								</div>
+							</div>
+						</div>
+						<div ng-if="block.type == '23right'">
+							<a class="anchor" id="block{{block.id}}"></a>
+							<div class="field-row">
+								<div class="field two-thirds-width optional" ng-class="{nonempty: block.text}">
+									<h1 class="field-title">
+										{{getBlockNameFromType(block.type)}}
+									</h1>
+									<textarea msd-elastic name="imageText{{ block.id }}" ng-model="block.text" placeholder="Optional Text"></textarea>
+								</div>
+								<div class="field third-width">
+									<h1 class="remove-x" ng-click="removeBlock(block)">
+										<span class="icon-x"></span>
+									</h1>
+									<h1 class="block-remove">
+										Remove Block
+									</h1>
+									<div class="image-box" ng-click="openImageModal(block)" ng-style="blockImageThumbnail(block)" ng-class="{'has-thumbnail': blockShouldDisplayThumb(block)}">
+										<div class="thumb-mask">
+										<span class="icon-contentRight"></span>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div ng-if="block.type == 'fullBleed'">
+							<a class="anchor" id="block{{block.id}}"></a>
+							<div class="field-row">
+								<div class="field full-width">
+									<h1 class="field-title">
+										{{getBlockNameFromType(block.type)}}
+									</h1>
+									<h1 class="remove-x" ng-click="removeBlock(block)">
+										<span class="icon-x"></span>
+									</h1>
+									<h1 class="block-remove">
+										Remove Block
+									</h1>
+									<div class="image-box" ng-click="openImageModal(block)" ng-style="blockImageThumbnail(block)" ng-class="{'has-thumbnail': blockShouldDisplayThumb(block)}">
+										<div class="thumb-mask">
+										<span class="icon-imgBreak full-width"></span>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div ng-if="block.type == '23leftVideo'">
+							<a class="anchor" id="block{{block.id}}"></a>
+							<div class="field-row">
+								<div class="field third-width optional" ng-class="{nonempty: block.videoEmbed}">
+									<h1 class="field-title">
+										Embed Video Left
+									</h1>
+									<textarea msd-elastic name="videoEmbed{{ block.id }}" ng-model="block.videoEmbed" placeholder="Full Embed Code"></textarea>
+								</div>
+								<div class="field two-thirds-width optional" ng-class="{nonempty: block.text}">
+									<h1 class="remove-x" ng-click="removeBlock(block)">
+										<span class="icon-x"></span>
+									</h1>
+									<h1 class="block-remove">
+										Remove Block
+									</h1>
+									<textarea msd-elastic name="videoText{{ block.id }}" ng-model="block.text" placeholder="Optional Text"></textarea>
+								</div>
+							</div>
+						</div>
+						<div ng-if="block.type == '23rightVideo'">
+							<a class="anchor" id="block{{block.id}}"></a>
+							<div class="field-row">
+								<div class="field two-thirds-width optional" ng-class="{nonempty: block.text}">
+									<h1 class="field-title">
+										Embed Video Right
+									</h1>
+									<textarea msd-elastic name="videoText{{ block.id }}" ng-model="block.text" placeholder="Optional Text"></textarea>
+								</div>
+								<div class="field third-width optional" ng-class="{nonempty: block.videoEmbed}">
+									<h1 class="remove-x" ng-click="removeBlock(block)">
+										<span class="icon-x"></span>
+									</h1>
+									<h1 class="block-remove">
+										Remove Block
+									</h1>
+									<textarea msd-elastic name="videoEmbed{{ block.id }}" ng-model="block.videoEmbed" placeholder="Full Embed Code"></textarea>
+								</div>
+							</div>
+						</div>
+						<div ng-if="block.type == 'body'">
+							<a class="anchor" id="block{{block.id}}"></a>
+							<div class="field-row">
+								<div class="field full-width optional" ng-class="{nonempty: block.text}">
+									<h1 class="field-title">
+										Body Copy
+									</h1>
+									<h1 class="remove-x" ng-click="removeBlock(block)">
+										<span class="icon-x"></span>
+									</h1>
+									<h1 class="block-remove">
+										Remove Block
+									</h1>
+									<textarea msd-elastic name="bodyCopy{{ block.id }}" ng-model="block.text"></textarea>
+								</div>
+							</div>
+						</div>
+
+					</fieldset>
+				</div>
+			</div>
+		</div> <!-- field section (content) -->
+	</form>
+</div>
+</div>
+</div>

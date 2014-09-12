@@ -1,0 +1,145 @@
+.currentTag.ng-enter, 
+.currentTag.ng-leave, 
+.currentTag.ng-move {
+  -webkit-transition: 0.2s linear all;
+  transition: 0.2s linear all;
+  position:relative;
+}
+
+.currentTag.ng-enter {
+  // left:-10px;
+  opacity:0;
+}
+.currentTag.ng-enter.ng-enter-active {
+  // left:0;
+  opacity:1;
+}
+
+.currentTag.ng-leave {
+  // left:0;
+  opacity:1;
+}
+.currentTag.ng-leave.ng-leave-active {
+  // left:-10px;
+  opacity:0;
+}
+
+.currentTag.ng-move {
+  // right: 10px;
+  opacity:0.5;
+  // color: blue;
+}
+.currentTag.ng-move.ng-move-active {
+  // right: 0;
+  opacity:1;
+}
+
+.blockContainer.ng-enter, 
+.blockContainer.ng-leave, 
+.blockContainer.ng-move {
+  -webkit-transition: 0.2s linear all;
+  transition: 0.2s linear all;
+  position:relative;
+}
+
+.blockContainer.ng-enter {
+  // left:-10px;
+  opacity:0;
+}
+.blockContainer.ng-enter.ng-enter-active {
+  // left:0;
+  opacity:1;
+}
+
+.blockContainer.ng-leave {
+  // left:0;
+  opacity:1;
+}
+.blockContainer.ng-leave.ng-leave-active {
+  // left:-10px;
+  opacity:0;
+}
+
+.blockContainer.ng-move {
+  // right: 10px;
+  opacity:0.5;
+  // color: blue;
+}
+.blockContainer.ng-move.ng-move-active {
+  // right: 0;
+  opacity:1;
+}
+
+.block-menu.ng-enter, 
+.block-menu.ng-leave{
+  -webkit-transition: 0.2s linear all;
+  transition: 0.2s linear all;
+  position:relative;
+}
+
+.block-menu.ng-enter {
+  // left:-10px;
+  opacity:0;
+}
+.block-menu.ng-enter.ng-enter-active {
+  // left:0;
+  opacity:1;
+}
+
+.block-menu.ng-leave {
+  // left:0;
+  opacity:1;
+}
+.block-menu.ng-leave.ng-leave-active {
+  // left:-10px;
+  opacity:0;
+}
+
+.existing-block.ng-enter,
+.existing-block.ng-leave-active{
+  -webkit-transition: 0.2s linear all;
+  transition: 0.2s linear all;
+}
+
+.existing-block.ng-enter,
+.existing-block.ng-leave-active{
+  opacity: 0;
+}
+
+.existing-block.ng-enter-active,
+.existing-block.ng-leave{
+  opacity: 1;
+}
+
+.image-picker-box.ng-hide-add,
+.image-picker-box.ng-hide-remove,
+.color-picker-box.ng-hide-add,
+.color-picker-box.ng-hide-remove,
+.picker-triangle.ng-hide-add,
+.picker-triangle.ng-hide-remove {
+  -webkit-transition:0.2s linear all;
+  transition:0.2s linear all;
+
+  /* remember to add this */
+  display:block!important;
+  opacity:1;
+}
+.image-picker-box.ng-hide,
+.color-picker-box.ng-hide,
+.picker-triangle.ng-hide {
+  opacity:0;
+}
+
+.fade-in-field.ng-hide-add,
+.fade-in-field.ng-hide-remove {
+  -webkit-transition:0.2s linear all;
+  transition:0.2s linear all;
+
+  /* remember to add this */
+  display:block!important;
+  opacity:1;
+}
+
+.fade-in-field.ng-hide {
+  opacity:0;
+}

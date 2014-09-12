@@ -1,0 +1,111 @@
+.header{
+	width: 100%;
+	background-color: $nav-background;
+
+	.container{
+		@include row;
+		max-width: none;
+	}
+
+	.uc-logo{
+		width: columns(2, 16);
+		height: 70px;
+		padding-left: 5.078%;
+		/*padding-left: 65px;*/
+
+		.resistor{
+			background: url('http://www.smallbatchws.com/assets/img/header-logo-768.png') no-repeat 0 center;
+			background-size: 40px;
+			display: block;
+			height: 40px;
+			margin: rhythm(15/9) auto;	
+		}
+	}
+
+	.main-nav{
+		width: columns(11.5,16);
+		list-style: none;
+		margin-top: rhythm(21.5/9);
+
+		li{
+			display: inline-block;
+			@include adjust-font-size-to(13px, 2);
+			@extend .gotham-ss-black;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin-right: 40px;
+
+			a{
+				color: $inactive-accent;
+				@include transition(color, 0.2s, linear);
+			}
+
+			a:hover, a:active, a.current{
+				color: $main-highlight;
+			}
+		}
+
+		.arrow-up{
+			width: 0; 
+			height: 0; 
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 10px solid $sub-header-accent;
+			margin: 0 auto;
+			margin-top: rhythm(20.5/9);
+		}
+	}
+
+	.user-info{
+		// TODO: figure out what is up with floatin here
+		@include last-in-row;
+		@include row;
+		width: columns(2.5,16);
+		/*margin-left: columns(6, 16);*/
+
+		#user-photo{
+			width: rhythm(45/9);
+			height: rhythm(45/9);
+			background-size: 100% 100%;
+			-webkit-border-radius: 50%; 
+			-moz-border-radius: 50%; 
+			border-radius: 50%; 
+			margin-left: 32%;
+			margin-top: rhythm(15/9);
+			border: 2px solid $inactive-accent;
+		}
+
+		.user-session-info{
+			width: columns(2, 4);
+			margin-left: columns(2, 4);
+			margin-top: rhythm(20/9);
+
+			.name{
+				@include adjust-font-size-to(18px, 2);
+				@extend .merriweather-light;
+				color: #ffffff;
+			}
+
+			.sign-out{
+				@include adjust-font-size-to(11px, 12/9);
+				@extend .gotham-ss-light;
+				text-transform: uppercase;
+				color: $main-highlight;
+				@include transition(color, 0.2s, linear);
+				a{
+					color: $main-highlight;
+					@include transition(color, 0.2s, linear);
+					&:hover{
+						color: $inactive-accent;
+					}
+				}
+
+				&:hover, &:active{
+					color: $inactive-accent;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

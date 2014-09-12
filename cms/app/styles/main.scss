@@ -1,0 +1,423 @@
+@import "compass";
+@import "compass/typography/vertical_rhythm";
+@import "compass/reset";
+
+// vertical rhythm vars
+$base-font-size: 16px;
+$base-line-height: 9px;
+@include establish-baseline;
+
+html {
+  @include adjust-leading-to(3);
+}
+
+// TODO: move this to global file somewhere
+a {
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+// Modules
+@import 'modules/_grid';
+@import 'modules/_mixins';
+@import 'modules/_colors';
+@import 'modules/_fonts';
+
+body{
+  background-color: $main-background;
+}
+
+
+.button{
+  @include adjust-font-size-to(16px, 39/9);
+  @extend .gotham-ss-black;
+      color: $text-color-accent-secondary;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: inline-block;
+      // height: rhythm(45/9);
+      margin-left: 20px;
+      // TODO: allow for border vertical space
+      border: 3px solid $text-color-accent-secondary;
+      // border-width: #{(3/1280)*100}vm;
+      @include transition(border-color, 0.2s, linear);
+
+      &.hidden{
+        // visibility: hidden;
+        display: none;
+      }
+
+      a{
+        padding: rhythm(23/9) 40px;
+        color: $text-color-accent-secondary;
+        @include transition(color, 0.2s, linear);
+      }
+
+      &:hover, &:active{
+        color: $main-highlight;
+        border-color: $main-highlight;
+
+        a{
+          color: $main-highlight;
+        }
+      }
+
+      &.inactive{
+        padding: 0 40px;
+        color: $inactive-accent;
+        border-color: $inactive-accent;
+        a{
+          color: $inactive-accent;
+        }
+        &:hover{
+          color: $inactive-accent;
+          border-color: $inactive-accent;
+        }
+      }
+}
+
+//vendor
+// not importing it just yet...
+
+/*
+ * jquery.selectBoxIt.css 3.8.1
+ * Author: @gregfranko
+ */
+
+ html, body{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 945px;
+ }
+
+/*
+  Common CSS Properties
+  ---------------------
+  These properties will be applied to any themes that you use
+*/
+
+/* SelectBoxIt container */
+.selectboxit-container {
+  position: relative;
+  // display: inline-block;
+  display: block;
+  vertical-align: top;
+}
+
+/* Styles that apply to all SelectBoxIt elements */
+.selectboxit-container * {
+  // font: 14px Helvetica, Arial;
+  /* Prevents text selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  outline: none;
+  white-space: nowrap;
+}
+
+/* Button */
+.selectboxit-container .selectboxit {
+  // width: 220px; /* Width of the dropdown button */
+  width: 100%;
+  height: 60px;
+  @include border-box;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  // border-radius: 6px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.selectboxit-container .selectboxit{
+	&.skinny{
+		height: 48px;
+	}
+}
+
+/* Height and Vertical Alignment of Text */
+.selectboxit-container span, .selectboxit-container .selectboxit-options a {
+  // height: 60px; Height of the drop down
+  @include border-box;
+  // line-height: 60px; /* Vertically positions the drop down text */
+  display: block;
+  @include adjust-font-size-to(18px, 2);
+  @extend .gotham-light;
+  letter-spacing: 1px;
+  padding-top: rhythm(15.5/9);
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.skinny span{
+	padding-top: rhythm(11/9);
+}
+
+.selectboxit-container .selectboxit-options a{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+/* Focus pseudo selector */
+.selectboxit-container .selectboxit:focus {
+  outline: 0;
+}
+
+/* Disabled Mouse Interaction */
+.selectboxit.selectboxit-disabled, .selectboxit-options .selectboxit-disabled {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  cursor: default;
+}
+
+/* Button Text */
+.selectboxit-text {
+  text-indent: 5px;
+  // overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
+}
+
+.selectboxit .selectboxit-option-icon-container {
+  margin-left: 5px;
+}
+
+/* Options List */
+.selectboxit-container .selectboxit-options {
+@include border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 100%;  /* Minimum Width of the dropdown list box options */
+  *width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  cursor: pointer;
+  display: none;
+  z-index: 9999999999999;
+  // border-radius: 6px;
+  text-align: left;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* Individual options */
+ .selectboxit-option .selectboxit-option-anchor{
+  padding: 0 2px;
+  padding-top: -25px;
+  border-top: 1px solid $main-background;
+  background-color: $nav-background;
+}
+
+/* Individual Option Hover Action */
+.selectboxit-option .selectboxit-option-anchor:hover {
+  text-decoration: none;
+}
+
+/* Individual Option Optgroup Header */
+.selectboxit-option, .selectboxit-optgroup-header {
+  text-indent: 5px; /* Horizontal Positioning of the select box option text */
+  margin: 0;
+  list-style-type: none;
+}
+
+/* The first Drop Down option */
+.selectboxit-option-first {
+	border-top: none;
+  // border-top-right-radius: 6px;
+  // border-top-left-radius: 6px;
+}
+
+/* The first Drop Down option optgroup */
+.selectboxit-optgroup-header + .selectboxit-option-first {
+  border-top: none;
+}
+
+/* The last Drop Down option */
+.selectboxit-option-last {
+	border-top: none;
+  // border-bottom-right-radius: 6px;
+  // border-bottom-left-radius: 6px;
+}
+
+/* Drop Down optgroup headers */
+.selectboxit-optgroup-header {
+  font-weight: bold;
+}
+
+/* Drop Down optgroup header hover psuedo class */
+.selectboxit-optgroup-header:hover {
+  cursor: default;
+}
+
+/* Drop Down down arrow container */
+.selectboxit-arrow-container {
+  /* Positions the down arrow */
+  width: 30px;
+  position: absolute;
+  right: 0;
+}
+
+/* Drop Down down arrow */
+.selectboxit .selectboxit-arrow-container .selectboxit-arrow {
+  /* Horizontally centers the down arrow */
+  margin: 0 auto;
+  position: absolute;
+  @include adjust-font-size-to(27px, 3);
+  color: $main-background;
+  top: 56.66666%;
+  right: 0;
+  left: -20px;
+}
+
+/* Drop Down down arrow for jQueryUI and jQuery Mobile */
+.selectboxit .selectboxit-arrow-container .selectboxit-arrow.ui-icon {
+  top: 30%;
+}
+
+/* Drop Down individual option icon positioning */
+.selectboxit-option-icon-container {
+  float: left;
+}
+
+.selectboxit-container .selectboxit-option-icon {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+/* Drop Down individual option icon positioning */
+.selectboxit-option-icon-url {
+  width: 18px;
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
+  float: left;
+}
+
+.selectboxit-rendering {
+  // display: inline-block !important;
+  display: block !important;
+  *display: inline !important;
+  zoom: 1 !important;
+  visibility: visible !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+/* jQueryUI and jQuery Mobile compatability fix - Feel free to remove this style if you are not using jQuery Mobile */
+.jqueryui .ui-icon {
+  background-color: inherit;
+}
+
+/* Another jQueryUI and jQuery Mobile compatability fix - Feel free to remove this style if you are not using jQuery Mobile */
+.jqueryui .ui-icon-triangle-1-s {
+  background-position: -64px -16px;
+}
+
+/*
+  Default Theme
+  -------------
+  Note: Feel free to remove all of the CSS underneath this line if you are not using the default theme
+*/
+.selectboxit-btn {
+  background-color: $inactive-accent;
+  background-image: none;
+  background-repeat: repeat-x;
+  // border: 1px solid #cccccc;
+  // border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  // border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  // border-bottom-color: #b3b3b3;
+}
+
+.selectboxit-btn.selectboxit-enabled:hover,
+.selectboxit-btn.selectboxit-enabled:focus,
+.selectboxit-btn.selectboxit-enabled:active {
+  // color: #333333;
+  // color: #ffffff;
+  // background-color: #e6e6e6;
+  // background-color: #000000;
+}
+
+.selectboxit-btn.selectboxit-enabled:hover,
+.selectboxit-btn.selectboxit-enabled:focus {
+  // color: #333333;
+  // color: #ffffff;
+  // text-decoration: none;
+  background-position: 0 -15px;
+}
+
+.selectboxit-default-arrow {
+  width: 0;
+  height: 0;
+  border-top: 4px solid #000000;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.selectboxit-list {
+  // background-color: $inactive-accent;
+  // border: 1px solid #ccc;
+  // border: 1px solid rgba(0, 0, 0, 0.2);
+  // -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  // -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.selectboxit-list .selectboxit-option-anchor {
+  color: #ffffff;
+}
+
+.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {
+  color: $nav-background;
+  // background-color: #0081c2;
+  background-color: $inactive-accent;
+  // background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+  // background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+  // background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+  // background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+  // background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  // background-repeat: repeat-x;
+}
+
+.selectboxit-list > .selectboxit-disabled > .selectboxit-option-anchor {
+  color: #999999;
+}
+
+// Partials
+@import 'partials/_header';
+@import 'partials/_sub-header';
+@import 'partials/_form-general';
+@import 'partials/_tag-widget';
+@import 'partials/_image-modal';
+@import 'partials/_animations';
+@import 'partials/_table-general';
+@import 'partials/_login';
+@import 'partials/_spinner';
+@import 'partials/_timepicker';
+@import 'ng-quick-date/_ucs-ng-quick-date';
+@import 'partials/_file-upload';
+
+//vendor
+
+ [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+

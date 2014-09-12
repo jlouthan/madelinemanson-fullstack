@@ -1,0 +1,553 @@
+.form-fields{
+	background-color: $main-background;
+
+	.container{
+		width: 100%;
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: rhythm(52/9) 0 0 0;
+		height: auto;
+
+		select{
+			visibility: hidden;
+		}
+
+		.field-section{
+			@include row;
+			width: columns(15,16);
+			margin-left: columns(1,16);
+			// padding-left: 80px;
+			padding-bottom: 24px;
+			&.optional-items, &.people-required{
+				padding-bottom: 44px;
+			}
+			&.content{
+				min-height: 400px;
+			}
+			// TODO: use extend for this
+			@include border-box;
+
+			&.ui-scrollfix{
+				.section-header{
+					position: fixed;
+					top: 140px;
+					width: columns(3,16);
+					max-width: 240px;
+					height: 100%;
+					padding-bottom: 475px;
+					overflow: scroll;
+					&.blog-content{
+						padding-bottom: 375px;
+					}
+				}
+
+				.field-group{
+					margin-left: columns(4,15);
+				}
+			}
+
+			.section-header{
+				width: columns(3,15);
+				// width: 240px;
+
+				h1{
+					@include adjust-font-size-to(11px, 11/9);
+					@extend .gotham-ss-black;
+					color: $text-color-accent-secondary;
+					text-align: left;
+					letter-spacing: 2px;
+					text-transform: uppercase;
+					padding-bottom: rhythm(7/9);
+					border-bottom: 1px dotted $text-color-accent-secondary;
+				}
+
+				ul.existing-blocks{
+					margin-top: 2px;
+
+					li{
+						width: columns(3,3);
+						@extend .gotham-ss-thin;
+						letter-spacing: 1px;
+						text-transform: uppercase;
+						height: 40px;
+						margin-top: 1px;
+						background-color: $inactive-accent;
+
+						&.dropdown{
+							@extend .gotham-ss-black;
+							margin-top: -1px;
+							background-color: $main-highlight;
+						}
+
+						&:hover{
+							cursor: pointer;
+							a{
+								color: $text-color-accent-secondary;
+								&.dropdown-toggle{
+									color: #ffffff;
+								}
+							}
+						}
+
+						a{
+							padding-left: 20px;
+							padding-top: 14px;
+							padding-bottom: 26px;
+							display: block;
+							@include adjust-font-size-to(12px, 12/9);
+							color: $text-color-accent-secondary;
+
+							&.dropdown-toggle{
+								color: #ffffff;
+							}
+
+							span{
+								display: inline;
+								float: left;
+							}
+
+							span.block-name{
+								width: 83.3333%;
+							}
+
+							span.icon-drag, span.block-icon{
+								@include adjust-font-size-to(26px, 28/9, 12px);
+								margin-top: -8px;
+							}
+
+						}
+
+						&.scroll-focus{
+							background-color: $sub-header-accent;
+							a{
+								color: #ffffff;
+							}
+						}
+					}
+				}
+
+				ul.block-menu{
+					background-color: transparent;
+					padding: 0;
+					margin: 0;
+					border-radius: 0;
+					border: none;
+					-moz-box-shadow: none;
+					-webkit-box-shadow: none;
+					box-shadow: none;
+					width: columns(3,3);
+					font-size: inherit;
+					display: block;
+					@include border-box;
+					@include antialiased;
+
+					li{
+						background-color: $nav-background;
+						a{
+							padding-right: 0;
+						}
+						&:hover{
+							background-color: $text-color-accent-secondary;
+							a{
+								background: none;
+								color: $nav-background;
+							}
+						}
+						a:focus{
+							background: none;
+						}
+					}
+				}
+			}
+
+
+			.field-group{
+				width: columns(9,15);
+				// width: 720px;
+				margin-left: columns(1,15);
+
+				// for auto-scrolling to blocks
+				a.anchor{
+					display: block; 
+					position: relative; 
+					top: -150px; 
+					visibility: hidden;
+				}
+
+				.field-row{
+					@include row;
+					padding-bottom: 18px;
+
+					&.no-bottom-padding{
+						padding-bottom: 0;
+					}
+
+
+					.field{
+						padding-right: 20px;
+				
+						&.full-width{
+							width: 100%;
+						}
+
+						&.third-width{
+							width: 33.3333%;
+						}
+
+						&.two-thirds-width{
+							width: 66.66666%;
+						}
+
+						// these classes aren't exact fractions, came about because of strange row in blogpost
+						&.fifth-plus-epsilon-width{
+							width: 22.222222%;
+							padding-right: 16px;
+						}
+
+						&.third-plus-epsilon-width{
+							width: 36.11111%;
+						}
+
+						&.half-minus-epsilon-width{
+							width: 41.66666%;
+						}
+
+						&.half-plus-epsilon-width{
+							width: 58.33333%;
+						}
+
+						&.bottom-padding{
+							padding-bottom: 18px;
+						}
+
+						.title-container{
+							@include clearfix;
+						}
+
+						h1{
+							height: 18px;
+							@include adjust-font-size-to(11px, 11/9);
+							@extend .gotham-ss-thin;
+							letter-spacing: 1px;
+							text-transform: uppercase;
+							display: block;
+
+							&.field-title{
+								color: $text-color-accent-secondary;
+								text-align: left;
+								float: left;
+							}
+							&.field-metadata{
+								color: $detail-accent;
+								float: right;
+								&.middle-metadata{
+									margin-right: 25%;
+								}
+							}
+							&.slug-info{
+								color: $main-highlight;
+
+								span.slug{
+									@extend .merriweather-italic;
+									letter-spacing: normal;
+									text-transform: none;
+								}
+							}
+							&.block-remove{
+								color: $main-highlight;
+								float: right;
+								// margin-right: -20px;
+								&:hover{
+									cursor: pointer;
+								}
+							}
+
+							&.remove-x{
+								color: $main-highlight;
+								float: right;
+								@include adjust-font-size-to(12px, 12/9, 11px);
+								margin-right: -25px;
+								margin-top: -4px;
+								&:hover{
+									cursor: pointer;
+								}
+							}
+						}
+
+						.tagsinput{
+							margin-top: -30px;
+							span.tag{
+								z-index: 1004;
+							}
+						}
+
+						input, .tagsinput{
+							@include adjust-font-size-to(18px, 2);
+							@extend .merriweather-light;
+							color: #ffffff;
+							height: 60px;
+							background-color: $main-background;
+							// TODO: use extend for this
+							@include border-box;
+							border: 3px solid $text-color-accent-secondary;
+							padding-left: 20px;
+							width: 100%;
+							outline: none;
+							border-radius: 0;
+							margin-bottom: 0;
+							-webkit-box-shadow: none;
+							box-shadow: none;
+
+							&#tags1{
+								z-index: 999;
+							}
+
+							&:focus{
+								border-color: $main-highlight;
+								@include transition(border, 0.2s, linear);
+							}
+
+						}
+
+						&.has-background-icon{
+							@include row;
+							width: 97.22222%;
+							border: 3px solid $text-color-accent-secondary;
+							@include border-box;
+							padding-right: 0;
+							@include transition(border, 0.2s, linear);
+
+							input{
+								width: 94.2857%;
+								padding-right: 0;
+								border: none;
+								float: left;
+								height: 54px;
+							}
+							div.background-icon{
+								width: 5.714%;
+								@include border-box;
+								border-left: none;
+								height: 54px;
+								background-image: none;
+								@include adjust-font-size-to(30px, 30/9);
+								color: $inactive-accent;
+								padding-top: 12px;
+								@include transition(color, 0.2s, linear);
+
+								span{
+									margin-top: 0;
+									padding-top: 0;
+									width: 0;
+									&:before{
+										// padding-right: 10px;
+									}
+								}
+							}
+						}
+
+						input::-webkit-outer-spin-button,
+						input::-webkit-inner-spin-button {
+							/* display: none; <- Crashes Chrome on hover */
+							-webkit-appearance: none;
+							margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+						}
+
+						textarea{
+							@include adjust-font-size-to(18px);
+							@extend .merriweather-light;
+							height: 144px;
+							@include border-box;
+							background-color: $main-background;
+							border: 3px solid $text-color-accent-secondary;
+							border-radius: 0;
+							width: 100%;
+							padding: 20px;
+							color: #ffffff;
+							resize: none;
+							outline: none;
+							-webkit-box-shadow: none;
+							box-shadow: none;
+
+							&.seo-terms{
+								@include adjust-font-size-to(14px);
+							}
+
+							&.no-title{
+								margin-top: 18px;
+							}
+							&.pull-quote, &.video-embed, &.code-snippet, &.link-roll{
+								height: 120px;
+							}
+							&.body-copy, &.personal-bio{
+								height: 360px;
+							}
+							&:focus{
+								border-color: $main-highlight;
+								@include transition(border, 0.2s, linear);
+							}
+						}
+
+						.circle-mask{
+							-webkit-border-radius: 50%; 
+							-moz-border-radius: 50%; 
+							border-radius: 50%; 
+						}
+
+						.image-box{
+							width: 100%;
+							height: 144px;
+							background-color: $inactive-accent;
+							margin-top: 18px;
+							position: relative;
+							@include transition(background-color, 0.25s, linear);
+
+							span{
+								padding-top: 36px;
+								// TODO: write mixin to calc this on the fly OR resize font on the fly
+								// padding-left: 33.636363%;
+								margin-top: 0;
+								margin-left: auto;
+								margin-right: auto;
+								background-image: none;
+								display: block;
+								// font-size: 5.625vw;
+								@include adjust-font-size-to(72px, 8);
+								color: $text-color-accent-secondary;
+								width: 0;
+
+								&:before{
+									margin-left: -36px;
+								}
+							}
+				
+							// &.circle-mask{
+							// 	-webkit-border-radius: 50%; 
+							// 	-moz-border-radius: 50%; 
+							// 	border-radius: 50%; 
+								
+							// }
+
+							&.full-size{
+								// height: 260px;
+								height: 455px;
+								span{
+									padding-top: 191px;
+								}
+							}
+
+							&.avatar{
+								height: 220px;
+								span{
+									padding-top: 74px;
+								}
+							}
+
+							&:hover{
+								background-color: $main-highlight;
+								// background-image: none !important;
+								cursor: pointer;
+								span:before{
+									content: "\e618";
+									color: #ffffff;
+									@include transition(color, 0.2s, linear);
+								}
+							}
+
+							&.has-thumbnail{
+								background-color: transparent;
+								background-size: 100% 100%;
+								span:before{
+									content: "\e614";
+								}
+								.thumb-mask{
+									width: 100%;
+									height: 100%;
+									visibility: hidden;
+									background-color: $main-highlight;
+									opacity: 0;
+									transition: opacity 0.2s linear;
+								}
+								&:hover{
+									.thumb-mask{
+										visibility: visible;
+										opacity: 0.75;
+									}
+								}
+						
+							}
+						}
+
+						.switch-box{
+							width: 100%;
+							height: 60px;
+							padding-bottom: 18px;
+
+							.switch-option{
+								background-color: $inactive-accent;
+								@include transition(background-color, 0.25s, linear);
+								@include border-box;
+								height: 60px;
+								width: 50%;
+								float: left;
+								margin-bottom: 18px;
+								border-right: 1px solid $main-background;
+
+								span{
+									padding-top: 15px;
+									@include adjust-font-size-to(30px, 30/9);
+									@include transition(color, 0.25s, linear);
+									margin-top: 0;
+									margin-left: auto;
+									margin-right: auto;
+									background-image: none;
+									display: block;
+									color: $sub-header-accent;
+									width: 0;
+
+									&:before{
+										margin-left: -15px;
+									}
+								}
+
+								&:hover{
+									cursor: pointer;
+									background-color: $main-highlight;
+									span{
+										color: #ffffff;
+									}
+								}
+
+								&.selected{
+									background-color: $sub-header-accent;
+									border-right: none;
+									span{
+										color: $text-color-accent-secondary;
+									}
+								}
+
+							}
+						}
+
+						&.optional{
+							input, textarea{
+								border-color: $inactive-accent;
+
+								&:focus{
+									border-color: $main-highlight;
+								}
+							}
+						}
+						&.nonempty{
+							input, textarea{
+								border-color: $text-color-accent-secondary;
+							}
+						}
+					}
+				}//field-row
+
+				
+			}//field-group
+		}//field-section
+	}
+}

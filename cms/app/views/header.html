@@ -1,0 +1,43 @@
+<div class="header" ng-controller="LoginCtrl">
+	<div class="container">
+		<div class="uc-logo">
+			<!-- <a href=""></a> -->
+			<div class="resistor">
+			</div>
+		</div>
+		<div class="main-nav" ng-if="currentPage != 'login'" ng-show="$root.userLoaded">
+			<ul>
+				<li>
+					<a href="#!/prints" ng-class="{'current': currentPage == 'prints'}">Prints</a>
+					<div ng-show="currentPage == 'prints'" class="arrow-up"></div>
+				</li>
+				<li>
+					<a href="#!/textiles" ng-class="{'current': currentPage == 'textiles'}">Textiles</a>
+					<div ng-show="currentPage == 'textiles'" class="arrow-up"></div>
+				</li>
+				<li>
+					<a href="#!/objects" ng-class="{'current': currentPage == 'objects'}">Objects</a>
+					<div ng-show="currentPage == 'objects'" class="arrow-up"></div>
+				</li>
+				<li>
+					<a href="#!/friends" ng-class="{'current': currentPage == 'friends'}">Friends</a>
+					<div ng-show="currentPage == 'friends'" class="arrow-up"></div>
+				</li>
+				<li>
+					<a href="#!/cv" ng-class="{'current': currentPage == 'cv'}">CV</a>
+					<div ng-show="currentPage == 'cv'" class="arrow-up"></div>
+				</li>
+			</ul>
+		</div>
+		<div class="user-info" ng-if="currentPage != 'login'" ng-show="$root.userLoaded">
+			<ul class="user-session-info">
+				<li class="name" ng-show="currentUser">{{currentUser.username}}</li>
+				<li class="sign-out" ng-show="currentUser" ng-click="logout()">sign out</li>
+
+				<li class="name" ng-show="!currentUser">Guest</li>
+				<li class="sign-out" ng-show="!currentUser"><a href="#!/login">Login</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>

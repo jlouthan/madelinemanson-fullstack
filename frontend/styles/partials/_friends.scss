@@ -1,0 +1,18 @@
+div.container .content.friends{
+
+	h3{
+		width: columns(5, 12);
+		text-align: center;
+		@extend .gotham-ss-thin;
+		@include adjust-font-size-to(14px, 32/9);
+		a{
+			text-decoration: none;
+			color: #6CD1D4;
+			@include transition(color, 0.2s, linear);
+			&:hover{
+				color: #000000;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,23 @@
+div.container .content{
+
+	div.contact{
+		@include row;
+	}
+
+	div.side-image{
+		width: columns(6, 12);
+		margin-right: columns(1, 12);
+		img{
+			width: 100%;
+		}
+	}
+
+	div.contact-info{
+		width: columns(4,12);
+		h2{
+			@extend .gotham-ss-black;
+			@include adjust-font-size-to(20px, 36/9);
+		}
+	}
+
+}
