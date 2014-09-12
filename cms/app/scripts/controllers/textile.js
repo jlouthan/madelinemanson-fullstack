@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('cmsFrontendApp')
-  .controller('TextileCtrl', function ($scope, $rootScope, loggedInChecker, $anchorScroll, $routeParams, modalManager) {
+  .controller('TextileCtrl', function ($scope, $rootScope, loggedInChecker, $anchorScroll, $routeParams, modalManager, $location) {
   	loggedInChecker.validateUser();
   	$rootScope.currentPage = 'textiles';
   	$anchorScroll();
   	$scope.textileId = null;
+  	$scope.availableBlocks = [{"name":"Fullsize Image","type":"image","id":"02ff9b74e90da8a0"}];
 
   	if($routeParams.textileId){
   		$scope.textileId = $routeParams.textileId;
@@ -121,5 +122,34 @@ angular.module('cmsFrontendApp')
   		}
   		return '';
   	};
+
+  	//!#!#!#!##!#!image blocks!@!@!@@!!@!@!@
+
+  	$scope.scrollToBlock = function(blockId){
+		var old = $location.hash();
+		$location.hash('block' + blockId);
+		$anchorScroll();
+		$location.hash(old);
+	};
+
+	$scope.toggleDropdown = function(dropdown){
+		$scope.dropdownShowing = !$scope.dropdownShowing;
+	};
+
+	$scope.addBlock = function (which){
+		var clonedBlock = JSON.parse(JSON.stringify(which));
+		clonedBlock.id = clonedBlock.id+"-"+generateUniqueId();
+		if(!$scope.textile.hasOwnProperty('images')){
+			$scope.textile.images = [];
+		}
+		$scope.textile.images.push(clonedBlock);
+		$scope.toggleDropdown();
+		return false;
+	};
+
+	$scope.removeBlock = function (which){
+		var index = $scope.textile.images.indexOf(which);
+		$scope.textile.images.splice(index, 1);
+	};
 
 });
