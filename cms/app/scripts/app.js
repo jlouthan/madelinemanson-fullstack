@@ -51,6 +51,18 @@ app.config(function ($routeProvider) {
         templateUrl: 'views/print.html',
         controller: 'PrintCtrl'
       })
+      .when('/textiles', {
+        templateUrl: 'views/textileManager.html',
+        controller: 'TextileManagerCtrl'
+      })
+      .when('/textile/new', {
+        templateUrl: 'views/textile.html',
+        controller: 'TextileCtrl'
+      })
+      .when('/textile/:textileId', {
+        templateUrl: 'views/textile.html',
+        controller: 'TextileCtrl'
+      })
       .otherwise({
         redirectTo: '/things'
       });

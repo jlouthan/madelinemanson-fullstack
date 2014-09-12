@@ -1,0 +1,49 @@
+<div ng-show="$root.userLoaded">
+<sub-header current-page={{subHeaderText}} current-obj="textile" save-fcn="save()" back="back()" form-is-valid="formIsValid()">
+</sub-header>
+
+<div class="full-width form-fields">
+<div class="container">
+	<form class="" name="textileForm">
+		<div class="field-section">
+			<div class="section-header"><h1>Required Items</h1></div>
+			<div class="field-group">
+
+				<div class="field-row" ng-show="invalidSubmitted && !formIsValid()">
+					<div class="field full-width invalid">
+						<h1 class="field-title">You're missing one or more fields required to save this Textile.</h1>
+					</div>
+				</div>
+
+				<div class="field-row" ng-if="serverError">
+					<div class="field full-width invalid">
+						<h1 class="field-title">There was an error saving the Textile to the database: {{serverError}}</h1>
+					</div>
+				</div>
+
+				<div class="field-row">
+					<div class="field full-width" ng-class="{'invalid': invalidSubmitted && !textile.name}">
+						<h1 class="field-title">Name</h1>
+						<input type="text" ng-model="textile.name" name="name">
+						<h1 class="required" ng-show="invalidSubmitted && !textile.name">This is a required field.</h1>
+					</div>
+				</div>
+
+				<!-- TODO: REPLACE WITH BLOCK LIST OF IMAGES -->
+				<!-- <div class="field-row">
+					<div class="field full-width" ng-class="{'invalid': invalidSubmitted && !textile.image}">
+						<h1 class="field-title">Image</h1>
+						<div class="image-box full-size" ng-click="openImageModal('image')" ng-style="imageThumbnail('image')" ng-class="{'has-thumbnail': textile.image}">
+							<div class="thumb-mask">
+								<span class="icon-img"></span>
+							</div>
+						</div>
+						<h1 class="required" ng-show="invalidSubmitted && !textile.image">This is a required field.</h1>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</form>
+</div>
+</div>
+</div>
