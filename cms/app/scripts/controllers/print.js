@@ -41,7 +41,7 @@ angular.module('cmsFrontendApp')
 
 	$scope.formIsValid = function(){
 		if($scope.print){
-			if(print.name && print.image){
+			if($scope.print.name && $scope.print.image){
 				return true;
 			}
 		}

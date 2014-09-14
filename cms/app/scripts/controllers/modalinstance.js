@@ -14,7 +14,7 @@ var ModalInstanceCtrl = ['$scope', '$http', '$modalInstance', 'modalObj', functi
 		console.log("the upload url is " + $scope.modalObj.uploadUrl);
 		var fd = new FormData();
 		fd.append("file", file);
-		var url = 'http://sbapi.uncorkedstudios.com' + $scope.modalObj.uploadUrl;
+		var url = 'http://api.madelinemanson.com' + $scope.modalObj.uploadUrl;
 		$http.post(url, fd, {
 			transformRequest: angular.identity,
 			headers: {'Content-Type': undefined}
