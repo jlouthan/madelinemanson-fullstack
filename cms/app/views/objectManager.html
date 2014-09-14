@@ -1,0 +1,41 @@
+<div class="full-width list-view" ng-show="$root.userLoaded">
+	<div class="container">
+		<div class="main-header">
+			<h1>Objects</h1>
+			<div class="create-button">
+				<a href="#!/object/new">Add A Object</a>
+			</div>
+		</div>
+
+		<table class="main-table">
+			<thead>
+				<tr>
+					<td></td><td><span>Name:</span></td><td><span>Thumbnail:</span></td><td></td><td><span>Added:</span></td><td></td>
+				</tr>
+			</thead>
+			<tbody infinite-scroll="feed.loadContents()" infinite-scroll-distance="1" ng-model="feed.objects" ui-sortable="sortingOptions">
+				<tr ng-repeat="object in feed.objects" ng-class="{'dark': $index%2 == 1}">
+					<td class="icons drag">
+						<span class="icon-drag"></span>
+						<!-- <span class="icon-trash" ng-click="openRemoveModal(endorsement)"></span> -->
+					</td>
+					<td class="title smallest">
+						<a href="#!/object/{{object.id}}">{{object.name}}</a>
+					</td>
+					<td class="author largest">
+						{{object.description}}
+					</td>
+					<td class="state">
+						{{object.dateCreated}}
+					</td>
+					<td class="pub-date">
+						<!-- <span ng-if="cocktail.state == 'published'"> {{cocktail.date | date:'MM/dd/yyyy @ h:mma'}}</span> -->
+					</td> 
+					<td class="icons">
+						<span class="icon-trash" ng-click="openRemoveModal(object)"></span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

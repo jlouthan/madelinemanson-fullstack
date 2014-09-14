@@ -59,9 +59,17 @@ app.config(function ($routeProvider) {
         templateUrl: 'views/textile.html',
         controller: 'TextileCtrl'
       })
-      .when('/textile/:textileId', {
-        templateUrl: 'views/textile.html',
-        controller: 'TextileCtrl'
+      .when('/objects', {
+        templateUrl: 'views/objectManager.html',
+        controller: 'ObjectManagerCtrl'
+      })
+      .when('/object/new', {
+        templateUrl: 'views/object.html',
+        controller: 'ObjectCtrl'
+      })
+      .when('/object/:objectId', {
+        templateUrl: 'views/object.html',
+        controller: 'ObjectCtrl'
       })
       .otherwise({
         redirectTo: '/things'
