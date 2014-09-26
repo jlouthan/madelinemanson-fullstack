@@ -5,7 +5,7 @@ a.div-link {
 	top: 0;
 	left: 0;
    	text-decoration: none;
-   	z-index: 1000;
+   	// z-index: 1000;
     background-color: white;
     /*workaround to make clickable in IE */
     opacity: 0;
@@ -20,46 +20,67 @@ div.container{
 
 	div.logo{
 		position: fixed;
-		width: columns(3,16);
-		margin-right: columns(13,16);
-		height: rhythm( (60 + (16*4.44643)) / 9);
+		width: columns(16,16);
+		// margin-right: columns(13,16);
+		// height: rhythm( (60 + (16*4.44643)) / 9);
+		height: rhythm(100/9);
 		z-index: 1000;
 
-		background-image: url('/images/cocktail-circle.jpg');
-		background-position: rhythm(30/9) 50%;
-		background-size: 70px 100%;
+		background-image: url('http://www.connectingthreads.com/images/CTtutorials/pinwheels/hst_fonsandporter/pinwheel_1_resized.JPG');
+		background-position: 50% 50%;
+		background-size: 70px 70px;
 		background-repeat: no-repeat;
+		background-color: white;
 	}
-	div.nav-col{
+	div.nav-row{
 		@include border-box;
 		position: fixed;
-		width: columns(3,16);
-		padding-left: rhythm(30/9);
-		padding-top: rhythm( (60 + (16*4.44643)) / 9);
+		// top: rhythm( (60 + (16*4.44643)) / 9);
+		top: rhythm(100/9);
+		width: columns(16,16);
+		text-align: center;
+		background-color: white;
+		padding-bottom: rhythm(11/9);
+		z-index: 1000;
+		a{
+			text-decoration: none;
+			color: #000000;
+		}
+		h1{
+			@extend .gotham-ss-thin;
+			@include adjust-font-size-to(28px, 32/9);
+			margin-bottom: rhythm(4/9);
+		}
 		ul{
-			li a{
-				@extend .gotham-ss-thin;
-				@include adjust-font-size-to(20px, 36/9);
-				text-decoration: none;
-				color: #000000;
-				@include transition(color, 0.3s, linear);
-				&:hover{
-					color: #6CD1D4;
+			li {
+				display: inline-block;
+				padding-right: 13%;
+				a{
+					@extend .gotham-ss-thin;
+					@include adjust-font-size-to(20px, 28/9);
+					@include transition(color, 0.2s, linear);
+					&:hover{
+						color: #6CD1D4;
+					}
 				}
+			}
+			li:last-child{
+				padding-right: 0;
 			}
 		}
 	}
 	div.content{
-		margin-left: columns(3, 16);
-		margin-top: rhythm(60/9);
-		padding-top: rhythm((16*4.44643)/9);
+		margin-left: columns(2, 16);
+		padding-top: rhythm(198/9);
+		width: columns(12, 16);
+		// padding-top: rhythm(18/9);
 		&.index, &.set{
-			width: columns(10, 16);
+			width: columns(9, 16);
+			margin-left: columns(3.5, 16);
 			// width: columns(11.5, 16);
 		}
 		div.main{
-			width: columns(10,10);
-			// width: columns(11.5, 11.5);
+			width: 100%;
 			margin: 0 auto;
 
 			img.source-image{

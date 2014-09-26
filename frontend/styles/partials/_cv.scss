@@ -1,17 +1,17 @@
-div.container .content.cv{
+// div.container .content.cv{
 
-	section h2{
-		@extend .gotham-ss-black;
-		@include adjust-font-size-to(14px, 32/9);
-	}
+// 	section h2{
+// 		@extend .gotham-ss-black;
+// 		@include adjust-font-size-to(14px, 32/9);
+// 	}
 
-	section p{
-		@extend .gotham-ss-thin;
-		@include adjust-font-size-to(12px, 16/9);
-	}
+// 	section p{
+// 		@extend .gotham-ss-thin;
+// 		@include adjust-font-size-to(12px, 16/9);
+// 	}
 
-	section{
-		margin-bottom: rhythm(18/9);
-	}
+// 	section{
+// 		margin-bottom: rhythm(18/9);
+// 	}
 
-}
+// }

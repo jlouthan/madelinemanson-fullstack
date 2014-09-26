@@ -9,8 +9,11 @@ div.container{
 				@include border-box;
 				// width: columns(5, 12);
 				// margin-right: columns(1, 12);
-				width: columns(3.5, 12);
-				margin-right: columns(0.5, 12);
+				width: columns(2.5, 12);
+				margin-right: columns(0.667, 12);
+				&:last-child{
+					margin-right: 0;
+				}
 				div.image{
 					@include transition(opacity, 0.2s, linear);
 					position: relative;

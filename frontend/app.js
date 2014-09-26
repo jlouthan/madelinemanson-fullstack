@@ -32,36 +32,32 @@ app.get('/home', function (req, res) {
     res.render('home');
 });
 
-app.get('/prints', function (req, res) {
+app.get('/print', function (req, res) {
 	res.render('set');
 });
 
-app.get('/textiles', function (req, res) {
+app.get('/textile', function (req, res) {
 	res.render('collection');
 });
 
-app.get('/textiles/:textileId', function (req, res){
+app.get('/textile/:textileId', function (req, res){
 	res.render('set');
 });
 
-app.get('/objects', function (req, res) {
+app.get('/object', function (req, res) {
 	res.render('collection');
 });
 
-app.get('/objects/:objectId', function (req, res){
+app.get('/object/:objectId', function (req, res){
 	res.render('set');
 });
 
-app.get('/contact', function (req, res){
-	res.render('contact');
+app.get('/about', function (req, res){
+	res.render('about');
 });
 
 app.get('/friends', function (req, res){
 	res.render('friends');
-});
-
-app.get('/cv', function (req, res){
-	res.render('cv');
 });
 
 http.createServer(app).listen(app.get('port'), function(){

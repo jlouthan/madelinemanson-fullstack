@@ -1,8 +1,15 @@
-div.container .content.friends{
+div.container .content{
+	div.friends{
+		@include row;
+	}
+
+	div.links{
+		width: columns(5, 12);
+		padding-left: 4%;
+	}
 
 	h3{
-		width: columns(5, 12);
-		text-align: center;
+		text-align: left;
 		@extend .gotham-ss-thin;
 		@include adjust-font-size-to(14px, 32/9);
 		a{
