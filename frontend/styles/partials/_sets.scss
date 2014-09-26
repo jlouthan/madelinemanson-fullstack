@@ -1,9 +1,38 @@
 div.container{
 
 	div.content.set{
-		div.main img.source-image{
-			margin-bottom: rhythm(30/9);
+		margin-left: columns(4, 16);
+		width: columns(7.5, 16);
+		div.set-wrap{
+			@include row;
+			div.arrow{
+				width: columns(0.5, 8);
+				height: rhythm(375/9);
+				padding-top: 20%;
+				h3{
+					text-align: center;
+					@extend .gotham-ss-black;
+					@include adjust-font-size-to(36px, 36/9);
+					@include antialiased;
+					color: #a3a3a3;
+					@include transition(color, 0.2s, linear);
+					&:hover{
+						cursor: pointer;
+						color: #6CD1D4;
+					}
+				}
+			}
+			div.main-pic{
+				width: columns(7, 8);
+				img.source-image{
+					width: 100%;
+				}
+				li.hidden{
+					img.source-image{
+						display: none;
+					}
+				}
+			}
 		}
-
 	}
 }

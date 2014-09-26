@@ -1,6 +1,7 @@
 @mixin antialiased{
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
+	font-smoothing: antialiased;
 }
 
 @mixin transition($transition-property, $transition-time, $method) {
