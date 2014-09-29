@@ -1,8 +1,11 @@
 div.container{
-
+	h2.title-strip{
+		padding-top: rhythm(198/9);
+	}
 	div.content.set{
 		margin-left: columns(4, 16);
 		width: columns(7.5, 16);
+		padding-top: 0;
 		div.set-wrap{
 			@include row;
 			div.arrow{

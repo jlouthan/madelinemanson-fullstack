@@ -9,7 +9,7 @@ div.container{
 				@include border-box;
 				// width: columns(5, 12);
 				// margin-right: columns(1, 12);
-				width: columns(2.5, 12);
+				width: columns(2.495, 12);
 				margin-right: columns(0.667, 12);
 				&:last-child{
 					margin-right: 0;
@@ -23,7 +23,6 @@ div.container{
 				}
 				h2.title{
 					width: 100%;
-					text-align: right;
 					@extend .gotham-ss-thin;
 					@include adjust-font-size-to(14px, 16/9);
 					margin-top: rhythm(-4/9);
