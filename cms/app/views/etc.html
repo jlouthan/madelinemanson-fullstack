@@ -1,0 +1,68 @@
+<div ng-show="$root.userLoaded">
+	<sub-header current-page={{subHeaderText}} current-obj="etc" save-fcn="save()" back="back()" form-is-valid="true"></sub-header>
+</div>
+
+<div class="full-width form-fields">
+	<div class="container">
+		<form name="etcForm">
+			<div class="field-section">
+				<div class="section-header"><h1>Required Items</h1></div>
+				<div class="field-group">
+
+					<div class="field-row" ng-show="invalidSubmitted && !formIsValid()">
+						<div class="field full-width invalid">
+							<h1 class="field-title">You're missing one or more fields required to save.</h1>
+						</div>
+					</div>
+
+					<div class="field-row" ng-if="serverError">
+						<div class="field full-width invalid">
+							<h1 class="field-title">There was an error saving to the database: {{serverError}}</h1>
+						</div>
+					</div>
+
+					<div class="field-row" ng-show="validSubmitted">
+						<div class="field full-width valid">
+							<h1 class="field-title">Save Successful.</h1>
+						</div>
+					</div>
+					<div class="field-row">
+						<div class="field full-width" ng-class="{'invalid': invalidSubmitted && !etc.homeImage}">
+							<h1 class="field-title">Home Page Image</h1>
+							<div class="image-box full-size" ng-click="openImageModal('homeImage')" ng-style="imageThumbnail('homeImage')" ng-class="{'has-thumbnail': etc.homeImage}">
+								<div class="thumb-mask">
+									<span class="icon-img"></span>
+								</div>
+							</div>
+							<h1 class="required" ng-show="invalidSubmitted && !etc.homeImage">This is a required field.</h1>
+						</div>
+					</div>
+
+					<div class="field-row">
+						<div class="field full-width" ng-class="{'invalid': invalidSubmitted && !etc.aboutImage}">
+							<h1 class="field-title">About Page Image</h1>
+							<div class="image-box full-size" ng-click="openImageModal('aboutImage')" ng-style="imageThumbnail('aboutImage')" ng-class="{'has-thumbnail': etc.aboutImage}">
+								<div class="thumb-mask">
+									<span class="icon-img"></span>
+								</div>
+							</div>
+							<h1 class="required" ng-show="invalidSubmitted && !etc.aboutImage">This is a required field.</h1>
+						</div>
+					</div>
+
+					<div class="field-row">
+						<div class="field full-width" ng-class="{'invalid': invalidSubmitted && !etc.friendsImage}">
+							<h1 class="field-title">Friends Page Image</h1>
+							<div class="image-box full-size" ng-click="openImageModal('friendsImage')" ng-style="imageThumbnail('friendsImage')" ng-class="{'has-thumbnail': etc.friendsImage}">
+								<div class="thumb-mask">
+									<span class="icon-img"></span>
+								</div>
+							</div>
+							<h1 class="required" ng-show="invalidSubmitted && !etc.friendsImage">This is a required field.</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

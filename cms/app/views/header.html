@@ -27,6 +27,10 @@
 					<a href="#!/cv" ng-class="{'current': currentPage == 'cv'}">CV</a>
 					<div ng-show="currentPage == 'cv'" class="arrow-up"></div>
 				</li>
+				<li>
+					<a href="#!/etc" ng-class="{'current': currentPage == 'etc'}">ETC.</a>
+					<div ng-show="currentPage == 'etc'" class="arrow-up"></div>
+				</li>
 			</ul>
 		</div>
 		<div class="user-info" ng-if="currentPage != 'login'" ng-show="$root.userLoaded">

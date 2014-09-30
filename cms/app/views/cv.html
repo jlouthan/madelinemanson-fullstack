@@ -1,0 +1,41 @@
+<div ng-show="$root.userLoaded">
+	<sub-header current-page={{subHeaderText}} current-obj="cv" save-fcn="save()" back="back()" form-is-valid="true"></sub-header>
+</div>
+
+<div class="full-width form-fields">
+	<div class="container">
+		<form name="cvForm">
+			<div class="field-section">
+				<div class="section-header"><h1>Required Items</h1></div>
+				<div class="field-group">
+
+					<div class="field-row" ng-show="invalidSubmitted && !formIsValid()">
+						<div class="field full-width invalid">
+							<h1 class="field-title">You're missing one or more fields required to save.</h1>
+						</div>
+					</div>
+
+					<div class="field-row" ng-if="serverError">
+						<div class="field full-width invalid">
+							<h1 class="field-title">There was an error saving to the database: {{serverError}}</h1>
+						</div>
+					</div>
+
+					<div class="field-row" ng-show="validSubmitted">
+						<div class="field full-width valid">
+							<h1 class="field-title">Save Successful.</h1>
+						</div>
+					</div>
+					<div class="field-row">
+						<div class="field full-width" ng-class="{'invalid': invalidSubmitted && !cv.videoUrl}">
+							<h1 class="field-title">Text</h1>
+							<h1 class="field-metadata">Parsed as Markdown</h1>
+							<textarea ng-model="cv.content" name="content" msd-elastic></textarea>
+							<h1 class="required" ng-show="invalidSubmitted && !cv.videoUrl">This is a required field.</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

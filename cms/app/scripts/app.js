@@ -21,23 +21,11 @@ var app = angular.module('cmsFrontendApp', [
 app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        redirectTo: '/thing'
+        redirectTo: '/prints'
       })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
-      })
-      .when('/things', {
-        templateUrl: 'views/thingManager.html',
-        controller: 'ThingManagerCtrl'
-      })
-      .when('/thing/new', {
-        templateUrl: 'views/thing.html',
-        controller: 'ThingCtrl'
-      })
-      .when('/thing/:thingId', {
-        templateUrl: 'views/thing.html',
-        controller: 'ThingCtrl'
       })
       .when('/prints', {
         templateUrl: 'views/printManager.html',
@@ -76,15 +64,23 @@ app.config(function ($routeProvider) {
         controller: 'FriendManagerCtrl'
       })
       .when('/friend/new', {
-        templateUrl: 'views/object.html',
+        templateUrl: 'views/friend.html',
         controller: 'FriendCtrl'
       })
       .when('/friend/:friendId', {
         templateUrl: 'views/friend.html',
         controller: 'FriendCtrl'
       })
+      .when('/cv', {
+        templateUrl: 'views/cv.html',
+        controller: 'CvCtrl'
+      })
+      .when('/etc', {
+        templateUrl: 'views/etc.html',
+        controller: 'EtcCtrl'
+      })
       .otherwise({
-        redirectTo: '/things'
+        redirectTo: '/'
       });
   });
 
