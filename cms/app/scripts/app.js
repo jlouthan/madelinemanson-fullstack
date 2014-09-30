@@ -71,6 +71,18 @@ app.config(function ($routeProvider) {
         templateUrl: 'views/object.html',
         controller: 'ObjectCtrl'
       })
+      .when('/friends', {
+        templateUrl: 'views/friendManager.html',
+        controller: 'FriendManagerCtrl'
+      })
+      .when('/friend/new', {
+        templateUrl: 'views/object.html',
+        controller: 'FriendCtrl'
+      })
+      .when('/friend/:friendId', {
+        templateUrl: 'views/friend.html',
+        controller: 'FriendCtrl'
+      })
       .otherwise({
         redirectTo: '/things'
       });

@@ -4355,7 +4355,9 @@ body {
 
 .form-fields .container .field-section .field-group .field-row .field .image-box.has-thumbnail {
   background-color: transparent;
-  background-size: 100% 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
 }
 
 @media -sass-debug-info {
@@ -4364,7 +4366,7 @@ body {
   }
 
   line {
-    font-family: \00003469;
+    font-family: \00003472;
   }
 }
 
@@ -4378,7 +4380,7 @@ body {
   }
 
   line {
-    font-family: \00003472;
+    font-family: \00003475;
   }
 }
 
@@ -4397,7 +4399,7 @@ body {
   }
 
   line {
-    font-family: \00003481;
+    font-family: \00003484;
   }
 }
 
@@ -4412,7 +4414,7 @@ body {
   }
 
   line {
-    font-family: \00003490;
+    font-family: \00003493;
   }
 }
 
@@ -4428,7 +4430,7 @@ body {
   }
 
   line {
-    font-family: \00003495;
+    font-family: \00003498;
   }
 }
 
@@ -4450,7 +4452,7 @@ body {
   }
 
   line {
-    font-family: \00003505;
+    font-family: \00003508;
   }
 }
 
@@ -4474,7 +4476,7 @@ body {
   }
 
   line {
-    font-family: \00003517;
+    font-family: \00003520;
   }
 }
 
@@ -4488,7 +4490,7 @@ body {
   }
 
   line {
-    font-family: \00003522;
+    font-family: \00003525;
   }
 }
 
@@ -4503,7 +4505,7 @@ body {
   }
 
   line {
-    font-family: \00003525;
+    font-family: \00003528;
   }
 }
 
@@ -4517,7 +4519,7 @@ body {
   }
 
   line {
-    font-family: \00003530;
+    font-family: \00003533;
   }
 }
 
@@ -4532,7 +4534,7 @@ body {
   }
 
   line {
-    font-family: \00003533;
+    font-family: \00003536;
   }
 }
 
@@ -4546,7 +4548,7 @@ body {
   }
 
   line {
-    font-family: \00003542;
+    font-family: \00003545;
   }
 }
 
@@ -4561,7 +4563,7 @@ body {
   }
 
   line {
-    font-family: \00003545;
+    font-family: \00003548;
   }
 }
 
@@ -4576,7 +4578,7 @@ body {
   }
 
   line {
-    font-family: \00003551;
+    font-family: \00003554;
   }
 }
 
