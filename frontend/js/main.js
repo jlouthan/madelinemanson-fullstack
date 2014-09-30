@@ -12,13 +12,16 @@ $(window).load(function(){
 	function alignTitle(){
 		var extraSpace = (document.documentElement.clientWidth * 0.48) - (66 + 51 + 67 + 62 + 73) - 11;
 		var leftPadding = extraSpace / 2;
-		console.log('leftPadding is ' + leftPadding)
 		$('.title-strip').css('padding-left', leftPadding + 'px');
 	}
+
+// !~!~!~!~!!CAROUSEL!~!~!~!~!~!!
 
 	if($('#carousel').data('total-pics') == 1){
 		$("#right-arrow").css('visibility', 'hidden');
 	}
+
+	$('.title-strip').text($('#carousel li:first-child').data('proj-title'));
 
 	$("#right-arrow").click(function(){
 		var arrow = $(this);
@@ -34,7 +37,9 @@ $(window).load(function(){
 			if(nextI == 2){
 				$('#left-arrow').css('visibility', 'visible');
 			}
-			$('#carousel').data('visible-index', nextI);
+			$('#carousel').data('visible-index', nextI)
+			$('.title-strip').text(next.data('proj-title'));
+			window.history.pushState({}, "", "/" + window.location.pathname.split('/')[1] + "/" + window.location.pathname.split('/')[2] + "/" + nextI);
 			next.fadeIn('fast', function(){
 
 			});
@@ -56,6 +61,8 @@ $(window).load(function(){
 				arrow.css('visibility', 'hidden');
 			}
 			$("#carousel").data('visible-index', prevI);
+			$('.title-strip').text(prev.data('proj-title'));
+			window.history.pushState({}, "", "/textile/" + prevI);
 			prev.fadeIn("fast", function(){
 
 			});

@@ -1,9 +1,12 @@
 // Load Fonts
 @import "http://cloud.typography.com/6338432/611002/css/fonts.css";
+@import "http://fonts.googleapis.com/css?family=Merriweather:400,700,300";
 
 // Typography
 $primary-sans-serif: 'Gotham SSm A', 'Gotham SSm B';
 $secondary-sans-serif: 'Gotham A', 'Gotham B';
+
+$primary-serif: 'Merriweather', serif;
 
 .gotham-ss-black{
 	font-family: $primary-sans-serif;
@@ -19,4 +22,18 @@ $secondary-sans-serif: 'Gotham A', 'Gotham B';
 	font-family: $secondary-sans-serif;
 	font-weight: 300;
 	@include antialiased;
+}
+
+.merriweather-light{
+	font-family: $primary-serif;
+	font-weight: 300;
+}
+
+.merriweather-normal{
+	font-family: $primary-serif;
+}
+
+.merriweather-bold{
+	font-family: $primary-serif;
+	font-weight: 700;
 }
