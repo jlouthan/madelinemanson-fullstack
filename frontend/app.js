@@ -41,9 +41,9 @@ var requestHandler = function(req, res, pageView, pageTitle, bodyClass, paths){
     var results = {};
     var completed = 0;
     var completionCallback = function(feed){
-    	// console.log(feed);
-    	console.log(feed.cv[0].content);
-    	feed = feed.cv[0];
+    	console.log(feed);
+    	// console.log(feed.cv[0].content);
+    	// feed = feed.cv[0];
         res.render(pageView,{
             title: pageTitle,
             bodyClass: bodyClass,
@@ -80,35 +80,35 @@ app.get('/home', function (req, res) {
     res.render('home');
 });
 
-app.get('/print', function (req, res) {
-	res.render('collection', {title: 'print'});
+app.get('/prints', function (req, res) {
+	res.render('collection', {title: 'prints'});
 });
 
-app.get('/print/:printName', function(req, res){
+app.get('/prints/:printName', function(req, res){
 	res.render('set');
 });
 
-app.get('/textile', function (req, res) {
-	res.render('collection', {title: 'textile'});
+app.get('/textiles', function (req, res) {
+	res.render('collection', {title: 'textiles'});
 });
 
-app.get('/textile/:textileName/:textileId', function (req, res){
+app.get('/textiles/:textileName/:textileId', function (req, res){
 	res.render('set');
 });
 
-app.get('/textile/:textileName', function (req, res){
+app.get('/textiles/:textileName', function (req, res){
 	res.render('list-set');
 });
 
-app.get('/object', function (req, res) {
-	res.render('collection', {title: 'object'});
+app.get('/objects', function (req, res) {
+	res.render('collection', {title: 'objects'});
 });
 
-app.get('/object/:objectName/:objectId', function (req, res){
+app.get('/objects/:objectName/:objectId', function (req, res){
 	res.render('set');
 });
 
-app.get('/object/:objectName', function (req, res){
+app.get('/objects/:objectName', function (req, res){
 	res.render('list-set');
 });
 
@@ -119,7 +119,9 @@ app.get('/about', function (req, res){
 });
 
 app.get('/friends', function (req, res){
-	res.render('friends');
+    var path = 'friends?state=published';
+    requestHandler(req, res, 'friends', 'Madi Manson - Friends', 'friends', [path])
+	// res.render('friends');
 });
 
 http.createServer(app).listen(app.get('port'), function(){

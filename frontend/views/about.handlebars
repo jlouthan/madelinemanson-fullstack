@@ -4,22 +4,19 @@
 		<div class="contact">
 			<div class="info">
 				<div class="social">
-					<h2><a href="mailto:madelinemanson@gmail.com">madelinemanson@gmail.com</a></h2>
-					<h2><a href="http://instagram.com/madmanson__" target="_blank">@madmanson__</a></h2>
-					<h2><a href="/" target="_blank">madistumblr</a></h2>
+					<h2 class="mail"><a href="mailto:madelinemanson@gmail.com">madelinemanson@gmail.com</a></h2>
+					<h2 class="insta"><a href="http://instagram.com/madmanson__" target="_blank">@madmanson__</a></h2>
+					<h2 class="tumblr"><a href="/" target="_blank">madistumblr</a></h2>
 				</div>
 
 				<div class="cv">
 					<h1>CV</h1>
 
+					{{#each jsonFeed.cv~}}
 					<section>
-						{{#markdown}}{{jsonFeed.content}}{{/markdown}}
+						{{#markdown}}{{this.content}}{{/markdown}}
 					</section>
-
-					<section>
-						<h2>Lorem Ipsum</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, </p>
-					</section>
+					{{~/each~}}
 
 				</div>
 

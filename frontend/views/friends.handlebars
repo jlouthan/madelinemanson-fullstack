@@ -6,36 +6,9 @@
 				<img src="/images/School_of_Athens.jpg">
 			</div>
 			<div class="links">
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
-				<h3><a href="/">FirstName LastName</a></h3>
+				{{#each jsonFeed.friends~}}
+				<h3><a href="/">{{this.name}}</a></h3>
+				{{~/each~}}
 			</div>
 			</div>
 		</div>

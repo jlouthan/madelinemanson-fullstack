@@ -26,7 +26,8 @@ div.container{
 		height: rhythm(100/9);
 		z-index: 1000;
 
-		background-image: url('http://www.connectingthreads.com/images/CTtutorials/pinwheels/hst_fonsandporter/pinwheel_1_resized.JPG');
+		// background-image: url('http://www.connectingthreads.com/images/CTtutorials/pinwheels/hst_fonsandporter/pinwheel_1_resized.JPG');
+		background-image: url('https://s3-us-west-2.amazonaws.com/jbll-madelinemanson/pinwheel_larger.jpg');
 		background-position: 50% 50%;
 		background-size: 70px 70px;
 		background-repeat: no-repeat;
@@ -47,25 +48,29 @@ div.container{
 			color: #000000;
 		}
 		h1{
-			@extend .gotham-ss-thin;
+			@extend .gotham-light;
 			@include adjust-font-size-to(28px, 32/9);
-			margin-bottom: rhythm(4/9);
+			margin-bottom: rhythm(6/9);
+			letter-spacing: 1.5px;
 		}
 		ul{
 			li {
 				display: inline-block;
-				padding-right: 13%;
+				margin-right: 13%;
+				padding-left: 4px;
+				padding-right: 4px;
 				a{
-					@extend .gotham-ss-thin;
-					@include adjust-font-size-to(20px, 28/9);
+					@extend .gotham-ss-light;
+					@include adjust-font-size-to(20px, 24/9);
 					@include transition(color, 0.2s, linear);
+					letter-spacing: 1.5px;
 					&:hover{
-						color: #6CD1D4;
+						color: $main-highlight;
 					}
 				}
 			}
 			li:last-child{
-				padding-right: 0;
+				margin-right: 0;
 			}
 		}
 	}

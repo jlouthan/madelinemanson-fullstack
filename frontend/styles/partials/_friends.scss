@@ -14,10 +14,10 @@ div.container .content{
 		@include adjust-font-size-to(14px, 32/9);
 		a{
 			text-decoration: none;
-			color: #6CD1D4;
+			color: #000000;
 			@include transition(color, 0.2s, linear);
 			&:hover{
-				color: #000000;
+				color: $main-highlight;
 			}
 		}
 	}

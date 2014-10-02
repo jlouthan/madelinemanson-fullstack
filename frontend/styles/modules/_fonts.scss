@@ -1,21 +1,26 @@
 // Load Fonts
-@import "http://cloud.typography.com/6338432/611002/css/fonts.css";
+// @import "http://cloud.typography.com/6338432/611002/css/fonts.css";
+@import "http://fonts.googleapis.com/css?family=News+Cycle:400,700";
 @import "http://fonts.googleapis.com/css?family=Merriweather:400,700,300";
 
 // Typography
-$primary-sans-serif: 'Gotham SSm A', 'Gotham SSm B';
-$secondary-sans-serif: 'Gotham A', 'Gotham B';
+// $primary-sans-serif: 'Gotham SSm A', 'Gotham SSm B';
+// $secondary-sans-serif: 'Gotham A', 'Gotham B';
+$primary-sans-serif: 'News Cycle', sans-serif;
+$secondary-sans-serif: 'News Cycle', sans-serif;
 
 $primary-serif: 'Merriweather', serif;
 
 .gotham-ss-black{
 	font-family: $primary-sans-serif;
 	font-weight: 600;
+	letter-spacing: 1px;
 }
 
 .gotham-ss-light, .gotham-ss-thin{
 	font-family: $primary-sans-serif;
 	font-weight: 300;
+	letter-spacing: 1px;
 }
 
 .gotham-light{

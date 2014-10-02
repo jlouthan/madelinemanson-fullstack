@@ -19,11 +19,11 @@ div.container{
 					@extend .gotham-ss-black;
 					@include adjust-font-size-to(36px, 36/9);
 					@include antialiased;
-					color: #a3a3a3;
+					color: $light-grey;
 					@include transition(color, 0.2s, linear);
 					&:hover{
 						cursor: pointer;
-						color: #6CD1D4;
+						color: $main-highlight;
 					}
 				}
 			}
