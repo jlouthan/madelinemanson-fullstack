@@ -6,8 +6,18 @@
 				<h3><</h3>
 			</div>
 			<div class="main-pic">
-				<ul data-visible-index="1" data-total-pics="3" id="carousel">
-					<li data-proj-title="School of Athens">
+				<ul data-visible-index="{{bodyClass}}" data-total-pics="{{jsonFeed.setItem.0.images.length}}" id="carousel">
+					{{#each jsonFeed.setItem.0.images}}
+						{{#addIfEq @index 1 ../bodyClass}}
+						<li data-proj-title="{{../../jsonFeed.setItem.0.name}}">
+						{{/addIfEq}}
+						{{#addIfNeq @index 1 ../bodyClass}}
+						<li style="display:none;" data-proj-title="{{../../jsonFeed.setItem.0.name}}">
+						{{/addIfNeq}}
+							<img src="{{this.image.carousel-mdpi}}" alt="" class="source-image">
+						</li>
+					{{/each}}
+<!-- 					<li data-proj-title="School of Athens">
 						<img src="/images/School_of_Athens.jpg" alt="" class="source-image">
 					</li>
 					<li style="display:none;" data-proj-title="Quilt #1">
@@ -15,7 +25,7 @@
 					</li>
 					<li style="display:none;" data-proj-title="Watermelon Cat">
 						<img src="http://pumpkinmonkey.files.wordpress.com/2010/07/cat-watermelon-helmet-img129d.jpg" alt="" class="source-image">
-					</li>
+					</li> -->
 				</ul>
 			</div>
 			<div class="arrow" id="right-arrow">

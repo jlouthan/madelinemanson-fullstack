@@ -42,7 +42,8 @@ angular.module('cmsFrontendApp')
 
 	$scope.formIsValid = function(){
 		if($scope.textile){
-			if($scope.textile.name && $scope.textile.image){
+			if($scope.textile.name){
+				console.log('returning valid form');
 				return true;
 			}
 		}
@@ -51,6 +52,12 @@ angular.module('cmsFrontendApp')
 
 	$scope.updateTextile = function(){
 		if($scope.textileId){
+
+			console.log($scope.textile);
+			// $scope.textile.images = [];
+			// var testblock = {};
+			// testblock.name = "Fullsize Image";
+			// $scope.textile.images.push(testblock);
 			dpd.textiles.put($scope.textile, function(result, error){
 				if(error){
 					console.log('there was an error: ');
@@ -58,6 +65,7 @@ angular.module('cmsFrontendApp')
 					$scope.serverError = error;
 				}
 				else{
+					console.log('updated the textile!');
 					location.href='#!/textiles';
 				}
 			});
@@ -72,6 +80,7 @@ angular.module('cmsFrontendApp')
 				$scope.textile.weighting = minWeight - 1;
 			}
 			else{
+				console.log('updating the weight');
 				$scope.textile.weighting = 20;
 			}
 			$scope.updateTextile();
@@ -95,7 +104,7 @@ angular.module('cmsFrontendApp')
 
 	// ~%~%~%~%~%~%~%Modal%~%~%~%~%~~%~
 
-	$scope.openImageModal = function(imageName) {
+	$scope.openImageModal = function(block) {
 		var modalObj = {};
 		modalObj.hasAltText = true;
 		modalObj.altText = $scope.textile.imageAltText;
@@ -108,16 +117,16 @@ angular.module('cmsFrontendApp')
 		modalObj.uploadUrl = '/resize-portfolio-image/' + $scope.textile.id + '/image';
 
 		modalManager.imageModal(modalObj).then(function(imageObj){
-			$scope.textile.image = imageObj.urls;
-			$scope.textile.imageAltText = imageObj.altText;
+			block.image = imageObj.urls;
+			block.imageAltText = imageObj.altText;
 		});
   	};
 
-  	$scope.imageThumbnail = function(imageName){
+  	$scope.blockImageThumbnail = function(block){
   		if($scope.textile){
-  			var urlObj = $scope.textile[imageName];
+  			var urlObj = block.image;
   			if(urlObj){
-  				return {backgroundImage: 'url(' + urlObj.xhdpi + ')'};
+  				return {backgroundImage: 'url(' + urlObj['carousel-xhdpi'] + ')'};
   			}
   		}
   		return '';
@@ -136,9 +145,10 @@ angular.module('cmsFrontendApp')
 		$scope.dropdownShowing = !$scope.dropdownShowing;
 	};
 
-	$scope.addBlock = function (which){
-		var clonedBlock = JSON.parse(JSON.stringify(which));
-		clonedBlock.id = clonedBlock.id+"-"+generateUniqueId();
+	$scope.addBlock = function (){
+		var clonedBlock = {};
+		clonedBlock.id = generateUniqueId();
+		clonedBlock.name = "Fullsize Image";
 		if(!$scope.textile.hasOwnProperty('images')){
 			$scope.textile.images = [];
 		}

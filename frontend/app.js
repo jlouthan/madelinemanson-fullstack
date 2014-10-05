@@ -16,6 +16,35 @@ var hbs = exphbs.create({
 	helpers: {
 		markdown: function(options) {
             return marked(options.fn(this));
+        },
+        ifEq: function(param1, param2, options) { 
+            if ( param1 === param2) {
+                return options.fn(this);     
+            }            
+        },
+        ifNeq: function(param1, param2, options) {
+            if ( param1 != param2 ) {
+                return options.fn(this);
+            }
+        },
+        ifMod: function(param1, param2, param3, options) { 
+            if ( param1 % param2 == param3) {
+                return options.fn(this);     
+            }            
+        },
+        add: function(param1, param2) {
+            return param1 + param2;
+        },
+        addIfEq: function(param1, param2, param3, options){
+            console.log(param1 + '' + param2 + '' + param3);
+            if (param1 + param2 == param3) {
+                return options.fn(this);
+            }
+        },
+        addIfNeq: function(param1, param2, param3, options){
+            if (param1 + param2 != param3) {
+                return options.fn(this);
+            }
         }
 	}
 });
@@ -42,8 +71,23 @@ var requestHandler = function(req, res, pageView, pageTitle, bodyClass, paths){
     var completed = 0;
     var completionCallback = function(feed){
     	console.log(feed);
-    	// console.log(feed.cv[0].content);
-    	// feed = feed.cv[0];
+        if(feed.textiles){
+            feed.collectionItems = feed.textiles;
+            delete feed.textiles;
+        }
+        else if(feed.textile){
+            feed.setItem = feed.textile;
+            delete feed.textile;
+        }
+        if(feed.objects){
+            feed.collectionItems = feed.objects;
+            delete feed.objects;
+        }
+        else if(feed.object){
+            feed.setItem = feed.object;
+            delete feed.object;
+        }
+        console.log(feed);
         res.render(pageView,{
             title: pageTitle,
             bodyClass: bodyClass,
@@ -89,39 +133,50 @@ app.get('/prints/:printName', function(req, res){
 });
 
 app.get('/textiles', function (req, res) {
-	res.render('collection', {title: 'textiles'});
+    var path = 'textiles?state=published';
+    requestHandler(req, res, 'collection', 'Madi Manson - Textiles', 'textiles', [path]);
+	// res.render('collection', {title: 'textiles'});
 });
 
 app.get('/textiles/:textileName/:textileId', function (req, res){
-	res.render('set');
+    var slug = req.params.textileName;
+    var imageIndex = req.params.textileId;
+    var path = 'textiles?state=published&slug=' + slug;
+    requestHandler(req, res, 'set', 'Madi Manson - Textiles', imageIndex, [path]);
 });
 
 app.get('/textiles/:textileName', function (req, res){
-	res.render('list-set');
+    var slug = req.params.textileName;
+    var path = 'textiles?state=published&slug=' + slug;
+    requestHandler(req, res, 'list-set', 'Madi Manson - Textiles', 'textiles', [path]);
 });
 
 app.get('/objects', function (req, res) {
-	res.render('collection', {title: 'objects'});
+    var path = 'objects?state=published';
+    requestHandler(req, res, 'collection', 'Madi Manson - Objects', 'objects', [path]);
 });
 
 app.get('/objects/:objectName/:objectId', function (req, res){
-	res.render('set');
+    var slug = req.params.objectName;
+    var imageIndex = req.params.objectId;
+    var path = 'objects?state=published&slug=' + slug;
+    requestHandler(req, res, 'set', 'Madi Manson - Objects', imageIndex, [path]);
 });
 
 app.get('/objects/:objectName', function (req, res){
-	res.render('list-set');
+    var slug = req.params.objectName;
+    var path = 'objects?state=published&slug=' + slug;
+    requestHandler(req, res, 'list-set', 'Madi Manson - Objects', 'objects', [path]);
 });
 
 app.get('/about', function (req, res){
 	var path = 'cv';
     requestHandler(req, res, 'about', 'Madi Manson - About', 'about', [path])
-	// res.render('about');
 });
 
 app.get('/friends', function (req, res){
     var path = 'friends?state=published';
     requestHandler(req, res, 'friends', 'Madi Manson - Friends', 'friends', [path])
-	// res.render('friends');
 });
 
 http.createServer(app).listen(app.get('port'), function(){

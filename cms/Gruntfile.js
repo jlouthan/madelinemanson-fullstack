@@ -321,24 +321,24 @@ module.exports = function (grunt) {
     },
 
     rsync: {
-      'staging': {
-        options: {
-          src: '<%= yeoman.dist %>/',
-          dest: '/var/www/sbcms.uncorkedstudios.com/public_html',
-          host: 'galapagos',
-          recursive: true,
-          syncDest: true
-        }
-      }
-      // 'production': {
+      // 'staging': {
       //   options: {
       //     src: '<%= yeoman.dist %>/',
-      //     dest: '<PROD DIR PATH>',
-      //     host: '<PROD HOST>',
+      //     dest: '/var/www/sbcms.uncorkedstudios.com/public_html',
+      //     host: 'galapagos',
       //     recursive: true,
       //     syncDest: true
       //   }
       // }
+      'production': {
+        options: {
+          src: '<%= yeoman.dist %>/',
+          dest: '/var/www/cms.madelinemanson.com/public_html',
+          host: 'myaws',
+          recursive: true,
+          syncDest: true
+        }
+      }
 
     },
 

@@ -1,4 +1,7 @@
 div.container{
+	h2.title-strip{
+		visibility: hidden;
+	}
 	div.content.list-set{
 		padding-top: 0;
 		margin-top: rhythm(12/9);

@@ -10,8 +10,14 @@ $(window).load(function(){
 	window.addEventListener('resize', alignTitle);
 
 	function alignTitle(){
-		var extraSpace = (document.documentElement.clientWidth * 0.48) - (66 + 51 + 67 + 62 + 73) - 11;
-		var leftPadding = extraSpace / 2;
+		var width = document.documentElement.clientWidth;
+		if(width > 1280){
+			var leftPadding = 134;
+		}
+		else{
+			var extraSpace = (width * 0.48) - (75 + 61 + 74 + 59 + 72);
+			var leftPadding = extraSpace / 2;
+		}
 		$('.title-strip').css('padding-left', leftPadding + 'px');
 	}
 
@@ -21,7 +27,16 @@ $(window).load(function(){
 		$("#right-arrow").css('visibility', 'hidden');
 	}
 
+	if($('#carousel').data('total-pics') == $('#carousel').data('visible-index')){
+		$("#right-arrow").css('visibility', 'hidden');
+	}
+
+	if($('#carousel').data('visible-index') != 1){
+		$('#left-arrow').css('visibility', 'visible');
+	}
+
 	$('.title-strip').text($('#carousel li:first-child').data('proj-title'));
+	$('.title-strip').css('visibility', 'visible');
 
 	$("#right-arrow").click(function(){
 		var arrow = $(this);
