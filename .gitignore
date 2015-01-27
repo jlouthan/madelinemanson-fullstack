@@ -5,3 +5,4 @@ cms/app/bower_components
 cms/node_modules
 cms/.sass-cache
 api/app/node_modules
+awsUpload
