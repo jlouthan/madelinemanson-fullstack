@@ -1,8 +1,8 @@
 <div class="container">
+	<div class="content list-set-prints">
 
-	<div class="content">
 		<div class="thumbnail-row">
-			{{#each jsonFeed.collectionItems~}}
+			{{#each jsonFeed.prints~}}
 
 			{{#ifMod @index 4 0}}
 			{{#ifNeq @index 0}}
@@ -10,16 +10,15 @@
 			<div class="thumbnail-row">
 			{{/ifNeq}}
 			{{/ifMod}}
-
 			<div class="thumbnail">
-				<div class="image" style="background-image:url('{{this.images.0.image.thumb-xhdpi}}');">
-					<!-- <img src="{{this.images.0.image.thumb-xhdpi}}" alt="" class="source-image"> -->
+				<div class="image" style="background-image:url('{{this.image.thumb-xhdpi}}');">
+					<!-- <img src="{{this.image.thumb-xhdpi}}" alt="" class="source-image"> -->
 					<a class="div-link" href="/{{../bodyClass}}/{{this.slug}}"></a>
 				</div>
 				<h2 class="title">{{this.name}}</h2>
 			</div>
-
 			{{/each}}
 		</div>
+
 	</div>
 </div>

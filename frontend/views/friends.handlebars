@@ -3,11 +3,11 @@
 	<div class="content">
 		<div class="friends">
 			<div class="side-image">
-				<img src="/images/School_of_Athens.jpg">
+				<img src="{{jsonFeed.etc.0.friendsImage.xhdpi}}">
 			</div>
 			<div class="links">
 				{{#each jsonFeed.friends~}}
-				<h3><a href="/">{{this.name}}</a></h3>
+				<h3><a href="{{this.url}}" target="_blank">{{this.name}}</a></h3>
 				{{~/each~}}
 			</div>
 			</div>

@@ -1,13 +1,25 @@
 div.container{
-	h2.title-strip{
-		padding-top: rhythm(198/9);
+	h2.title-strip, h2.title-strip-prints{
+		padding-top: rhythm(218/9);
 		@include adjust-font-size-to(16px, 48/9);
-		@extend .merriweather-bold;
+		@extend .gotham-ss-thin;
+		@media #{$break-medium} {
+			padding-left: 2em;
+		}
+		@media #{$break-small}{
+			padding-top: 14em;
+			padding-left: 2em;
+			@include adjust-font-size-to(12px, 28/9);
+		}
 	}
 	div.content.set{
-		margin-left: columns(4, 16);
-		width: columns(7.5, 16);
+		margin-left: columns(3, 16);
+		width: columns(10, 16);
 		padding-top: 0;
+		@media #{$break-small}{
+			margin-left: columns(1, 16);
+			width: columns(14, 16);
+		}
 		div.set-wrap{
 			@include row;
 			div.arrow{
@@ -26,6 +38,11 @@ div.container{
 						color: $main-highlight;
 					}
 				}
+				&#right-arrow, &#right-arrow-prints{
+					@media #{$break-small}{
+						padding-left: 10px;
+					}
+				}
 			}
 			div.main-pic{
 				width: columns(7, 8);
@@ -36,6 +53,26 @@ div.container{
 					img.source-image{
 						display: none;
 					}
+				}
+				@media #{$break-small}{
+					padding-left: 10px;
+				}
+			}
+		}
+		div.back-button{
+			@include row;
+			width: columns(16, 16);
+			padding-bottom: rhythm(36/9);
+			text-align: center;
+			a{
+				@extend .gotham-ss-black;
+				@include adjust-font-size-to(36px, 36/9);
+				@include antialiased;
+				color: $light-grey;
+				@include transition(color, 0.2s, linear);
+				text-decoration: none;
+				&:hover{
+					color: $main-highlight;
 				}
 			}
 		}

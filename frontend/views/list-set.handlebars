@@ -7,13 +7,13 @@
 
 			{{#ifMod @index 4 0}}
 			{{#ifNeq @index 0}}
-			<div class="thumbnail-row">
 			</div>
+			<div class="thumbnail-row">
 			{{/ifNeq}}
 			{{/ifMod}}
 			<div class="thumbnail">
-				<div class="image">
-					<img src="{{this.image.thumb-mdpi}}" alt="" class="source-image">
+				<div class="image" style="background-image:url('{{this.image.thumb-xhdpi}}');">
+					<!-- <img src="{{this.image.thumb-xhdpi}}" alt="" class="source-image"> -->
 					<a class="div-link" href="/{{../bodyClass}}/{{../jsonFeed.setItem.0.slug}}/{{add @index 1}}"></a>
 				</div>
 			</div>

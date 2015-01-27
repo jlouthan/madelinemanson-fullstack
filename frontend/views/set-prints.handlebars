@@ -1,0 +1,28 @@
+<div class="container">
+	<h2 class="title-strip-prints"></h2>
+	<div class="content set">
+		<div class="set-wrap">
+			<div class="arrow" id="left-arrow-prints" style="visibility:hidden;">
+				<h3><</h3>
+			</div>
+			<div class="main-pic">
+				<ul data-visible-index="{{bodyClass}}" data-total-pics="{{jsonFeed.prints.length}}" id="carousel">
+					{{#each jsonFeed.prints}}
+						{{#addIfEq @index 1 ../bodyClass}}
+						<li data-proj-title="{{this.name}}">
+						{{/addIfEq}}
+						{{#addIfNeq @index 1 ../bodyClass}}
+						<li style="display:none;" data-proj-title="{{this.name}}">
+						{{/addIfNeq}}
+							<img src="{{this.image.carousel-xhdpi}}" alt="" class="source-image">
+						</li>
+					{{/each}}
+				</ul>
+			</div>
+			<div class="arrow" id="right-arrow-prints">
+				<h3>></h3>
+			</div>
+		</div>
+		<div class="back-button"><a href="/prints">back</a></div>
+	</div>
+</div>

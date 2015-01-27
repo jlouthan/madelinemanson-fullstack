@@ -4,14 +4,19 @@ div.container .content{
 	}
 
 	div.links{
-		// width: columns(5, 12);
 		padding-left: 65%;
+		@media #{$break-medium}{
+			padding-left: 0;
+		}
 	}
 
 	h3{
 		text-align: left;
 		@extend .gotham-ss-thin;
 		@include adjust-font-size-to(14px, 32/9);
+		//@media #{$break-small}{
+		//	@include adjust-font-size-to(12px, 28/9);
+		//}
 		a{
 			text-decoration: none;
 			color: #000000;

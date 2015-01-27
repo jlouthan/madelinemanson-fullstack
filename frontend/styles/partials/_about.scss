@@ -4,8 +4,13 @@ div.container .content{
 		position: fixed;
 		width: columns(7,16);
 		max-width: 560px;
+		max-height: 460px;
 		img{
 			width: 100%;
+		}
+		@media #{$break-medium}{
+			position: static;
+			width: columns(16, 16);
 		}
 	}
 
@@ -13,11 +18,16 @@ div.container .content{
 		@include row;
 		div.side-image{
 			left: 50%;
+			@media #{$break-medium}{
+				left: 0;
+				float:none;
+			}
 		}
 	}
 
 	div.info{
 		width: columns(5,12);
+		padding-bottom: rhythm(92/9);
 		div.social{
 			a{
 				text-decoration: none;
@@ -27,6 +37,10 @@ div.container .content{
 					color: $main-highlight;
 				}
 			}
+		}
+		@media #{$break-medium}{
+			padding-bottom: rhythm(12/9);
+			width: columns(12, 12);
 		}
 
 		h2.insta, h2.mail, h2.tumblr{
@@ -45,6 +59,9 @@ div.container .content{
 			&.tumblr{
 				background-image: url('https://s3-us-west-2.amazonaws.com/jbll-madelinemanson/tumblr_large.jpg');
 			}
+			@media #{$break-small}{
+				/*@include adjust-font-size-to(11px, 30/9);*/
+			}
 		}
 		& > div{
 			margin-top: rhythm(18/9);
@@ -52,6 +69,7 @@ div.container .content{
 
 		div.cv{
 			margin-top: rhythm(28/9);
+			@extend .gotham-ss-thin;
 
 			h1{
 				@extend .gotham-ss-black;
@@ -70,7 +88,13 @@ div.container .content{
 
 			section{
 				margin-bottom: rhythm(18/9);
+				ul{
+					@include adjust-font-size-to(12px);
+					list-style-type: square;
+					margin-left: 18px;
+				}
 			}
+
 		}
 	}
 

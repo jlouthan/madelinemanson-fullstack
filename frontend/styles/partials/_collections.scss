@@ -7,9 +7,8 @@ div.container{
 			// margin-bottom: rhythm(30/9);
 			div.thumbnail{
 				@include border-box;
-				// width: columns(5, 12);
-				// margin-right: columns(1, 12);
 				width: columns(2.495, 12);
+				// width: 198px;
 				margin-right: columns(0.667, 12);
 				&:last-child{
 					margin-right: 0;
@@ -17,6 +16,15 @@ div.container{
 				div.image{
 					@include transition(opacity, 0.2s, linear);
 					position: relative;
+					height: 180px;
+					background-color: transparent;
+					// background-size: 100% 100%;
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: 50% 50%;
+					@media #{$break-small}{
+						height: 80px;
+					}
 				}
 				img.source-image{
 					width: 100%;
@@ -25,14 +33,23 @@ div.container{
 					width: 100%;
 					@extend .gotham-ss-thin;
 					@include adjust-font-size-to(14px, 16/9);
-					margin-top: rhythm(-4/9);
-					margin-bottom: rhythm(24/9);
+					margin-top: rhythm(4/9);
+					margin-bottom: rhythm(32/9);
+					@media #{$break-small}{
+						@include adjust-font-size-to(8px, 8/9);
+					}
+					@media #{$break-medium} {
+						text-align: center;
+					}
 				}
 				&:hover{
 					cursor: pointer;
 					div.image{
 						opacity: 0.6;
 					}
+				}
+				@media #{$break-medium}{
+					width: 44%;
 				}
 			}
 		}

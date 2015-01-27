@@ -1,0 +1,2 @@
+k = 'hello'
+print k

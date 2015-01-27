@@ -6,7 +6,16 @@ div.container{
 		padding-top: 0;
 		margin-top: rhythm(12/9);
 		div.thumbnail-row div.thumbnail{
-			margin-bottom: rhythm(28/9);
+			@media #{$break-small}{
+				margin-bottom: 2em;
+			}
+		}
+	}
+	div.content.list-set-prints{
+		margin-top: rhythm(12/9);
+		padding-top: rhythm(238/9);
+		@media #{$break-small}{
+			padding-top: 11em;
 		}
 	}
 }
