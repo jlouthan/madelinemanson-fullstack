@@ -94,7 +94,7 @@ angular.module('cmsFrontendApp')
 
 	// ~%~%~%~%~%~%~%Modal%~%~%~%~%~~%~
 
-	$scope.openImageModal = function(imageName) {
+	$scope.openImageModal = function() {
 		var modalObj = {};
 		modalObj.hasAltText = true;
 		modalObj.altText = $scope.print.imageAltText;
@@ -103,7 +103,7 @@ angular.module('cmsFrontendApp')
 
 		modalObj.spec = 'at least px x px';
 		modalObj.title = 'Print Image';
-		modalObj.info = 'Image of the print to appear in vertical scroll view.';
+		modalObj.info = 'Image of the print to appear as thumbnail and in carousel.';
 		modalObj.uploadUrl = '/resize-portfolio-image/' + $scope.print.id + '/image';
 
 		modalManager.imageModal(modalObj).then(function(imageObj){
@@ -112,11 +112,11 @@ angular.module('cmsFrontendApp')
 		});
   	};
 
-  	$scope.imageThumbnail = function(imageName){
+  	$scope.imageThumbnail = function(){
   		if($scope.print){
-  			var urlObj = $scope.print[imageName];
+  			var urlObj = $scope.print.image;
   			if(urlObj){
-  				return {backgroundImage: 'url(' + urlObj.xhdpi + ')'};
+  				return {backgroundImage: 'url(' + urlObj['carousel-xhdpi'] + ')'};
   			}
   		}
   		return '';

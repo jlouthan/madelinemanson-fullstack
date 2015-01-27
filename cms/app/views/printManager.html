@@ -10,7 +10,7 @@
 		<table class="main-table">
 			<thead>
 				<tr>
-					<td></td><td><span>Name:</span></td><td><span>Thumbnail:</span></td><td></td><td><span>Added:</span></td><td></td>
+					<td></td><td><span>Name:</span></td><td><span></span></td><td><span>Added:</span></td><td></td><td></td>
 				</tr>
 			</thead>
 			<tbody infinite-scroll="feed.loadContents()" infinite-scroll-distance="1" ng-model="feed.prints" ui-sortable="sortingOptions">
@@ -26,7 +26,7 @@
 						{{print.description}}
 					</td>
 					<td class="state">
-						{{print.dateCreated}}
+						{{print.dateCreated | date:'MMM dd, yyyy'}}
 					</td>
 					<td class="pub-date">
 						<!-- <span ng-if="cocktail.state == 'published'"> {{cocktail.date | date:'MM/dd/yyyy @ h:mma'}}</span> -->

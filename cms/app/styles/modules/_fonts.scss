@@ -1,11 +1,14 @@
 // Load Fonts
-@import "http://cloud.typography.com/6338432/611002/css/fonts.css";
+// @import "http://cloud.typography.com/6338432/611002/css/fonts.css";
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700";
 @import "http://fonts.googleapis.com/css?family=Merriweather:300,400,700";
 
 // Typography
 $primary-serif: 'Merriweather', serif;
-$primary-sans-serif: 'Gotham SSm A', 'Gotham SSm B';
-$secondary-sans-serif: 'Gotham A', 'Gotham B';
+// $primary-sans-serif: 'Gotham SSm A', 'Gotham SSm B';
+// $secondary-sans-serif: 'Gotham A', 'Gotham B';
+$primary-sans-serif: 'Open Sans', sans-serif;
+$secondary-sans-serif: 'Open Sans', sans-serif;
 
 .gotham-ss-black{
 	font-family: $primary-sans-serif;

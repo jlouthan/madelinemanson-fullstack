@@ -24,7 +24,7 @@
 				<div class="field-row">
 					<div class="field full-width" ng-class="{'invalid': invalidSubmitted && !print.name}">
 						<h1 class="field-title">Name</h1>
-						<input type="text" ng-model="print.name" name="name">
+						<input type="text" ng-model="print.name" name="name" maxlength="28">
 						<h1 class="required" ng-show="invalidSubmitted && !print.name">This is a required field.</h1>
 					</div>
 				</div>
@@ -32,7 +32,7 @@
 				<div class="field-row">
 					<div class="field full-width" ng-class="{'invalid': invalidSubmitted && !print.image}">
 						<h1 class="field-title">Image</h1>
-						<div class="image-box full-size" ng-click="openImageModal('image')" ng-style="imageThumbnail('image')" ng-class="{'has-thumbnail': print.image}">
+						<div class="image-box full-size" ng-click="openImageModal()" ng-style="imageThumbnail()" ng-class="{'has-thumbnail': print.image}">
 							<div class="thumb-mask">
 								<span class="icon-img"></span>
 							</div>

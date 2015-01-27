@@ -42,7 +42,7 @@ angular.module('cmsFrontendApp')
 
 	$scope.formIsValid = function(){
 		if($scope.object){
-			if($scope.object.name && $scope.object.image){
+			if($scope.object.name && $scope.object.images){
 				return true;
 			}
 		}
@@ -95,29 +95,29 @@ angular.module('cmsFrontendApp')
 
 	// ~%~%~%~%~%~%~%Modal%~%~%~%~%~~%~
 
-	$scope.openImageModal = function(imageName) {
+	$scope.openImageModal = function(block) {
 		var modalObj = {};
 		modalObj.hasAltText = true;
-		modalObj.altText = $scope.object.imageAltText;
+		modalObj.altText = block.imageAltText;
 		modalObj.icon = 'icon-img';
 		modalObj.templateUrl = '';
 
 		modalObj.spec = 'at least px x px';
 		modalObj.title = 'Object Image';
-		modalObj.info = 'Image of the object to appear in vertical scroll view.';
+		modalObj.info = 'Image of the object to appear in thumbnail and carousel views.';
 		modalObj.uploadUrl = '/resize-portfolio-image/' + $scope.object.id + '/image';
 
 		modalManager.imageModal(modalObj).then(function(imageObj){
-			$scope.object.image = imageObj.urls;
-			$scope.object.imageAltText = imageObj.altText;
+			block.image = imageObj.urls;
+			block.imageAltText = imageObj.altText;
 		});
   	};
 
-  	$scope.imageThumbnail = function(imageName){
+  	$scope.blockImageThumbnail = function(block){
   		if($scope.object){
-  			var urlObj = $scope.object[imageName];
+  			var urlObj = block.image;
   			if(urlObj){
-  				return {backgroundImage: 'url(' + urlObj.xhdpi + ')'};
+  				return {backgroundImage: 'url(' + urlObj['carousel-xhdpi'] + ')'};
   			}
   		}
   		return '';

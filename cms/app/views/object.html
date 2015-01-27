@@ -24,7 +24,7 @@
 				<div class="field-row">
 					<div class="field full-width" ng-class="{'invalid': invalidSubmitted && !object.name}">
 						<h1 class="field-title">Name</h1>
-						<input type="text" ng-model="object.name" name="name">
+						<input type="text" ng-model="object.name" name="name" maxlength="28">
 						<h1 class="required" ng-show="invalidSubmitted && !object.name">This is a required field.</h1>
 					</div>
 				</div>
@@ -39,7 +39,7 @@
 					<ul ui-sortable ng-model="object.images" class="existing-blocks">
 						<li ng-repeat="block in object.images track by block.id" class="existing-block" ng-class="{'scroll-focus': block.isActive}">
 							<a href="" ng-click="scrollToBlock(block.id)">
-								<span class="block-name">{{block.name}}</span>
+								<span class="block-name">{{block.imageAltText}}</span>
 								<span class="icon-drag"></span>
 							</a>
 						</li>
@@ -64,14 +64,14 @@
 			</div>
 
 			<div class="field-group">
-				<div ng-repeat="block in object.images track by block.id" id="{{ block.id }}" class="blockContainer contentBlock" emit-when="{event: 'allRendered', condition: $last}" scroll-spy-blocks="-125" current-block="block">
+				<div ng-repeat="block in object.images track by $index" id="{{ block.id }}" class="blockContainer contentBlock" emit-when="{event: 'allRendered', condition: $last}" scroll-spy-blocks="-125" current-block="block">
 					<fieldset>
 						<div ng-if="block.type == 'image'">
 							<a class="anchor" id="block{{block.id}}"></a>
 							<div class="field-row">
 								<div class="field full-width">
 									<h1 class="field-title">
-										{{block.name}}
+										{{block.imageAltText}}
 									</h1>
 									<h1 class="remove-x" ng-click="removeBlock(block)">
 										<span class="icon-x"></span>
@@ -79,7 +79,7 @@
 									<h1 class="block-remove">
 										Remove Image
 									</h1>
-									<div class="image-box full-size" ng-click="openImageModal(block)" ng-style="blockImageThumbnail(block)" ng-class="{'has-thumbnail': blockShouldDisplayThumb(block)}">
+									<div class="image-box full-size" ng-click="openImageModal(block)" ng-style="blockImageThumbnail(block)" ng-class="{'has-thumbnail': block.image['carousel-xhdpi']}">
 										<div class="thumb-mask">
 										<p><span class="icon-img"></span></p>
 									</div>

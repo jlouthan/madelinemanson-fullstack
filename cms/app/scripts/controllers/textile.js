@@ -54,10 +54,6 @@ angular.module('cmsFrontendApp')
 		if($scope.textileId){
 
 			console.log($scope.textile);
-			// $scope.textile.images = [];
-			// var testblock = {};
-			// testblock.name = "Fullsize Image";
-			// $scope.textile.images.push(testblock);
 			dpd.textiles.put($scope.textile, function(result, error){
 				if(error){
 					console.log('there was an error: ');
@@ -107,7 +103,7 @@ angular.module('cmsFrontendApp')
 	$scope.openImageModal = function(block) {
 		var modalObj = {};
 		modalObj.hasAltText = true;
-		modalObj.altText = $scope.textile.imageAltText;
+		modalObj.altText = block.imageAltText;
 		modalObj.icon = 'icon-img';
 		modalObj.templateUrl = '';
 

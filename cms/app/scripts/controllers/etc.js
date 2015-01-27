@@ -58,19 +58,19 @@ angular.module('cmsFrontendApp')
     if(imageName === 'homeImage'){
       modalObj.title = 'Home Page Image';
       modalObj.info = 'Large image shown on the home page.';
-      modalObj.uploadUrl = '/resize-poster-frame/' + $scope.etc.id;
+      modalObj.uploadUrl = '/resize-home-image/' + $scope.etc.id;
       modalObj.spec = 'at least 1152px x 550px';
     }
     else if(imageName === 'aboutImage'){
       modalObj.title = 'About Page Image';
       modalObj.info = 'Image shown on the about page.';
-      modalObj.uploadUrl = '/resize-poster-frame/' + $scope.etc.id;
+      modalObj.uploadUrl = '/resize-about-image/' + $scope.etc.id;
       modalObj.spec = 'at least 1152px x 550px';
     }
     else{
       modalObj.title = 'Friends Page Image';
       modalObj.info = 'Image shown on the friends page.';
-      modalObj.uploadUrl = '/resize-poster-frame/' + $scope.etc.id;
+      modalObj.uploadUrl = '/resize-about-image/' + $scope.etc.id;
       modalObj.spec = 'at least 1152px x 550px';
     }
     modalManager.imageModal(modalObj).then(function(imageObj){

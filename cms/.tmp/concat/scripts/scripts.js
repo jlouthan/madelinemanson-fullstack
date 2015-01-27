@@ -193,7 +193,8 @@ var ModalInstanceCtrl = [
         console.log('the upload url is ' + $scope.modalObj.uploadUrl);
         var fd = new FormData();
         fd.append('file', file);
-        var url = 'http://api.madelinemanson.com' + $scope.modalObj.uploadUrl;
+        // var url = 'http://api.madelinemanson.com' + $scope.modalObj.uploadUrl;
+        var url = 'http://aws-upload.madelinemanson.com/aws-upload' + $scope.modalObj.uploadUrl;
         $http.post(url, fd, {
           transformRequest: angular.identity,
           headers: { 'Content-Type': undefined }
@@ -855,7 +856,7 @@ angular.module('cmsFrontendApp').controller('PrintCtrl', [
       }
     };
     // ~%~%~%~%~%~%~%Modal%~%~%~%~%~~%~
-    $scope.openImageModal = function (imageName) {
+    $scope.openImageModal = function () {
       var modalObj = {};
       modalObj.hasAltText = true;
       modalObj.altText = $scope.print.imageAltText;
@@ -863,18 +864,18 @@ angular.module('cmsFrontendApp').controller('PrintCtrl', [
       modalObj.templateUrl = '';
       modalObj.spec = 'at least px x px';
       modalObj.title = 'Print Image';
-      modalObj.info = 'Image of the print to appear in vertical scroll view.';
+      modalObj.info = 'Image of the print to appear as thumbnail and in carousel.';
       modalObj.uploadUrl = '/resize-portfolio-image/' + $scope.print.id + '/image';
       modalManager.imageModal(modalObj).then(function (imageObj) {
         $scope.print.image = imageObj.urls;
         $scope.print.imageAltText = imageObj.altText;
       });
     };
-    $scope.imageThumbnail = function (imageName) {
+    $scope.imageThumbnail = function () {
       if ($scope.print) {
-        var urlObj = $scope.print[imageName];
+        var urlObj = $scope.print.image;
         if (urlObj) {
-          return { backgroundImage: 'url(' + urlObj.xhdpi + ')' };
+          return { backgroundImage: 'url(' + urlObj['carousel-xhdpi'] + ')' };
         }
       }
       return '';
@@ -1007,10 +1008,6 @@ angular.module('cmsFrontendApp').controller('TextileCtrl', [
     $scope.updateTextile = function () {
       if ($scope.textileId) {
         console.log($scope.textile);
-        // $scope.textile.images = [];
-        // var testblock = {};
-        // testblock.name = "Fullsize Image";
-        // $scope.textile.images.push(testblock);
         dpd.textiles.put($scope.textile, function (result, error) {
           if (error) {
             console.log('there was an error: ');
@@ -1058,7 +1055,7 @@ angular.module('cmsFrontendApp').controller('TextileCtrl', [
     $scope.openImageModal = function (block) {
       var modalObj = {};
       modalObj.hasAltText = true;
-      modalObj.altText = $scope.textile.imageAltText;
+      modalObj.altText = block.imageAltText;
       modalObj.icon = 'icon-img';
       modalObj.templateUrl = '';
       modalObj.spec = 'at least px x px';
@@ -1222,7 +1219,7 @@ angular.module('cmsFrontendApp').controller('ObjectCtrl', [
     };
     $scope.formIsValid = function () {
       if ($scope.object) {
-        if ($scope.object.name && $scope.object.image) {
+        if ($scope.object.name && $scope.object.images) {
           return true;
         }
       }
@@ -1272,26 +1269,26 @@ angular.module('cmsFrontendApp').controller('ObjectCtrl', [
       }
     };
     // ~%~%~%~%~%~%~%Modal%~%~%~%~%~~%~
-    $scope.openImageModal = function (imageName) {
+    $scope.openImageModal = function (block) {
       var modalObj = {};
       modalObj.hasAltText = true;
-      modalObj.altText = $scope.object.imageAltText;
+      modalObj.altText = block.imageAltText;
       modalObj.icon = 'icon-img';
       modalObj.templateUrl = '';
       modalObj.spec = 'at least px x px';
       modalObj.title = 'Object Image';
-      modalObj.info = 'Image of the object to appear in vertical scroll view.';
+      modalObj.info = 'Image of the object to appear in thumbnail and carousel views.';
       modalObj.uploadUrl = '/resize-portfolio-image/' + $scope.object.id + '/image';
       modalManager.imageModal(modalObj).then(function (imageObj) {
-        $scope.object.image = imageObj.urls;
-        $scope.object.imageAltText = imageObj.altText;
+        block.image = imageObj.urls;
+        block.imageAltText = imageObj.altText;
       });
     };
-    $scope.imageThumbnail = function (imageName) {
+    $scope.blockImageThumbnail = function (block) {
       if ($scope.object) {
-        var urlObj = $scope.object[imageName];
+        var urlObj = block.image;
         if (urlObj) {
-          return { backgroundImage: 'url(' + urlObj.xhdpi + ')' };
+          return { backgroundImage: 'url(' + urlObj['carousel-xhdpi'] + ')' };
         }
       }
       return '';
@@ -1653,17 +1650,17 @@ angular.module('cmsFrontendApp').controller('EtcCtrl', [
       if (imageName === 'homeImage') {
         modalObj.title = 'Home Page Image';
         modalObj.info = 'Large image shown on the home page.';
-        modalObj.uploadUrl = '/resize-poster-frame/' + $scope.etc.id;
+        modalObj.uploadUrl = '/resize-home-image/' + $scope.etc.id;
         modalObj.spec = 'at least 1152px x 550px';
       } else if (imageName === 'aboutImage') {
         modalObj.title = 'About Page Image';
         modalObj.info = 'Image shown on the about page.';
-        modalObj.uploadUrl = '/resize-poster-frame/' + $scope.etc.id;
+        modalObj.uploadUrl = '/resize-about-image/' + $scope.etc.id;
         modalObj.spec = 'at least 1152px x 550px';
       } else {
         modalObj.title = 'Friends Page Image';
         modalObj.info = 'Image shown on the friends page.';
-        modalObj.uploadUrl = '/resize-poster-frame/' + $scope.etc.id;
+        modalObj.uploadUrl = '/resize-about-image/' + $scope.etc.id;
         modalObj.spec = 'at least 1152px x 550px';
       }
       modalManager.imageModal(modalObj).then(function (imageObj) {

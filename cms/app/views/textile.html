@@ -24,7 +24,7 @@
 				<div class="field-row">
 					<div class="field full-width" ng-class="{'invalid': invalidSubmitted && !textile.name}">
 						<h1 class="field-title">Name</h1>
-						<input type="text" ng-model="textile.name" name="name">
+						<input type="text" ng-model="textile.name" name="name" maxlength="28">
 						<h1 class="required" ng-show="invalidSubmitted && !textile.name">This is a required field.</h1>
 					</div>
 				</div>
@@ -39,7 +39,7 @@
 					<ul ui-sortable ng-model="textile.images" class="existing-blocks">
 						<li ng-repeat="block in textile.images track by $index" class="existing-block" ng-class="{'scroll-focus': block.isActive}">
 							<a href="" ng-click="scrollToBlock(block.id)">
-								<span class="block-name">{{block.name}}</span>
+								<span class="block-name">{{block.imageAltText}}</span>
 								<span class="icon-drag"></span>
 							</a>
 						</li>
@@ -70,7 +70,7 @@
 							<div class="field-row">
 								<div class="field full-width">
 									<h1 class="field-title">
-										{{block.name}}
+										{{block.imageAltText}}
 									</h1>
 									<h1 class="remove-x" ng-click="removeBlock(block)">
 										<span class="icon-x"></span>

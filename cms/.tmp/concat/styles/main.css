@@ -1,4 +1,4 @@
-@import "http://cloud.typography.com/6338432/611002/css/fonts.css";
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700";
 
 @import "http://fonts.googleapis.com/css?family=Merriweather:300,400,700";
 
@@ -196,7 +196,7 @@ create row behavior*/
 
 /*for the last element in a row, there's no gutter and we float it right*/
 
-/* line 10, ../../app/styles/modules/_fonts.scss */
+/* line 13, ../../app/styles/modules/_fonts.scss */
 
 .gotham-ss-black,
 .button,
@@ -239,11 +239,11 @@ div.file-upload,
 .form-fields .form-login .field-section .field-group .field-row .field .button h2,
 .form-fields .form-login .field-section .field-group .field-row .field div.file-upload h2,
 .quickdate {
-  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
 }
 
-/* line 15, ../../app/styles/modules/_fonts.scss */
+/* line 18, ../../app/styles/modules/_fonts.scss */
 
 .gotham-ss-light,
 .header .user-info .user-session-info .sign-out,
@@ -267,22 +267,22 @@ div.file-upload,
 .modal-dialog .drop-area h2.uploading,
 .modal-dialog .field h2,
 .form-fields .form-login .field-section .section-header.account-info p {
-  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
 }
 
-/* line 20, ../../app/styles/modules/_fonts.scss */
+/* line 23, ../../app/styles/modules/_fonts.scss */
 
 .gotham-light,
 .selectboxit-container span,
 .selectboxit-container .selectboxit-options a {
-  font-family: "Gotham A", "Gotham B";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
 }
 
-/* line 26, ../../app/styles/modules/_fonts.scss */
+/* line 29, ../../app/styles/modules/_fonts.scss */
 
 .merriweather-light,
 .header .user-info .user-session-info .name,
@@ -307,7 +307,7 @@ div.file-upload,
   -moz-font-smoothing: antialiased;
 }
 
-/* line 32, ../../app/styles/modules/_fonts.scss */
+/* line 35, ../../app/styles/modules/_fonts.scss */
 
 .merriweather-italic,
 .form-fields .container .field-section .field-group .field-row .field h1.slug-info span.slug {
@@ -324,7 +324,7 @@ div.file-upload,
   font-style: normal;
 }
 
-/* line 51, ../../app/styles/modules/_fonts.scss */
+/* line 54, ../../app/styles/modules/_fonts.scss */
 
 [class^="icon-"],
 [class*=" icon-"] {
@@ -340,175 +340,175 @@ div.file-upload,
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 65, ../../app/styles/modules/_fonts.scss */
+/* line 68, ../../app/styles/modules/_fonts.scss */
 
 .icon-videoLeft:before {
   content: "\e600";
 }
 
-/* line 68, ../../app/styles/modules/_fonts.scss */
+/* line 71, ../../app/styles/modules/_fonts.scss */
 
 .icon-trash:before {
   content: "\e601";
 }
 
-/* line 71, ../../app/styles/modules/_fonts.scss */
+/* line 74, ../../app/styles/modules/_fonts.scss */
 
 .icon-3words:before {
   content: "\e602";
 }
 
-/* line 74, ../../app/styles/modules/_fonts.scss */
+/* line 77, ../../app/styles/modules/_fonts.scss */
 
 .icon-text:before {
   content: "\e603";
 }
 
-/* line 77, ../../app/styles/modules/_fonts.scss */
+/* line 80, ../../app/styles/modules/_fonts.scss */
 
 .icon-projectTeaser:before {
   content: "\e604";
 }
 
-/* line 80, ../../app/styles/modules/_fonts.scss */
+/* line 83, ../../app/styles/modules/_fonts.scss */
 
 .icon-blogTeaser:before {
   content: "\e605";
 }
 
-/* line 83, ../../app/styles/modules/_fonts.scss */
+/* line 86, ../../app/styles/modules/_fonts.scss */
 
 .icon-video:before {
   content: "\e606";
 }
 
-/* line 86, ../../app/styles/modules/_fonts.scss */
+/* line 89, ../../app/styles/modules/_fonts.scss */
 
 .icon-img:before {
   content: "\e607";
 }
 
-/* line 89, ../../app/styles/modules/_fonts.scss */
+/* line 92, ../../app/styles/modules/_fonts.scss */
 
 .icon-pullquote:before {
   content: "\e608";
 }
 
-/* line 92, ../../app/styles/modules/_fonts.scss */
+/* line 95, ../../app/styles/modules/_fonts.scss */
 
 .icon-profile:before {
   content: "\e609";
 }
 
-/* line 95, ../../app/styles/modules/_fonts.scss */
+/* line 98, ../../app/styles/modules/_fonts.scss */
 
 .icon-preview:before {
   content: "\e60a";
 }
 
-/* line 98, ../../app/styles/modules/_fonts.scss */
+/* line 101, ../../app/styles/modules/_fonts.scss */
 
 .icon-no:before {
   content: "\e60b";
 }
 
-/* line 101, ../../app/styles/modules/_fonts.scss */
+/* line 104, ../../app/styles/modules/_fonts.scss */
 
 .icon-link:before {
   content: "\e60c";
 }
 
-/* line 104, ../../app/styles/modules/_fonts.scss */
+/* line 107, ../../app/styles/modules/_fonts.scss */
 
 .icon-imgBreak:before {
   content: "\e60d";
 }
 
-/* line 107, ../../app/styles/modules/_fonts.scss */
+/* line 110, ../../app/styles/modules/_fonts.scss */
 
 .icon-imgHero:before {
   content: "\e60e";
 }
 
-/* line 110, ../../app/styles/modules/_fonts.scss */
+/* line 113, ../../app/styles/modules/_fonts.scss */
 
 .icon-dropdown:before {
   content: "\e60f";
 }
 
-/* line 113, ../../app/styles/modules/_fonts.scss */
+/* line 116, ../../app/styles/modules/_fonts.scss */
 
 .icon-contentRight:before {
   content: "\e610";
 }
 
-/* line 116, ../../app/styles/modules/_fonts.scss */
+/* line 119, ../../app/styles/modules/_fonts.scss */
 
 .icon-contentLeft:before {
   content: "\e611";
 }
 
-/* line 119, ../../app/styles/modules/_fonts.scss */
+/* line 122, ../../app/styles/modules/_fonts.scss */
 
 .icon-contentLead:before {
   content: "\e612";
 }
 
-/* line 122, ../../app/styles/modules/_fonts.scss */
+/* line 125, ../../app/styles/modules/_fonts.scss */
 
 .icon-code:before {
   content: "\e613";
 }
 
-/* line 125, ../../app/styles/modules/_fonts.scss */
+/* line 128, ../../app/styles/modules/_fonts.scss */
 
 .icon-x:before {
   content: "\e614";
 }
 
-/* line 128, ../../app/styles/modules/_fonts.scss */
+/* line 131, ../../app/styles/modules/_fonts.scss */
 
 .icon-check:before {
   content: "\e615";
 }
 
-/* line 131, ../../app/styles/modules/_fonts.scss */
+/* line 134, ../../app/styles/modules/_fonts.scss */
 
 .icon-addRetina:before {
   content: "\e616";
 }
 
-/* line 134, ../../app/styles/modules/_fonts.scss */
+/* line 137, ../../app/styles/modules/_fonts.scss */
 
 .icon-addStd:before {
   content: "\e617";
 }
 
-/* line 137, ../../app/styles/modules/_fonts.scss */
+/* line 140, ../../app/styles/modules/_fonts.scss */
 
 .icon-add:before {
   content: "\e618";
 }
 
-/* line 140, ../../app/styles/modules/_fonts.scss */
+/* line 143, ../../app/styles/modules/_fonts.scss */
 
 .icon-download:before {
   content: "\e619";
 }
 
-/* line 143, ../../app/styles/modules/_fonts.scss */
+/* line 146, ../../app/styles/modules/_fonts.scss */
 
 .icon-quote:before {
   content: "\e61a";
 }
 
-/* line 146, ../../app/styles/modules/_fonts.scss */
+/* line 149, ../../app/styles/modules/_fonts.scss */
 
 .icon-drag:before {
   content: "\e61b";
 }
 
-/* line 149, ../../app/styles/modules/_fonts.scss */
+/* line 152, ../../app/styles/modules/_fonts.scss */
 
 .icon-videoRight:before {
   content: "\e61c";
@@ -522,7 +522,7 @@ div.file-upload,
   font-style: normal;
 }
 
-/* line 166, ../../app/styles/modules/_fonts.scss */
+/* line 169, ../../app/styles/modules/_fonts.scss */
 
 [class^="icon-previous-arrow"],
 [class*=" icon-previous-arrow"] {
@@ -538,103 +538,103 @@ div.file-upload,
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 180, ../../app/styles/modules/_fonts.scss */
+/* line 183, ../../app/styles/modules/_fonts.scss */
 
 .icon-uniF000:before {
   content: "\f000";
 }
 
-/* line 183, ../../app/styles/modules/_fonts.scss */
+/* line 186, ../../app/styles/modules/_fonts.scss */
 
 .icon-samsung:before {
   content: "\24";
 }
 
-/* line 186, ../../app/styles/modules/_fonts.scss */
+/* line 189, ../../app/styles/modules/_fonts.scss */
 
 .icon-lego:before {
   content: "\25";
 }
 
-/* line 189, ../../app/styles/modules/_fonts.scss */
+/* line 192, ../../app/styles/modules/_fonts.scss */
 
 .icon-intel:before {
   content: "\26";
 }
 
-/* line 192, ../../app/styles/modules/_fonts.scss */
+/* line 195, ../../app/styles/modules/_fonts.scss */
 
 .icon-google:before {
   content: "\27";
 }
 
-/* line 195, ../../app/styles/modules/_fonts.scss */
+/* line 198, ../../app/styles/modules/_fonts.scss */
 
 .icon-logo:before {
   content: "\28";
 }
 
-/* line 198, ../../app/styles/modules/_fonts.scss */
+/* line 201, ../../app/styles/modules/_fonts.scss */
 
 .icon-next-arrow:before {
   content: "\29";
 }
 
-/* line 201, ../../app/styles/modules/_fonts.scss */
+/* line 204, ../../app/styles/modules/_fonts.scss */
 
 .icon-home-previous-arrow:before {
   content: "\2a";
 }
 
-/* line 204, ../../app/styles/modules/_fonts.scss */
+/* line 207, ../../app/styles/modules/_fonts.scss */
 
 .icon-previous-arrow:before {
   content: "\2b";
 }
 
-/* line 207, ../../app/styles/modules/_fonts.scss */
+/* line 210, ../../app/styles/modules/_fonts.scss */
 
 .icon-home-next-arrow:before {
   content: "\2c";
 }
 
-/* line 210, ../../app/styles/modules/_fonts.scss */
+/* line 213, ../../app/styles/modules/_fonts.scss */
 
 .icon-circle:before {
   content: "\21";
 }
 
-/* line 213, ../../app/styles/modules/_fonts.scss */
+/* line 216, ../../app/styles/modules/_fonts.scss */
 
 .icon-zepp:before {
   content: "\2e";
 }
 
-/* line 216, ../../app/styles/modules/_fonts.scss */
+/* line 219, ../../app/styles/modules/_fonts.scss */
 
 .icon-us-resistor:before {
   content: "\2d";
 }
 
-/* line 219, ../../app/styles/modules/_fonts.scss */
+/* line 222, ../../app/styles/modules/_fonts.scss */
 
 .icon-wavy-2:before {
   content: "\23";
 }
 
-/* line 222, ../../app/styles/modules/_fonts.scss */
+/* line 225, ../../app/styles/modules/_fonts.scss */
 
 .icon-three-words-diamond:before {
   content: "\2f";
 }
 
-/* line 225, ../../app/styles/modules/_fonts.scss */
+/* line 228, ../../app/styles/modules/_fonts.scss */
 
 .icon-footer-logo:before {
   content: "\30";
 }
 
-/* line 228, ../../app/styles/modules/_fonts.scss */
+/* line 231, ../../app/styles/modules/_fonts.scss */
 
 .icon-wavy-1:before {
   content: "\22";
@@ -1150,7 +1150,7 @@ body {
 /* line 16, ../../app/styles/partials/_header.scss */
 
 .header .uc-logo .resistor {
-  background: url("http://www.smallbatchws.com/assets/img/header-logo-768.png") no-repeat 0 center;
+  background: url("https://s3-us-west-2.amazonaws.com/jbll-madelinemanson/pinwheel_larger.jpg") no-repeat 0 center;
   background-size: 40px;
   display: block;
   height: 40px;
