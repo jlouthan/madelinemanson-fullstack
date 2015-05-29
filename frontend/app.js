@@ -95,6 +95,14 @@ var requestHandler = function(req, res, pageView, pageTitle, bodyClass, paths){
             feed.setItem = feed.object;
             delete feed.object;
         }
+        if(feed.books){
+            feed.collectionItems = feed.books;
+            delete feed.books;
+        }
+        else if(feed.book){
+            feed.setItem = feed.book;
+            delete feed.book;
+        }
         if(pageView === 'set-prints'){
             // find the index of the print by slug
             for(var i = 0; i < feed.prints.length; i++){
@@ -183,6 +191,24 @@ app.get('/objects/:objectName', function (req, res){
     var slug = req.params.objectName;
     var path = 'objects?state=published&slug=' + slug;
     requestHandler(req, res, 'list-set', 'Objects', 'objects', [path]);
+});
+
+app.get('/books', function (req, res) {
+    var path = 'books?{"state":"published","$sort":{"weighting":-1}}';
+    requestHandler(req, res, 'collection', 'Books', 'books', [path]);
+});
+
+app.get('/books/:bookName/:bookId', function (req, res){
+    var slug = req.params.bookName;
+    var imageIndex = req.params.bookId;
+    var path = 'books?state=published&slug=' + slug;
+    requestHandler(req, res, 'set', 'Books', imageIndex, [path]);
+});
+
+app.get('/books/:bookName', function (req, res){
+    var slug = req.params.bookName;
+    var path = 'books?state=published&slug=' + slug;
+    requestHandler(req, res, 'list-set', 'Books', 'books', [path]);
 });
 
 app.get('/about', function (req, res){
