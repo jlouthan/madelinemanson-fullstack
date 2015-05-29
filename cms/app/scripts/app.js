@@ -63,6 +63,18 @@ app.config(function ($routeProvider) {
         templateUrl: 'views/object.html',
         controller: 'ObjectCtrl'
       })
+      .when('/books', {
+        templateUrl: 'views/bookManager.html',
+        controller: 'BookManagerCtrl'
+      })
+      .when('/book/new', {
+        templateUrl: 'views/book.html',
+        controller: 'BookCtrl'
+      })
+      .when('/book/:bookId', {
+        templateUrl: 'views/book.html',
+        controller: 'BookCtrl'
+      })
       .when('/friends', {
         templateUrl: 'views/friendManager.html',
         controller: 'FriendManagerCtrl'
