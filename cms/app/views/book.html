@@ -1,0 +1,97 @@
+<div ng-show="$root.userLoaded">
+<sub-header current-page={{subHeaderText}} current-obj="book" save-fcn="save()" back="back()" form-is-valid="formIsValid()">
+</sub-header>
+
+<div class="full-width form-fields">
+<div class="container">
+	<form class="" name="bookForm">
+		<div class="field-section">
+			<div class="section-header"><h1>Required Items</h1></div>
+			<div class="field-group">
+
+				<div class="field-row" ng-show="invalidSubmitted && !formIsValid()">
+					<div class="field full-width invalid">
+						<h1 class="field-title">You're missing one or more fields required to save this Book.</h1>
+					</div>
+				</div>
+
+				<div class="field-row" ng-if="serverError">
+					<div class="field full-width invalid">
+						<h1 class="field-title">There was an error saving the Book to the database: {{serverError}}</h1>
+					</div>
+				</div>
+
+				<div class="field-row">
+					<div class="field full-width" ng-class="{'invalid': invalidSubmitted && !book.name}">
+						<h1 class="field-title">Name</h1>
+						<input type="text" ng-model="book.name" name="name" maxlength="28">
+						<h1 class="required" ng-show="invalidSubmitted && !book.name">This is a required field.</h1>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="field-section content">
+			<div class="section-header blog-content">
+				<h1>Images</h1>
+				<section id="blockNavWrapper">
+					<ul ui-sortable ng-model="book.images" class="existing-blocks">
+						<li ng-repeat="block in book.images track by block.id" class="existing-block" ng-class="{'scroll-focus': block.isActive}">
+							<a href="" ng-click="scrollToBlock(block.id)">
+								<span class="block-name">{{block.imageAltText}}</span>
+								<span class="icon-drag"></span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<section>
+						<ul class="existing-blocks">
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" ng-click="toggleDropdown('blocks')">
+									<span class="block-name">Add an image</span>
+									<span class="icon-add block-icon"></span>
+								</a>
+								<ul class="block-menu" ng-if="dropdownShowing">
+									<li ng-repeat="block in availableBlocks track by $index"><a href="" ng-click="addBlock(block)">
+										<span class="block-name">{{ block.name }}</span>
+										<span class="icon-img" class="block-icon"></span>
+									</a></li>
+								</ul>
+							</li>
+						</ul>
+				</section>
+			</div>
+
+			<div class="field-group">
+				<div ng-repeat="block in book.images track by $index" id="{{ block.id }}" class="blockContainer contentBlock" emit-when="{event: 'allRendered', condition: $last}" scroll-spy-blocks="-125" current-block="block">
+					<fieldset>
+						<div ng-if="block.type == 'image'">
+							<a class="anchor" id="block{{block.id}}"></a>
+							<div class="field-row">
+								<div class="field full-width">
+									<h1 class="field-title">
+										{{block.imageAltText}}
+									</h1>
+									<h1 class="remove-x" ng-click="removeBlock(block)">
+										<span class="icon-x"></span>
+									</h1>
+									<h1 class="block-remove">
+										Remove Image
+									</h1>
+									<div class="image-box full-size" ng-click="openImageModal(block)" ng-style="blockImageThumbnail(block)" ng-class="{'has-thumbnail': block.image['carousel-xhdpi']}">
+										<div class="thumb-mask">
+										<p><span class="icon-img"></span></p>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div> <!-- field section (content) -->
+	</form>
+</div>
+</div>
+</div>
