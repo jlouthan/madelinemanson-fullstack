@@ -79,21 +79,21 @@ var requestHandler = function(req, res, pageView, pageTitle, bodyClass, paths){
     var completed = 0;
     var completionCallback = function(feed){
     	console.log(feed);
-        if(feed.textiles){
-            feed.collectionItems = feed.textiles;
-            delete feed.textiles;
+        if(feed.quilts){
+            feed.collectionItems = feed.quilts;
+            delete feed.quilts;
         }
-        else if(feed.textile){
-            feed.setItem = feed.textile;
-            delete feed.textile;
+        else if(feed.quilt){
+            feed.setItem = feed.quilt;
+            delete feed.quilt;
         }
-        if(feed.objects){
-            feed.collectionItems = feed.objects;
-            delete feed.objects;
+        if(feed.things){
+            feed.collectionItems = feed.things;
+            delete feed.things;
         }
-        else if(feed.object){
-            feed.setItem = feed.object;
-            delete feed.object;
+        else if(feed.thing){
+            feed.setItem = feed.thing;
+            delete feed.thing;
         }
         if(feed.books){
             feed.collectionItems = feed.books;
@@ -157,40 +157,40 @@ app.get('/prints/:printName', function(req, res){
     requestHandler(req, res, 'set-prints', 'Prints', slug, [path]);
 });
 
-app.get('/textiles', function (req, res) {
-    var path = 'textiles?{"state":"published","$sort":{"weighting":-1}}';
-    requestHandler(req, res, 'collection', 'Textiles', 'textiles', [path]);
+app.get('/quilts', function (req, res) {
+    var path = 'quilts?{"state":"published","$sort":{"weighting":-1}}';
+    requestHandler(req, res, 'collection', 'Quilts', 'quilts', [path]);
 });
 
-app.get('/textiles/:textileName/:textileId', function (req, res){
-    var slug = req.params.textileName;
-    var imageIndex = req.params.textileId;
-    var path = 'textiles?state=published&slug=' + slug;
-    requestHandler(req, res, 'set', 'Textiles', imageIndex, [path]);
+app.get('/quilts/:quiltName/:quiltId', function (req, res){
+    var slug = req.params.quiltName;
+    var imageIndex = req.params.quiltId;
+    var path = 'quilts?state=published&slug=' + slug;
+    requestHandler(req, res, 'set', 'Quilts', imageIndex, [path]);
 });
 
-app.get('/textiles/:textileName', function (req, res){
-    var slug = req.params.textileName;
-    var path = 'textiles?state=published&slug=' + slug;
-    requestHandler(req, res, 'list-set', 'Textiles', 'textiles', [path]);
+app.get('/quilts/:quiltName', function (req, res){
+    var slug = req.params.quiltName;
+    var path = 'quilts?state=published&slug=' + slug;
+    requestHandler(req, res, 'list-set', 'Quilts', 'quilts', [path]);
 });
 
-app.get('/objects', function (req, res) {
-    var path = 'objects?{"state":"published","$sort":{"weighting":-1}}';
-    requestHandler(req, res, 'collection', 'Objects', 'objects', [path]);
+app.get('/things', function (req, res) {
+    var path = 'things?{"state":"published","$sort":{"weighting":-1}}';
+    requestHandler(req, res, 'collection', 'Things', 'things', [path]);
 });
 
-app.get('/objects/:objectName/:objectId', function (req, res){
-    var slug = req.params.objectName;
-    var imageIndex = req.params.objectId;
-    var path = 'objects?state=published&slug=' + slug;
-    requestHandler(req, res, 'set', 'Objects', imageIndex, [path]);
+app.get('/things/:thingName/:thingId', function (req, res){
+    var slug = req.params.thingName;
+    var imageIndex = req.params.thingId;
+    var path = 'things?state=published&slug=' + slug;
+    requestHandler(req, res, 'set', 'Things', imageIndex, [path]);
 });
 
-app.get('/objects/:objectName', function (req, res){
-    var slug = req.params.objectName;
-    var path = 'objects?state=published&slug=' + slug;
-    requestHandler(req, res, 'list-set', 'Objects', 'objects', [path]);
+app.get('/things/:thingName', function (req, res){
+    var slug = req.params.thingName;
+    var path = 'things?state=published&slug=' + slug;
+    requestHandler(req, res, 'list-set', 'Things', 'things', [path]);
 });
 
 app.get('/books', function (req, res) {
