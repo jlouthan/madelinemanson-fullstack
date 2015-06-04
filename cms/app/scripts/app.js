@@ -53,15 +53,15 @@ app.config(function ($routeProvider) {
       })
       .when('/things', {
         templateUrl: 'views/thingManager.html',
-        controller: 'ObjectManagerCtrl'
+        controller: 'ThingManagerCtrl'
       })
       .when('/thing/new', {
         templateUrl: 'views/thing.html',
-        controller: 'ObjectCtrl'
+        controller: 'ThingCtrl'
       })
       .when('/thing/:thingId', {
         templateUrl: 'views/thing.html',
-        controller: 'ObjectCtrl'
+        controller: 'ThingCtrl'
       })
       .when('/books', {
         templateUrl: 'views/bookManager.html',

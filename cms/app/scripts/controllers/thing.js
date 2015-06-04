@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cmsFrontendApp')
-  .controller('ObjectCtrl', function ($scope, $rootScope, loggedInChecker, $anchorScroll, $routeParams, modalManager, $location) {
+  .controller('ThingCtrl', function ($scope, $rootScope, loggedInChecker, $anchorScroll, $routeParams, modalManager, $location) {
   	loggedInChecker.validateUser();
   	$rootScope.currentPage = 'things';
   	$anchorScroll();
@@ -49,7 +49,7 @@ angular.module('cmsFrontendApp')
 		return false;
 	};
 
-	$scope.updateObject = function(){
+	$scope.updateThing = function(){
 		if($scope.thingId){
 			dpd.things.put($scope.thing, function(result, error){
 				if(error){
@@ -74,7 +74,7 @@ angular.module('cmsFrontendApp')
 			else{
 				$scope.thing.weighting = 20;
 			}
-			$scope.updateObject();
+			$scope.updateThing();
 		});
 	};
 
@@ -89,7 +89,7 @@ angular.module('cmsFrontendApp')
 			setWeightingToLeast();
 		}
 		else{
-			$scope.updateObject();
+			$scope.updateThing();
 		}
 	};
 
@@ -103,7 +103,7 @@ angular.module('cmsFrontendApp')
 		modalObj.templateUrl = '';
 
 		modalObj.spec = 'at least px x px';
-		modalObj.title = 'Object Image';
+		modalObj.title = 'Thing Image';
 		modalObj.info = 'Image of the thing to appear in thumbnail and carousel views.';
 		modalObj.uploadUrl = '/resize-portfolio-image/' + $scope.thing.id + '/image';
 

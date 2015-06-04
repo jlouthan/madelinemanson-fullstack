@@ -4,14 +4,12 @@
       <span class="icon-previous-arrow" ng-click = "back()"></span>
     </div>
     <div class="main-text">
-      <h1 ng-if="currentPage === 'thing-new' ">Add a Thing</h1>
-      <h1 ng-if="currentPage === 'thing' ">Edit a Thing</h1>
       <h1 ng-if="currentPage === 'print-new' ">Add a Print</h1>
       <h1 ng-if="currentPage === 'print' ">Edit a Print</h1>
       <h1 ng-if="currentPage === 'quilt-new' ">Add a Quilt</h1>
       <h1 ng-if="currentPage === 'quilt' ">Edit a Quilt</h1>
-      <h1 ng-if="currentPage === 'thing-new' ">Add an Object</h1>
-      <h1 ng-if="currentPage === 'thing' ">Edit an Object</h1>
+      <h1 ng-if="currentPage === 'thing-new' ">Add a Thing</h1>
+      <h1 ng-if="currentPage === 'thing' ">Edit a Thing</h1>
       <h1 ng-if="currentPage === 'book-new' ">Add a Book</h1>
       <h1 ng-if="currentPage === 'book' ">Edit a Book</h1>
       <h1 ng-if="currentPage === 'friend-new' ">Add a Friend</h1>
@@ -21,14 +19,14 @@
     </div>
     <div class="sub-nav-buttons">
       <h3 class="saved-date">
-        <div ng-show = "currentObject.state === 'published'">
-          Last saved: {{currentObject.dateUpdated | date:'MMM dd, yyyy @ h:mm:ssa'}}
+        <div ng-show = "currentThing.state === 'published'">
+          Last saved: {{currentThing.dateUpdated | date:'MMM dd, yyyy @ h:mm:ssa'}}
         </div>
       </h3>
       <div class="button-group" ng-class="{'top-padding': currentPage === 'person' || currentPage === 'person-new'}">
         <div>
           <div class="button">
-            <a  href="" ng-click="save(currentObject)">
+            <a  href="" ng-click="save(currentThing)">
               Save
             </a>
           </div>

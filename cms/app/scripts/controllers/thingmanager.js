@@ -1,19 +1,19 @@
 'use strict';
 
 angular.module('cmsFrontendApp')
-  .controller('ObjectManagerCtrl', function ($scope, $rootScope, $location, loggedInChecker, modalManager, weightUpdater) {
+  .controller('ThingManagerCtrl', function ($scope, $rootScope, $location, loggedInChecker, modalManager, weightUpdater) {
   	loggedInChecker.validateUser();
 	$rootScope.currentPage = 'things';
 
 	var PAGE_SIZE = 10;
 
-	var ObjectFeeder = function ObjectFeeder(query) {
+	var ThingFeeder = function ThingFeeder(query) {
 		this.query = query || {};
 		this.things = [];
 		this.moreToLoad = true;
   	};
 
-  ObjectFeeder.prototype.loadContents = function() {
+  ThingFeeder.prototype.loadContents = function() {
   	var feed = this;
   	if(feed.moreToLoad){
   		this.moreToLoad = false;
@@ -41,7 +41,7 @@ angular.module('cmsFrontendApp')
   	}
   };
 
-	var feed = new ObjectFeeder();
+	var feed = new ThingFeeder();
 	// feed.loadContents();
 	$scope.feed = feed;
 	$scope.sortingOptions = weightUpdater.sortingOptions($scope.feed.things, 'things', $scope);

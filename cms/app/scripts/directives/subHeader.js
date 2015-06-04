@@ -7,7 +7,7 @@ angular.module('cmsFrontendApp')
       replace: true,
       scope: {
         currentPage: "@",
-        currentObject: "=currentObj",
+        currentThing: "=currentObj",
         publish: "&publishFcn",
         unpublish: "&unpublishFcn",
         save: "&saveFcn",
