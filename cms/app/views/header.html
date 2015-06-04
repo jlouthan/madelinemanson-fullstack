@@ -8,12 +8,12 @@
 		<div class="main-nav" ng-if="currentPage != 'login'" ng-show="$root.userLoaded">
 			<ul>
 				<li>
-					<a href="#!/prints" ng-class="{'current': currentPage == 'prints'}">Prints</a>
-					<div ng-show="currentPage == 'prints'" class="arrow-up"></div>
-				</li>
-				<li>
 					<a href="#!/textiles" ng-class="{'current': currentPage == 'textiles'}">Textiles</a>
 					<div ng-show="currentPage == 'textiles'" class="arrow-up"></div>
+				</li>
+				<li>
+					<a href="#!/prints" ng-class="{'current': currentPage == 'prints'}">Prints</a>
+					<div ng-show="currentPage == 'prints'" class="arrow-up"></div>
 				</li>
 				<li>
 					<a href="#!/objects" ng-class="{'current': currentPage == 'objects'}">Objects</a>
@@ -24,11 +24,7 @@
 					<div ng-show="currentPage == 'books'" class="arrow-up"></div>
 				</li>
 				<li>
-					<a href="#!/friends" ng-class="{'current': currentPage == 'friends'}">Friends</a>
-					<div ng-show="currentPage == 'friends'" class="arrow-up"></div>
-				</li>
-				<li>
-					<a href="#!/cv" ng-class="{'current': currentPage == 'cv'}">CV</a>
+					<a href="#!/cv" ng-class="{'current': currentPage == 'cv'}">About</a>
 					<div ng-show="currentPage == 'cv'" class="arrow-up"></div>
 				</li>
 				<li>
