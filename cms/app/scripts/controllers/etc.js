@@ -20,7 +20,7 @@ angular.module('cmsFrontendApp')
   	});
 
     $scope.formIsValid = function(){
-      if($scope.etc && $scope.etc.homeImage && $scope.etc.aboutImage && $scope.etc.friendsImage){
+      if($scope.etc && $scope.etc.homeImage && $scope.etc.aboutImage){
         return true;
       }
       return false;
