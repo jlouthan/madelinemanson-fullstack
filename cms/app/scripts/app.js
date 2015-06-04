@@ -39,28 +39,28 @@ app.config(function ($routeProvider) {
         templateUrl: 'views/print.html',
         controller: 'PrintCtrl'
       })
-      .when('/textiles', {
-        templateUrl: 'views/textileManager.html',
-        controller: 'TextileManagerCtrl'
+      .when('/quilts', {
+        templateUrl: 'views/quiltManager.html',
+        controller: 'QuiltManagerCtrl'
       })
-      .when('/textile/new', {
-        templateUrl: 'views/textile.html',
-        controller: 'TextileCtrl'
+      .when('/quilt/new', {
+        templateUrl: 'views/quilt.html',
+        controller: 'QuiltCtrl'
       })
-      .when('/textile/:textileId', {
-        templateUrl: 'views/textile.html',
-        controller: 'TextileCtrl'
+      .when('/quilt/:quiltId', {
+        templateUrl: 'views/quilt.html',
+        controller: 'QuiltCtrl'
       })
-      .when('/objects', {
-        templateUrl: 'views/objectManager.html',
+      .when('/things', {
+        templateUrl: 'views/thingManager.html',
         controller: 'ObjectManagerCtrl'
       })
-      .when('/object/new', {
-        templateUrl: 'views/object.html',
+      .when('/thing/new', {
+        templateUrl: 'views/thing.html',
         controller: 'ObjectCtrl'
       })
-      .when('/object/:objectId', {
-        templateUrl: 'views/object.html',
+      .when('/thing/:thingId', {
+        templateUrl: 'views/thing.html',
         controller: 'ObjectCtrl'
       })
       .when('/books', {

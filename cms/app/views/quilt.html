@@ -1,31 +1,31 @@
 <div ng-show="$root.userLoaded">
-<sub-header current-page={{subHeaderText}} current-obj="textile" save-fcn="save()" back="back()" form-is-valid="formIsValid()">
+<sub-header current-page={{subHeaderText}} current-obj="quilt" save-fcn="save()" back="back()" form-is-valid="formIsValid()">
 </sub-header>
 
 <div class="full-width form-fields">
 <div class="container">
-	<form class="" name="textileForm">
+	<form class="" name="quiltForm">
 		<div class="field-section">
 			<div class="section-header"><h1>Required Items</h1></div>
 			<div class="field-group">
 
 				<div class="field-row" ng-show="invalidSubmitted && !formIsValid()">
 					<div class="field full-width invalid">
-						<h1 class="field-title">You're missing one or more fields required to save this Textile.</h1>
+						<h1 class="field-title">You're missing one or more fields required to save this Quilt.</h1>
 					</div>
 				</div>
 
 				<div class="field-row" ng-if="serverError">
 					<div class="field full-width invalid">
-						<h1 class="field-title">There was an error saving the Textile to the database: {{serverError}}</h1>
+						<h1 class="field-title">There was an error saving the Quilt to the database: {{serverError}}</h1>
 					</div>
 				</div>
 
 				<div class="field-row">
-					<div class="field full-width" ng-class="{'invalid': invalidSubmitted && !textile.name}">
+					<div class="field full-width" ng-class="{'invalid': invalidSubmitted && !quilt.name}">
 						<h1 class="field-title">Name</h1>
-						<input type="text" ng-model="textile.name" name="name" maxlength="28">
-						<h1 class="required" ng-show="invalidSubmitted && !textile.name">This is a required field.</h1>
+						<input type="text" ng-model="quilt.name" name="name" maxlength="28">
+						<h1 class="required" ng-show="invalidSubmitted && !quilt.name">This is a required field.</h1>
 					</div>
 				</div>
 
@@ -36,8 +36,8 @@
 			<div class="section-header blog-content">
 				<h1>Images</h1>
 				<section id="blockNavWrapper">
-					<ul ui-sortable ng-model="textile.images" class="existing-blocks">
-						<li ng-repeat="block in textile.images track by $index" class="existing-block" ng-class="{'scroll-focus': block.isActive}">
+					<ul ui-sortable ng-model="quilt.images" class="existing-blocks">
+						<li ng-repeat="block in quilt.images track by $index" class="existing-block" ng-class="{'scroll-focus': block.isActive}">
 							<a href="" ng-click="scrollToBlock(block.id)">
 								<span class="block-name">{{block.imageAltText}}</span>
 								<span class="icon-drag"></span>
@@ -64,7 +64,7 @@
 			</div>
 
 			<div class="field-group">
-				<div ng-repeat="block in textile.images track by $index" id="{{ block.id }}" class="blockContainer contentBlock" emit-when="{event: 'allRendered', condition: $last}" scroll-spy-blocks="-125" current-block="block">
+				<div ng-repeat="block in quilt.images track by $index" id="{{ block.id }}" class="blockContainer contentBlock" emit-when="{event: 'allRendered', condition: $last}" scroll-spy-blocks="-125" current-block="block">
 					<fieldset>
 							<a class="anchor" id="block{{block.id}}"></a>
 							<div class="field-row">

@@ -5945,10 +5945,10 @@ body {
   }
 }
 
-.modal-dialog .remove-modal h2 span.object-title,
-.modal-dialog .login-error-modal h2 span.object-title,
-.modal-dialog .archive-beer-modal h2 span.object-title,
-.modal-dialog .edit-modal h2 span.object-title {
+.modal-dialog .remove-modal h2 span.thing-title,
+.modal-dialog .login-error-modal h2 span.thing-title,
+.modal-dialog .archive-beer-modal h2 span.thing-title,
+.modal-dialog .edit-modal h2 span.thing-title {
   color: #6cd1d4;
 }
 
